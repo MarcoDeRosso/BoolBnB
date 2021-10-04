@@ -15,6 +15,10 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('apartament_id');
+            $table->foreign('apartament_id')->references('id')->on('apartaments');
+            $table->boolean('status');
+            $table->date('expire_date');
             $table->timestamps();
         });
     }

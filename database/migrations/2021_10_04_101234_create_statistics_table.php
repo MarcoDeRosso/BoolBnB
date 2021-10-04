@@ -16,6 +16,7 @@ class CreateStatisticsTable extends Migration
         Schema::create('statistics', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('apartament_id');
+            $table->foreign('apartment_id')->references('id')->on('apartaments');
             $table->ipAddress('guest_ip');
             $table->timestamps();
         });

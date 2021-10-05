@@ -467,10 +467,7 @@ class ApartmentsTableSeeder extends Seeder
             $payment->sponsor_id=rand(1,3);
             $payment->status=true;
             $payment->expire_date='2999/12/31';
-            // $newSponsor= new Sponsor();
-
-            // $cost=$payment;
-            // $payment->total=$payment->sponsor()->cost;
+            $payment->total=Sponsor::find($payment->sponsor_id)->cost;
             $payment->save();
         };
 

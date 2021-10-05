@@ -3,6 +3,7 @@
 use App\User;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 
 class ApartmentsTableSeeder extends Seeder
 {
@@ -55,7 +56,7 @@ class ApartmentsTableSeeder extends Seeder
             $user->img_path = $userImgList[$i];
             $user->date_of_birth = $userDateList[$i];
             $user->email = $userEmailList[$i];
-            $user->password = $faker->password();
+            $user->password = Hash::make($faker->password());
             $user->save();
         }
 

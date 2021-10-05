@@ -328,7 +328,7 @@ class ApartmentsTableSeeder extends Seeder
         ];
 
         // ----------
-        $user=new User();
+        $userObj=new User();
         $userObj->name = 'Andrea';
         $userObj->surname = 'Calzolari';
         $userObj->img_path = 'https://lh3.googleusercontent.com/proxy/fgCnqkNF5DsJ4YmDJKlo5pypkT9Lt1AQokGEusbAalDTkMFWKfi07MIbZ_JF_npNob1YuKVsdubHpI5T8HGF3UZPWf8rXy4mLyYxzo6HZ2-Xd0RdKNblr285Bs-EHT8';
@@ -338,7 +338,7 @@ class ApartmentsTableSeeder extends Seeder
         $userObj->save();
 
 
-        $messages
+        // $messages
 
     }
 }

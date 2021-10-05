@@ -38,6 +38,7 @@
                                 <input id="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="date_of_birth" autofocus>
                             </div>
                         </div>
+                        <!-- TO DO NEGARE I CARATTERI SPECIALI COME I '-' -->
                         <div class="form-group row">
                             <label for="img_path" class="col-md-4 col-form-label text-md-right">{{ __('Personal image') }}</label>
 

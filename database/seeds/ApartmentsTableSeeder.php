@@ -1,5 +1,6 @@
 <?php
 
+use App\Apartment;
 use App\User;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
@@ -60,7 +61,6 @@ class ApartmentsTableSeeder extends Seeder
             $user->save();
         }
 
-        $apartmentUserId=[1,2,3,4,5];
         $apartmentDescriptionList=[
             "Stylish and cosy basement studio located in Via Marsala in the heart of Bologna historic city centre. The studio is located in a renovated historic building. The studio has original stone ceilings, a duble bed, kitchenette and bathroom.
             Elegante e accogliente monolocale seminterrato situato in Via Marsala nel cuore del centro storico di Bologna. Il monolocale si trova in un palazzo storico ristrutturato. Lo studio ha soffitti in pietra originali, letto matrimoniale, angolo cottura e bagno.
@@ -74,9 +74,7 @@ class ApartmentsTableSeeder extends Seeder
             Altre cose da tenere a mente
             Usiamo un sistema di self check in direttamente presso l'abitazione. Vi invieremo un link per effettuare il check in on line (da fare TASSATIVAMENTE entro le 19 del giorno precedente l'arrivo) e riceverete le istruzioni circa 24 ore prima dell'arrivo.",
             "L'Athens Studios sorge in una posizione molto centrale, a 100 metri dalla Stazione Metro Acropolis, a 150 metri dal Nuovo Museo dell'Acropoli e a 500 metri dall'ingresso dell'Acropoli. La struttura vanta un'area all'ultimo piano con vista sull'Acropoli, un bar-caffetteria e un Craft Beer & Sports Bar. Il WiFi è fruibile gratuitamente in tutto l’edificio.
-
             Tutti climatizzati e spaziosi, i monolocali, le camere e gli appartamenti dell’Athens Studios sono dotati di arredi moderni e pavimenti piastrellati. Inoltre, includono un bagno interno e un angolo cottura ben attrezzato. La maggior parte degli alloggi presenta anche un balcone.
-            
             Al mattino vi attende una colazione gratuita a base di ingredienti locali. Potrete gustare il pranzo e la cena presso il ristorante, aperto tutti i giorni dalle 07.30 alle 24:00. I bar vi attendono con drink e spuntini.
             
             Attivo 24 ore su 24, il personale della reception sarà lieto di fornirvi informazioni sulle attrazioni della zona. Avrete modo di usufruire di armadietti con serratura, di una lavanderia self-service 24 ore su 24 e di una spaziosa area sul livello della strada con numerosi posti a sedere.
@@ -200,6 +198,36 @@ class ApartmentsTableSeeder extends Seeder
             Per famiglie con bimbi piccoli è disponibile un lettino da campeggio e un seggiolone.
             L'appartamento è completo di dotazione biancheria letto e bagno.
             Per gli ospiti che arrivano in auto è possibile parcheggiare liberamente sotto casa o nel garage privato",
+            "La stanza è sita in un ampio appartamento a sua volta ubicato in uno storico palazzo del dopoguerra: centralissimo, a 50 metri dalla stazione centrale, dalle linee metropolitane e dalla linea Circumvesuviana. Dall'appartamento sono anche facilmente raggiungibili le linee Cumana e Circumflegrea.
+            Lo spazio
+            Una stanza finemente arredata, che ho attrezzato in risposta alle esigenze che io stesso, a seguito dei miei numerosi viaggi,ho riscontrato.
+            Accesso per gli ospiti
+            Gli ospiti possono usufruire, oltre che della loro stanza, anche di tutti i servizi disponibili in casa, incluso il bagno condiviso con me e con gli altri ospiti.
+            Altre cose da tenere a mente
+            La mia casa è una risorsa e al contempo una grande opportunità per chi la sceglie, sarò lieto di assistere i miei ospiti al meglio!
+            Non dovrebbe nemmeno essere specificato, ma lo faccio per chiarezza: LGBT benvenuti a casa mia!
+            Le zone comuni dell’appartamento sono sorvegliate da telecamere per la reciproca tutela e sicurezza.",
+            "Nuovissimo accogliente bilocale di 65 mq con doppio balcone, perfetto per 2 persone, situato al 1° piano di uno stabile con ascensore. L'appartamento si trova a soli 250mt dalla fermata della metro M1 De Angeli, all'interno dell'elegante quartiere Marghera/De Angeli, ricco di ristoranti, gelaterie, negozi di abbigliamento e bar. Nelle vicinanze sono presenti la farmacia De Angeli aperta h24, la Feltrinelli e Mondadori Store. L'alloggio fa parte di un condominio signorile con portiere.
+            Lo spazio
+            SONO CONSENTITI SOGGIORNI DI MEDIA/LUNGA DURATA CON CONTRATTO DI LOCAZIONE TURISTICA O TRANSITORIO FINO A 1 ANNO
+            
+            Lo spazio interno è così organizzato:
+            - SOGGIORNO con smart TV, divano eventualmente utilizzabile come terzo posto letto e da segnalare in fase di prenotazione, tavolo da pranzo;
+            - CUCINA con frigorifero, congelatore, lavastoviglie, forno tradizionale, microonde, bollitore elettrico e moka. Piccolo balcone;
+            - CAMERA DA LETTO con letto matrimoniale, guardaroba, TV e ampio terrazzo;
+            - BAGNO con bidet e box doccia.
+            
+            Ulteriori servizi a disposizione degli ospiti: WIFI, A/C con split in soggiorno, riscaldamento, lavatrice, ferro e asse da stiro.",
+            "Una piccola casa,arredata interamente in legno naturale,con un letto matrimoniale e un letto a castello ,camino e forno a legna . Un giardino attrezzato con barbeque , lettini e divani con accesso privato al lago.
+            Lo spazio
+            Una casa con giardino privato e recintato attrezzato con barbeque e lettini da cui si può accedere al lago per fare i bagni. Arredata in stile naturale , ha una camera con un letto matrimoniale e 2 originali letti a castello costruiti sopra . In sala un divano che può diventare un comodo letto.Cucina attrezzata , camino e forno a legna. CIR 09704-CNI-00019
+            Accesso per gli ospiti
+            Comodo parcheggio privato gratuito.",
+            "Splendido appartamento situato nel cuore del centro storico di Palermo, può ospitare fino a 4 persone ed è composto da cucina, living spazioso con divano letto matrimoniale , camera da letto matrimoniale e due bagni con doccia. Arredamento moderno, connessione wi-fi, TV LED 32, finestre insonorizzate, riscaldamento, frigo, cucina e bagno attrezzati, biancheria da letto e da bagno. L'appartamento si trova al primo piano, ASCENSORE.
+            Lo spazio
+            L'appartamento si trova al centro storico della città, posizione unica per vivere al meglio Palermo. A pochi passi si trova il mercato di Ballarò dove è possibile comprare pesce, semenze e spezie, frutta e verdura fresca ma anche provare il tipico street food palermitano! Di giorno sarà impossibile non perdersi nelle vie antiche di Palermo e ammirare le meraviglie che la città nasconde! Il tourist information è a pochi passi dalla proprietà se volete organizzare qualche gita fuori porta! Inoltre la stazione dei treni e degli autobus è a pochi passi dall'appartamento!
+            Accesso per gli ospiti
+            Gli ospiti avranno accesso all'intera proprietà.",
 
         ];
         $apartmentAddressList=[
@@ -239,17 +267,68 @@ class ApartmentsTableSeeder extends Seeder
             "CASA MOTOM: rifugio urbano per famiglie in viaggio",
             "Casetta con fantastica vista lago!",
             "La Casa all'Oliveto",
-            "Aurora, raffinata e romantica suite vicino alla Stazione",
+            "Aurora, raffinata e romantica suite",
             "Moderno zona isola/corso Como",
             "Grazioso appartamento sui Navigli",
             "Soggiorna nel cuore di Atene",
             "Acropolis & Lycavettus View Roof House",
             "Calm apartment near Panathenaic Stadium",
-            "Sweet one bedroom apartment (near to city centre)",
+            "Sweet one bedroom apartment",
             "Museum of Modern Art Private Double Room",
 
         ];
-        $apartmentImgList=[];
+        $apartmentImgList=[
+            'https://images.pexels.com/photos/2111768/pexels-photo-2111768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/276554/pexels-photo-276554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/3699656/pexels-photo-3699656.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            'https://images.pexels.com/photos/1571472/pexels-photo-1571472.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/245268/pexels-photo-245268.png?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            'https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/2079249/pexels-photo-2079249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            'https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/7227621/pexels-photo-7227621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            'https://images.pexels.com/photos/460695/pexels-photo-460695.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            'https://images.pexels.com/photos/462205/pexels-photo-462205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/8134848/pexels-photo-8134848.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            'https://images.pexels.com/photos/6585598/pexels-photo-6585598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        ];
+
+        for($x=0; $x<20; $x++){
+            $apartment = new Apartment();
+            $apartment->user_id=rand(1,5);
+            $apartment->description=$apartmentDescriptionList[$x];
+            $apartment->rooms_num=rand(5,8);
+            $apartment->beds_num=rand(1,3);
+            $apartment->bath_num=rand(1,2);
+            $apartment->meters_size=rand(80,500);
+            $apartment->address=$apartmentAddressList[$x];
+            $apartment->title=$apartmentTitleList[$x];
+            $apartment->visible=true;
+            $apartment->img_path=$apartmentImgList[$x];
+            $apartment->price_night=rand(80,200);
+            $apartment->longitude=$faker->longitude(10, 8);
+            $apartment->latitude=$faker->latitude(10, 8);
+            $apartment->save();
+        }
+
+        $messagesNameList=[
+            'Marco',
+            'Sebastian',
+            'Mariapia',
+            'Gianluca',
+            'Gianluigi'
+        ];
+
+        $messages
+
 
 
 

@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'surname' => $data['surname'],
             'date_of_birth' => $data['date_of_birth'],
-            $img= Storage::put('img/',$data['img_path']),
+            $img= Storage::put('img',$data['img_path']),
             'img_path'=> $img,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

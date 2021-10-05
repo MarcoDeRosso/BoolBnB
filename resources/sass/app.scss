@@ -6,3 +6,70 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+footer.my_footer{
+    background-color: #f2f2f3;
+    font-weight: bold;
+    color: #5C5B62;
+    padding-top: 20px;
+
+    li{
+        padding-bottom: 20px;
+        a{
+            color: #5C5B62;
+            padding-bottom: 20px ;
+        }
+        a:hover{
+            color: #FF8964;
+        }
+    }
+    h3{
+        a{
+            color: #5C5B62;
+        }
+        a:hover{
+            color: #FF8964;
+        }
+    }
+    .p-3{
+        a{
+            color: #5C5B62;
+        }
+        a:hover{
+            color: #FF8964;
+        }
+    }
+    i{
+        color:#FF8964;
+        font-size: 20px;
+    }
+
+    .social{
+        border-color: transparent;
+    }
+
+
+    h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .list-unstyled {
+
+        li {
+            font-size: .85rem;
+            font-weight: 400;
+        }
+    }
+
+    .footer_bottom {
+        font-weight: 400;
+        font-size: .75rem;
+    }
+}
+
+.for-line-only {
+    border-top: 1px solid black;
+}
+

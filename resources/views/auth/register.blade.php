@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" >
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" >
                         @csrf
 
                         <div class="form-group row">
@@ -28,7 +28,7 @@
                             <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
 
                             <div class="col-md-6">
-                                <input id="surname" type="text"  name="surname" >
+                                <input id="surname" type="text"  name="surname" class="form-control @error('name') is-invalid @enderror" >
                             </div>
                         </div>
                         <div class="form-group row">

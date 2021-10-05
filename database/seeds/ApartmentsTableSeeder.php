@@ -2,6 +2,9 @@
 
 use App\Apartment;
 use App\Message;
+use App\Payment;
+use App\Service;
+use App\Sponsor;
 use App\User;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
@@ -60,6 +63,40 @@ class ApartmentsTableSeeder extends Seeder
             $user->email = $userEmailList[$i];
             $user->password = Hash::make($faker->password());
             $user->save();
+        }
+        
+        $userObj=new User();
+        $userObj->name = 'Andrea';
+        $userObj->surname = 'Calzolari';
+        $userObj->img_path = 'https://lh3.googleusercontent.com/proxy/fgCnqkNF5DsJ4YmDJKlo5pypkT9Lt1AQokGEusbAalDTkMFWKfi07MIbZ_JF_npNob1YuKVsdubHpI5T8HGF3UZPWf8rXy4mLyYxzo6HZ2-Xd0RdKNblr285Bs-EHT8';
+        $userObj->date_of_birth = '1980/02/02';
+        $userObj->email = 'andreacalzolari@live.it';
+        $userObj->password = '$2y$10$GucQhVApDtnNFGjO9snLUeXMQo1NwU6p60V6Xs6DHAJzD.MBpqyZW';// ciccio1234
+        $userObj->save();
+        
+        $serviceList=[
+            'Wi-fi',
+            'Riscaldamento',
+            'Condizionatore',
+            'Piscina',
+            'Parcheggio auto',
+            'Animali ammessi',
+            'Tv',
+            'Giardino',
+            'Cucina',
+            'Lavanderia',
+            'Cassaforte',
+            'Palestra',
+            'Vista mare',
+            'Centro città',
+        ];
+        $serviceIDList=[];
+        
+        foreach($serviceList as $service){
+            $serviceObject= new Service();
+            $serviceObject->title=$service;
+            $serviceObject->save();
+            $serviceIDList[]=$serviceObject->id;
         }
 
         $apartmentDescriptionList=[
@@ -301,8 +338,8 @@ class ApartmentsTableSeeder extends Seeder
             'https://images.pexels.com/photos/6585598/pexels-photo-6585598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
         ];
-
-        for($x=0; $x<20; $x++){
+        
+        for($x=0; $x<17; $x++){
             $apartment = new Apartment();
             $apartment->user_id=rand(1,5);
             $apartment->description=$apartmentDescriptionList[$x];
@@ -317,7 +354,54 @@ class ApartmentsTableSeeder extends Seeder
             $apartment->price_night=rand(80,200);
             $apartment->longitude=$faker->longitude(10, 8);
             $apartment->latitude=$faker->latitude(10, 8);
+
+            $randServiceKeys = array_rand($serviceIDList, 5);
+            $service1=$serviceIDList[$randServiceKeys[0]];
+            $service2=$serviceIDList[$randServiceKeys[1]];
+            $service3=$serviceIDList[$randServiceKeys[2]];
+            $service4=$serviceIDList[$randServiceKeys[3]];
+            $service5=$serviceIDList[$randServiceKeys[4]];
+
             $apartment->save();
+
+            $apartment->service()->attach($service1);
+            $apartment->service()->attach($service2);
+            $apartment->service()->attach($service3);
+            $apartment->service()->attach($service4);
+            $apartment->service()->attach($service5);
+
+        }
+
+        for($z=17; $z<20; $z++){
+            $apartment = new Apartment();
+            $apartment->user_id=6;
+            $apartment->description=$apartmentDescriptionList[$z];
+            $apartment->rooms_num=rand(5,8);
+            $apartment->beds_num=rand(1,3);
+            $apartment->bath_num=rand(1,2);
+            $apartment->meters_size=rand(80,500);
+            $apartment->address=$apartmentAddressList[$z];
+            $apartment->title=$apartmentTitleList[$z];
+            $apartment->visible=true;
+            $apartment->img_path=$apartmentImgList[$z];
+            $apartment->price_night=rand(80,200);
+            $apartment->longitude=$faker->longitude(10, 8);
+            $apartment->latitude=$faker->latitude(10, 8);
+
+            $randServiceKeys = array_rand($serviceIDList, 5);
+            $service1=$serviceIDList[$randServiceKeys[0]];
+            $service2=$serviceIDList[$randServiceKeys[1]];
+            $service3=$serviceIDList[$randServiceKeys[2]];
+            $service4=$serviceIDList[$randServiceKeys[3]];
+            $service5=$serviceIDList[$randServiceKeys[4]];
+
+            $apartment->save();
+
+            $apartment->service()->attach($service1);
+            $apartment->service()->attach($service2);
+            $apartment->service()->attach($service3);
+            $apartment->service()->attach($service4);
+            $apartment->service()->attach($service5);
         }
 
         $messagesNameList=[
@@ -329,14 +413,6 @@ class ApartmentsTableSeeder extends Seeder
         ];
 
 
-        $userObj=new User();
-        $userObj->name = 'Andrea';
-        $userObj->surname = 'Calzolari';
-        $userObj->img_path = 'https://lh3.googleusercontent.com/proxy/fgCnqkNF5DsJ4YmDJKlo5pypkT9Lt1AQokGEusbAalDTkMFWKfi07MIbZ_JF_npNob1YuKVsdubHpI5T8HGF3UZPWf8rXy4mLyYxzo6HZ2-Xd0RdKNblr285Bs-EHT8';
-        $userObj->date_of_birth = '1980/02/02';
-        $userObj->email = 'andreacalzolari@live.it';
-        $userObj->password = '$2y$10$GucQhVApDtnNFGjO9snLUeXMQo1NwU6p60V6Xs6DHAJzD.MBpqyZW';// ciccio1234
-        $userObj->save();
 
         $messagesMailList=[
             'marco@marco.it',
@@ -355,16 +431,48 @@ class ApartmentsTableSeeder extends Seeder
 
         for($y=0; $y<5; $y++){
             $message=new Message();
-            $message->apartment_id=rand(1,20);
+            $message->apartment_id=rand(18,20);
             $message->full_name=$messagesNameList[$y];
             $message->email=$messagesMailList[$y];
             $message->text=$messagesTextList[$y];
             $message->save();
-
         }
 
+        $sponsorNameList=[
+            'Bronzo',
+            'Argento',
+            'Oro',
+        ];
+        $sponsorPriceList=[
+            2.99,
+            5.99,
+            9.99,
+        ];
+        $sponsorHourList=[
+            24,
+            72,
+            144,
+        ];
+        for($r=0;$r<3;$r++){
+            $sponsor=new Sponsor();
+            $sponsor->name=$sponsorNameList[$r];
+            $sponsor->hours=$sponsorHourList[$r];
+            $sponsor->cost=$sponsorPriceList[$r];
+            $sponsor->save();
+        }
 
+        for($s=0;$s<4;$s++){
+            $payment=new Payment();
+            $payment->apartment_id=rand(1,20);
+            $payment->sponsor_id=rand(1,3);
+            $payment->status=true;
+            $payment->expire_date='2999/12/31';
+            // $newSponsor= new Sponsor();
 
+            // $cost=$payment;
+            // $payment->total=$payment->sponsor()->cost;
+            $payment->save();
+        };
 
 
     }

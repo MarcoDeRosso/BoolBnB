@@ -1,6 +1,7 @@
 <?php
 
 use App\Apartment;
+use App\Message;
 use App\User;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
@@ -327,7 +328,30 @@ class ApartmentsTableSeeder extends Seeder
             'Gianluigi'
         ];
 
-        $messages
+        $messagesMailList=[
+            'marco@marco.it',
+            'sebastian@sebastian.it',
+            'mariapia@mariapia.it',
+            'gianluca@gianluca.it',
+            'gianluigi@gianluigi.it',
+        ];
+        $messagesTextList=[
+            "Salve! Vorrei delle informazioni su questo appartamento, come la posso contattare?",
+            "Salve, gradirei avere informazioni in merito al suo meraviglioso appartamento! Mi piace molto la Scandinavia e non vedo l'ora di passare lì le mie vacanze",
+            "Buongiorno, volevo chiederLe, l'appartamento ha il riscaldamento autonomo o centralizzato?",
+            "Ciao, volevo chiederle se l'appartamento è disponibile per Pasqua, grazie in anticipo",
+            "Buonasera, per curiosità chi dovrebbe pagare i costi di riparazione in caso di danni?"
+        ];
+
+        for($y=0; $y<5; $y++){
+            $message=new Message();
+            $message->apartment_id=rand(1,20);
+            $message->full_name=$messagesNameList[$y];
+            $message->email=$messagesMailList[$y];
+            $message->text=$messagesTextList[$y];
+            $message->save();
+
+        }
 
 
 

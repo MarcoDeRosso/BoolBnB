@@ -6,3 +6,21 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.navbar{
+    background-color: orange!important;
+    a{
+        color: grey!important;
+    }
+    a:hover{
+        color: black!important;
+    }
+}
+
+
+.jumbotron{
+    background-image: url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F04%2F20%2Fbali-bamboo-house-airbnb-AIRZOOM0420.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}

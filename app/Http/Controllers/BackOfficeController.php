@@ -17,8 +17,9 @@ class BackOfficeController extends Controller
      */
     public function index()
     {
-        // $apartments = Apartment::find();
-        // return view('apartments.index',compact('apartments'));
+        $current_user_id = Auth::id();
+        $apartments = Apartment::where('user_id',$current_user_id)->get();
+        return view('apartments.index', compact('apartments'));
     }
 
     /**

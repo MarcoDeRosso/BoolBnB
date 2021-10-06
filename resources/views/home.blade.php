@@ -26,7 +26,7 @@
 
     @foreach ($apartments as $apartment)
     <div class="col-12 col-md-6 col-lg-4 articol-card">
-        <a href="{{ route('apartments.show', $apartment) }}">
+        <a href="{{ route('apartmentShow', $apartment) }}">
             <h1>{{ $apartment->title }}</h1>
         </a>  
         <img src="{{ $apartment->img_path }}" alt="" style="width: 100%">

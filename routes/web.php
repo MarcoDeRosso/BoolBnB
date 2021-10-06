@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::resource('home', 'HomeController');
+// Route::resource('/', 'HomeController');
 Route::resource('apartments', 'BackOfficeController');
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/{id}', 'HomeController@show')->name('apartmentShow');

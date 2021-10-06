@@ -33,8 +33,8 @@
         </div>
 
         <div class="form-group">
-            <label for="bath_room">Numero bagni:</label>
-            <input type="number" id="bath_room" name="bath_room" min="1" max="5">
+            <label for="bath_num">Numero bagni:</label>
+            <input type="number" id="bath_num" name="bath_num" min="1" max="5">
         </div>
 
         <div class="form-group">
@@ -55,6 +55,24 @@
         <div class="form-group">
             <label for="price_night">Prezzo per notte:</label>
             <input type="number" id="price_night" name="price_night" min="1" max="65000">
+        </div>
+
+        <h3>Servizi:</h3>
+
+        <div>
+            @foreach ($services as $service)
+            <input type="checkbox" id="{{ $service->id }}" name="services[]" value="{{ $service->id }}">
+            <label for="{{ $service->id }}"> {{ $service->title }}</label>            
+            @endforeach
+
+        </div>
+
+        <div class="form-group">
+            <label for="visible" >Vuoi rendere l'annuncio visibile sulla piattaforma?</label>
+            <select name="visible" id="visible">
+                <option value="0">No</option>
+                <option value="1">Si</option>
+            </select>
         </div>
 
         <button type="submit" class="btn btn-success">Submit</button>

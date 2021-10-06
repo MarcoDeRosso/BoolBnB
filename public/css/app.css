@@ -10944,3 +10944,8 @@ a.text-dark:focus {
   }
 }
 
+#map-div {
+  width: 300px;
+  height: 300px;
+}
+

@@ -60,7 +60,13 @@
         <button type="submit" class="btn btn-success">Submit</button>
     
     </form>
+    <h1>Geocoding</h1> 
+    <div> 
+        Location: 
+        <input type="text" id="geoLocationQuery"><br> 
+        <button id="geocodeBtn">Submit</button> 
+    </div>  
+    <div id="map-div"></div>
 
-    
 </div>
 @endsection

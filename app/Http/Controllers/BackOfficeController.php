@@ -65,7 +65,7 @@ class BackOfficeController extends Controller
     public function destroy(Apartment $apartment)
     {
         $apartment->delete();
-        return redirect()->route('home');
+        return redirect()->route('apartments.index');
     }
 
     private function fillAndSave (Request $request, Apartment $apartment) {

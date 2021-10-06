@@ -10,8 +10,13 @@ use Illuminate\Support\Facades\Storage;
 
 class BackOfficeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth'); 
+    }
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource.   
      *
      * @return \Illuminate\Http\Response
      */
@@ -45,7 +50,6 @@ class BackOfficeController extends Controller
         $apartment = new Apartment();
         $this->fillAndSave($request, $apartment);
         return redirect()->route('apartments.show', $apartment);
-
     }
 
     /**

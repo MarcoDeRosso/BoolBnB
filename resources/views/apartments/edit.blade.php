@@ -63,12 +63,11 @@
         <div>
             @foreach ($services as $service)
             @if ($apartment->service->contains($service->id))
-            <input checked name="services[]" type="checkbox" id="{{ $service->id }}" value="{{ $service->id }}">
-            <label for="{{ $service->id }}">{{ $service->title }}</label>                
+                <input checked name="services[]" type="checkbox" id="{{ $service->id }}" value="{{ $service->id }}">
+                <label for="{{ $service->id }}">{{ $service->title }}</label>                
             @endif
-            <input name="services[]" type="checkbox" id="{{ $service->id }}" value="{{ $service->id }}">
-            <label for="{{ $service->id }}">{{ $service->title }}</label>     
-            
+                <input name="services[]" type="checkbox" id="{{ $service->id }}" value="{{ $service->id }}">
+                <label for="{{ $service->id }}">{{ $service->title }}</label>                 
             @endforeach
         </div>
 

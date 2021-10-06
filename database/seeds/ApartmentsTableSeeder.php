@@ -5,6 +5,7 @@ use App\Message;
 use App\Payment;
 use App\Service;
 use App\Sponsor;
+use App\Statistic;
 use App\User;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
@@ -471,6 +472,11 @@ class ApartmentsTableSeeder extends Seeder
             $payment->save();
         };
 
-
+        for($a=0;$a<5;$a++) {
+            $statistic = new Statistic();
+            $statistic->guest_ip = $faker->localIpv4();
+            $statistic->apartment_id = 18;
+            $statistic->save();
+        }
     }
 }

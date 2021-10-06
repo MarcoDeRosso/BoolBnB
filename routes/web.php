@@ -16,6 +16,7 @@ Auth::routes();
 
 // Route::resource('/', 'HomeController');
 Route::resource('apartments', 'BackOfficeController');
+Route::resource('messages', 'MessageController');
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/{id}', 'HomeController@show')->name('apartmentShow');

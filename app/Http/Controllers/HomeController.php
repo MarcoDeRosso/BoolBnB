@@ -1,28 +1,33 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Apartment;
 
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('home');
+        $apartments= Apartment::all();
+
+        foreach($apartments as $apartment) {
+            $apartment->description=$this->cutText($apartment->description);
+        }
+        return view('home', compact('apartments'));  
+    }
+
+    public function show($id)
+    {
+        $apartment= Apartment::find($id);
+        return view('apartments.show', compact('apartment'));
+        
+    }
+    
+    private function cutText ($text) {
+        $cutText = substr($text,0, 200);
+        $cutText =  $cutText . "...";
+        return $cutText;
     }
 }

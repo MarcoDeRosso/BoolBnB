@@ -9,6 +9,9 @@
 
 .navbar{
     background-color: orange!important;
+    .navbar-nav{
+        align-items: flex-end;
+    }
     a{
         color: grey!important;
     }

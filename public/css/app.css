@@ -10948,6 +10948,10 @@ a.text-dark:focus {
   background-color: orange !important;
 }
 
+.navbar .navbar-nav {
+  align-items: flex-end;
+}
+
 .navbar a {
   color: grey !important;
 }

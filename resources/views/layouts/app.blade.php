@@ -93,6 +93,7 @@
         <main class="py-0">
             @yield('content')
         </main>
+        @include('layouts.footer')
     </div>
 </body>
 </html>

@@ -15,11 +15,7 @@ class BackOfficeController extends Controller
     {
         $this->middleware('auth'); 
     }
-    /**
-     * Display a listing of the resource.   
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $current_user_id = Auth::id();
@@ -27,11 +23,7 @@ class BackOfficeController extends Controller
         return view('apartments.index', compact('apartments'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $apartments= Apartment::all();
@@ -39,12 +31,7 @@ class BackOfficeController extends Controller
         return view('apartments.create', compact('apartments', 'services'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function store(Request $request)
     {
         $apartment = new Apartment();
@@ -52,24 +39,14 @@ class BackOfficeController extends Controller
         return redirect()->route('apartments.show', $apartment);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $apartment= Apartment::find($id);
-        return view('apartments.show', compact('apartment'));
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // public function show($id)
+    // {
+    //     $apartment= Apartment::find($id);
+    //     return view('apartments.show', compact('apartment'));
+    // }
+
+
     public function edit(Apartment $apartment)
     {
         $services = Service::all();
@@ -77,25 +54,14 @@ class BackOfficeController extends Controller
         
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Apartment $apartment)
     {
         $this->fillAndSave($request, $apartment);
         return redirect()->route('apartments.show', $apartment);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Apartment $apartment)
     {
         $apartment->delete();

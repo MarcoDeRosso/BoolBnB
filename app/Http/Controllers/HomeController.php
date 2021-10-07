@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 use App\Apartment;
 
+use App\Apartment;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-
     public function index()
     {
         $apartments= Apartment::all();
@@ -15,7 +15,7 @@ class HomeController extends Controller
         foreach($apartments as $apartment) {
             $apartment->description=$this->cutText($apartment->description);
         }
-        return view('home', compact('apartments'));  
+        return view('home', compact('apartments'));        
     }
 
     public function show($id)
@@ -27,6 +27,7 @@ class HomeController extends Controller
     
     private function cutText ($text) {
         $cutText = substr($text,0, 190);
+
         $cutText =  $cutText . "...";
         return $cutText;
     }

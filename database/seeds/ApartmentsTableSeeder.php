@@ -112,15 +112,11 @@ class ApartmentsTableSeeder extends Seeder
             L'appartamento è situato al quarto piano SENZA ascensore.
             Altre cose da tenere a mente
             Usiamo un sistema di self check in direttamente presso l'abitazione. Vi invieremo un link per effettuare il check in on line (da fare TASSATIVAMENTE entro le 19 del giorno precedente l'arrivo) e riceverete le istruzioni circa 24 ore prima dell'arrivo.",
-            "L'Athens Studios sorge in una posizione molto centrale, a 100 metri dalla Stazione Metro Acropolis, a 150 metri dal Nuovo Museo dell'Acropoli e a 500 metri dall'ingresso dell'Acropoli. La struttura vanta un'area all'ultimo piano con vista sull'Acropoli, un bar-caffetteria e un Craft Beer & Sports Bar. Il WiFi è fruibile gratuitamente in tutto l’edificio.
-            Tutti climatizzati e spaziosi, i monolocali, le camere e gli appartamenti dell’Athens Studios sono dotati di arredi moderni e pavimenti piastrellati. Inoltre, includono un bagno interno e un angolo cottura ben attrezzato. La maggior parte degli alloggi presenta anche un balcone.
-            Al mattino vi attende una colazione gratuita a base di ingredienti locali. Potrete gustare il pranzo e la cena presso il ristorante, aperto tutti i giorni dalle 07.30 alle 24:00. I bar vi attendono con drink e spuntini.
-            
-            Attivo 24 ore su 24, il personale della reception sarà lieto di fornirvi informazioni sulle attrazioni della zona. Avrete modo di usufruire di armadietti con serratura, di una lavanderia self-service 24 ore su 24 e di una spaziosa area sul livello della strada con numerosi posti a sedere.
-            
-            La struttura dista meno di 10 minuti di cammino dalla centrale Piazza Syntagma e appena 1 km dal quartiere dello shopping di Ermou. Nelle strade vicine troverete un parcheggio pubblico gratuito.
-            
-            Questa zona di Atene è una delle preferite dai nostri ospiti, in base alle recensioni indipendenti.",
+            "La casa è situata in un podere adiacente ai parchi nazionali delle colline metallifere. A solo 1 Km dal paese di Montieri si affaccia su una vallata di boschi che comprende parte del senese. Il silenzio della natura circonda l'abitazione.
+            Lo spazio
+            L'alloggio è composto da 3 piani: al piano superiore c'è una camera con un letto matrimoniale e uno singolo; al piano centrale c'è una camera con letto a castello e il bagno; al piano inferiore c'è la cucina e la zona giorno. Terrazzo privato.
+            Accesso per gli ospiti
+            Gli ospiti sono liberi di girare in tutto il podere. A loro disposizione piscina con lettini e ombrelloni, e pergola toscana con vista panoramica.",
             "Ca Beo (URB120), casa 5 locali 300 m2 su 2 piani. Arredamento curato e accogliente: soggiorno con camino e TV. Uscita sulla terrazza. 1 camera con 1 letto doppio. Sala da pranzo con tavolo da pranzo. Cucina (forno, lavastoviglie, 5 fuochi, congelatore) con...
             Lo spazio
             ... tavolo da pranzo. Uscita sulla terrazza. Bagno/WC. Piano superiore: (scala senza ringhiera) 2 camere, ogni camera con 1 letto doppio e climatizzazione. Bagno/WC, doccia/WC. Riscaldamento a gas. Pavimenti in parquet. 2 terrazze coperta. Mobili da terrazza, sedie a sdraio. Bella vista panoramica sulla campagna. A disposizione: lavatrice, ferro da stiro. Internet (Wireless LAN [WLAN], gratis). Prego notare: casa per non fumatori. Il corrimano della galleria è alto 85 cm.
@@ -270,33 +266,33 @@ class ApartmentsTableSeeder extends Seeder
 
         ];
         $apartmentAddressList=[
-            "Tsami Karatasou 47, Atene, 11741, Grecia",
-            "Limbona 9 , Atene, 10560, Grecia",
-            "3a Veikou Street, Makrigianni , Atene, 11742, Grecia",
-            "25 Leoforos Andrea Siggrou, Atene, 11743, Grecia ",
-            "Kiafas 9, Atene, 10678, Grecia",
-            "via Giovanni Boccaccio, 16 ",
-            "Corso Matteotti, 8",
-            "Corso Unione Sovietica, 216",
-            "Via dell'Arcivescovado, 9/C",
-            "Corso Vittorio Emanuele II 130",
-            "43 Via Sicilia",
-            "13 Via del Capricorno",
-            "92 Via Antonio Gramsci",
-            "32 Via Pico della Mirandola",
-            "9 Via Lavoriere",
-            "Via Benedetto Cairoli, 117, Bari, BA",
-            "Via della Calendula, 8, 75100 Matera MT",
-            "Via le Granate, 4, 71100 Foggia FG",
-            "Via Taranto, 37d, 73100 Lecce LE",
-            "Viale Trentino, 36, 74121 Taranto TA",
+            "Via Roma 261, Palermo, PA",
+            "Via Antonio Mongitore, 4, 90134 Palermo PA",
+            "Via Schiavo Michele, 90134 Palermo PA",
+            "Via Aleardo Aleardi, 78, 30172 Venezia VE",
+            "Via Cappuccina, 30172 Venezia VE",
+            "Via Goffredo Mameli, 20129 Milano MI",
+            "Via Marcona, 20129 Milano MI",
+            "Via Gallia, 00183 Roma RM",
+            "Via Iberia, 16, 00183 Roma RM",
+            "Piazza Epiro, 15-11, 00183 Roma RM",
+            "Via Pietro Ravanas, 70123 Bari BA",
+            "Via Principe Amedeo, 70122 Bari BA",
+            "Via Giovanni Bovio, 38, 70123 Bari BA",
+            "Via Angelo Inganni, 40, 20147 Milano MI",
+            "Corso Vercelli, 22, 20145 Milano MI",
+            "V.le Berengario, 15, 20149 Milano MI",
+            "Rio Terà dei Pensieri, 328, 30135 Venezia VE",
+            "Calle Larga dei Bari, 1223, 30135 Venezia VE",
+            "Corte Coppo, 4346/a, 30124 Venezia VE",
+            "Viale Regina Margherita, 316, 00161 Roma RM",
         ];
         $apartmentTitleList=[
-            "Scannale for 11 persons",
-            "Intero alloggio: appartamento",
-            "Podere Casidote for 7 persons",
-            "Intero alloggio: unità in affitto",
-            "SHORT LETS DI PROIETTI",
+            "Stylish basement studio in Bologna City Centre",
+            "PrimoPiano - Melzo Flat",
+            "Podere Rachele - Casa Ghiandaia",
+            "Casa Das Areias",
+            "Casa immersa nel verde con piscina",
             "Lunattico 48 central station",
             "Lussuoso appartamento in centro storico",
             "TREVI Sweet Suite",
@@ -308,7 +304,7 @@ class ApartmentsTableSeeder extends Seeder
             "La Casa all'Oliveto",
             "Aurora, raffinata e romantica suite",
             "Moderno zona isola/corso Como",
-            "Grazioso appartamento sui Navigli",
+            "Appartamento sui Navigli",
             "Soggiorna nel cuore di Atene",
             "Acropolis & Lycavettus View Roof House",
             "Calm apartment near Panathenaic Stadium",
@@ -320,24 +316,68 @@ class ApartmentsTableSeeder extends Seeder
             'https://images.pexels.com/photos/2111768/pexels-photo-2111768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/276554/pexels-photo-276554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/3699656/pexels-photo-3699656.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            'https://images.pexels.com/photos/1571472/pexels-photo-1571472.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/245268/pexels-photo-245268.png?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            'https://images.pexels.com/photos/6775268/pexels-photo-6775268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/2850347/pexels-photo-2850347.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/4846461/pexels-photo-4846461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/2079249/pexels-photo-2079249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/6527069/pexels-photo-6527069.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            'https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/4846461/pexels-photo-4846461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/65225/boat-house-cottage-waters-lake-65225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/7227621/pexels-photo-7227621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
             'https://images.pexels.com/photos/460695/pexels-photo-460695.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            'https://images.pexels.com/photos/462205/pexels-photo-462205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/8134848/pexels-photo-8134848.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
             'https://images.pexels.com/photos/6585598/pexels-photo-6585598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        ];
+        $apartmentLongitudeList=[
+            13.36286,
+            13.35764,
+            13.36067,
+            12.24017,
+            12.23751,
+            9.21315,
+            9.20954,
+            12.50376,
+            12.50551,
+            12.50379,
+            16.85847,
+            16.86127,
+            16.85889,
+            9.12581,
+            9.16122,
+            9.15169,
+            12.31737,
+            12.32566,
+            12.33525,
+            12.51171
+        ];
+        $apartmentLatitudeList=[
+            38.11847,
+            38.11074,
+            38.11062,
+            45.48717,
+            45.48524,
+            45.46365,
+            45.46405,
+            41.88171,
+            41.87964,
+            41.87915,
+            41.12193,
+            41.12250,
+            41.12291,
+            45.45146,
+            45.46650,
+            45.47914,
+            45.43600,
+            45.44107,
+            45.43510,
+            41.90916
         ];
         
         for($x=0; $x<17; $x++){
@@ -353,8 +393,8 @@ class ApartmentsTableSeeder extends Seeder
             $apartment->visible=true;
             $apartment->img_path=$apartmentImgList[$x];
             $apartment->price_night=rand(80,200);
-            $apartment->longitude=$faker->longitude(10, 8);
-            $apartment->latitude=$faker->latitude(10, 8);
+            $apartment->longitude=$apartmentLongitudeList[$x];
+            $apartment->latitude=$apartmentLatitudeList[$x];
 
             $randServiceKeys = array_rand($serviceIDList, 5);
             $service1=$serviceIDList[$randServiceKeys[0]];
@@ -386,8 +426,8 @@ class ApartmentsTableSeeder extends Seeder
             $apartment->visible=true;
             $apartment->img_path=$apartmentImgList[$z];
             $apartment->price_night=rand(80,200);
-            $apartment->longitude=$faker->longitude(10, 8);
-            $apartment->latitude=$faker->latitude(10, 8);
+            $apartment->longitude=$apartmentLongitudeList[$z];
+            $apartment->latitude=$apartmentLatitudeList[$z];
 
             $randServiceKeys = array_rand($serviceIDList, 5);
             $service1=$serviceIDList[$randServiceKeys[0]];

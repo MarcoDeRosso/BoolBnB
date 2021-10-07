@@ -266,26 +266,26 @@ class ApartmentsTableSeeder extends Seeder
 
         ];
         $apartmentAddressList=[
-            "Tsami Karatasou 47, Atene, 11741, Grecia",
-            "Limbona 9 , Atene, 10560, Grecia",
-            "3a Veikou Street, Makrigianni , Atene, 11742, Grecia",
-            "25 Leoforos Andrea Siggrou, Atene, 11743, Grecia ",
-            "Kiafas 9, Atene, 10678, Grecia",
-            "via Giovanni Boccaccio, 16 ",
-            "Corso Matteotti, 8",
-            "Corso Unione Sovietica, 216",
-            "Via dell'Arcivescovado, 9/C",
-            "Corso Vittorio Emanuele II 130",
-            "43 Via Sicilia",
-            "13 Via del Capricorno",
-            "92 Via Antonio Gramsci",
-            "32 Via Pico della Mirandola",
-            "9 Via Lavoriere",
-            "Via Benedetto Cairoli, 117, Bari, BA",
-            "Via della Calendula, 8, 75100 Matera MT",
-            "Via le Granate, 4, 71100 Foggia FG",
-            "Via Taranto, 37d, 73100 Lecce LE",
-            "Viale Trentino, 36, 74121 Taranto TA",
+            "Via Roma 261, Palermo, PA",
+            "Via Antonio Mongitore, 4, 90134 Palermo PA",
+            "Via Schiavo Michele, 90134 Palermo PA",
+            "Via Aleardo Aleardi, 78, 30172 Venezia VE",
+            "Via Cappuccina, 30172 Venezia VE",
+            "Via Goffredo Mameli, 20129 Milano MI",
+            "Via Marcona, 20129 Milano MI",
+            "Via Gallia, 00183 Roma RM",
+            "Via Iberia, 16, 00183 Roma RM",
+            "Piazza Epiro, 15-11, 00183 Roma RM",
+            "Via Pietro Ravanas, 70123 Bari BA",
+            "Via Principe Amedeo, 70122 Bari BA",
+            "Via Giovanni Bovio, 38, 70123 Bari BA",
+            "Via Angelo Inganni, 40, 20147 Milano MI",
+            "Corso Vercelli, 22, 20145 Milano MI",
+            "V.le Berengario, 15, 20149 Milano MI",
+            "Rio Terà dei Pensieri, 328, 30135 Venezia VE",
+            "Calle Larga dei Bari, 1223, 30135 Venezia VE",
+            "Corte Coppo, 4346/a, 30124 Venezia VE",
+            "Viale Regina Margherita, 316, 00161 Roma RM",
         ];
         $apartmentTitleList=[
             "Stylish basement studio in Bologna City Centre",
@@ -335,6 +335,50 @@ class ApartmentsTableSeeder extends Seeder
             'https://images.pexels.com/photos/6585598/pexels-photo-6585598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
         ];
+        $apartmentLongitudeList=[
+            13.36286,
+            13.35764,
+            13.36067,
+            12.24017,
+            12.23751,
+            9.21315,
+            9.20954,
+            12.50376,
+            12.50551,
+            12.50379,
+            16.85847,
+            16.86127,
+            16.85889,
+            9.12581,
+            9.16122,
+            9.15169,
+            12.31737,
+            12.32566,
+            12.33525,
+            12.51171
+        ];
+        $apartmentLatitudeList=[
+            38.11847,
+            38.11074,
+            38.11062,
+            45.48717,
+            45.48524,
+            45.46365,
+            45.46405,
+            41.88171,
+            41.87964,
+            41.87915,
+            41.12193,
+            41.12250,
+            41.12291,
+            45.45146,
+            45.46650,
+            45.47914,
+            45.43600,
+            45.44107,
+            45.43510,
+            41.90916
+        ];
         
         for($x=0; $x<17; $x++){
             $apartment = new Apartment();
@@ -349,8 +393,8 @@ class ApartmentsTableSeeder extends Seeder
             $apartment->visible=true;
             $apartment->img_path=$apartmentImgList[$x];
             $apartment->price_night=rand(80,200);
-            $apartment->longitude=$faker->longitude(10, 8);
-            $apartment->latitude=$faker->latitude(10, 8);
+            $apartment->longitude=$apartmentLongitudeList[$x];
+            $apartment->latitude=$apartmentLatitudeList[$x];
 
             $randServiceKeys = array_rand($serviceIDList, 5);
             $service1=$serviceIDList[$randServiceKeys[0]];
@@ -382,8 +426,8 @@ class ApartmentsTableSeeder extends Seeder
             $apartment->visible=true;
             $apartment->img_path=$apartmentImgList[$z];
             $apartment->price_night=rand(80,200);
-            $apartment->longitude=$faker->longitude(10, 8);
-            $apartment->latitude=$faker->latitude(10, 8);
+            $apartment->longitude=$apartmentLongitudeList[$z];
+            $apartment->latitude=$apartmentLatitudeList[$z];
 
             $randServiceKeys = array_rand($serviceIDList, 5);
             $service1=$serviceIDList[$randServiceKeys[0]];

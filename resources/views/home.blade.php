@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid jumbotron"></div>
 
-<div class="container ">
+<div class="container home">
     <div class="row">
         @foreach ($apartments as $apartment)
         <div class="col-12 col-md-6 col-lg-4 articol-card">

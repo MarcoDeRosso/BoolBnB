@@ -62,20 +62,7 @@
             <label for="price_night">Prezzo per notte:</label>
             <input type="number" id="price_night" name="price_night" min="1" max="65000">
         </div>
-
-
-        <button type="submit" class="btn btn-success">Submit</button>
     
-    </form>
-    <h1>Geocoding</h1> 
-    <div> 
-        Location: 
-        <input type="text" id="geoLocationQuery"><br> 
-        <button id="geocodeBtn">Submit</button> 
-    </div>  
-    <div id="map-div"></div>
-
-
         <h3>Servizi:</h3>
 
         <div>

@@ -50,6 +50,6 @@
         </form>
     </div>
 
-
+    <div id="map-div"></div>
 </div>
 @endsection

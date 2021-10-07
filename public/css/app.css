@@ -11041,3 +11041,11 @@ a:hover {
   color: inherit;
 }
 
+h1 {
+  font-weight: bold;
+}
+
+h1:hover {
+  color: #FF8964;
+}
+

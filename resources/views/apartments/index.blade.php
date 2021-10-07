@@ -14,7 +14,7 @@
         
         @endforeach
     </div>
-    <img src="{{ $apartment->img_path }}" alt="">
+    <img src="{{ $apartment->img_path }}" alt="" style="width: 100%">
     <div>
         <p> {{ $apartment->description }}</p>
     </div>

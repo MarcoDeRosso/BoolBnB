@@ -2,6 +2,19 @@
 
 @section('content')
 <div class="container">
+    <div class="row">
+        @foreach ($apartments as $apartment)
+        <div class="col-12 col-md-6 col-lg-4 articol-card">
+            <a href="{{ route('apartmentShow', $apartment) }}">
+                <h1>{{ $apartment->title }}</h1>
+            </a>  
+            <img src="{{ $apartment->img_path }}" alt="" style="width: 100%;">
+            <div>{{ $apartment->description }}</div>
+    
+        </div>        
+        @endforeach
+
+    </div>
 
     {{-- <div class="row justify-content-center">
         <div class="col-md-8">
@@ -19,16 +32,6 @@
         </div>
     </div> --}}
 
-    @foreach ($apartments as $apartment)
-    <div class="col-12 col-md-6 col-lg-4 articol-card">
-        <a href="{{ route('apartmentShow', $apartment) }}">
-            <h1>{{ $apartment->title }}</h1>
-        </a>  
-        <img src="{{ $apartment->img_path }}" alt="" style="width: 100%">
-        <div>{{ $apartment->description }}</div>
-
-    </div>        
-    @endforeach
 
 </div>
 @endsection

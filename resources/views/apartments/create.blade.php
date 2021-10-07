@@ -18,13 +18,13 @@
         </div>
     
         <div class="form-group">
-            <label for="description">Descrizione:</label>
-            <textarea id="description" name="description" rows="5" placeholder="Scrivi qui la descrizione dell'appartamento"></textarea>
+            <label for="description">Descrizione:</label> <br>
+            <textarea id="description" name="description" rows="5" placeholder="Scrivi qui la descrizione dell'appartamento" style="width: 100%"></textarea>
         </div>
 
         <div class="form-group">
             <label for="rooms_num">Numero di camere:</label>
-            <input type="number" id="rooms_num" name="rooms_num" min="1" max="15">
+            <input type="number" id="rooms_num" name="rooms_num" min="1" max="15" >
         </div>
 
         <div class="form-group">

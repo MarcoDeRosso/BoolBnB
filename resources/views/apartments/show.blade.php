@@ -10,7 +10,7 @@
             
         @endforeach
     </div>
-    <img src="{{ $apartment->img_path }}" alt="">
+    <img src="{{ $apartment->img_path }}" alt="" style="width: 100%">
     <div>
         <p> {{ $apartment->description }}</p>
     </div>
@@ -43,8 +43,8 @@
             </div>
 
             <div class="form-group">
-                <label for="text">Testo:</label>
-                <textarea name="text" id="text" rows="3" placeholder="Scrivi qui il tuo messaggio"></textarea>
+                <label for="text">Testo:</label> <br>
+                <textarea style="width:100%;" rows="5" name="text" id="text" placeholder="Scrivi qui il tuo messaggio"></textarea>
             </div>
             <button type="submit" class="btn btn-success">Invia Messaggio</button>
         </form>

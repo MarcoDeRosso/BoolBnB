@@ -112,15 +112,11 @@ class ApartmentsTableSeeder extends Seeder
             L'appartamento è situato al quarto piano SENZA ascensore.
             Altre cose da tenere a mente
             Usiamo un sistema di self check in direttamente presso l'abitazione. Vi invieremo un link per effettuare il check in on line (da fare TASSATIVAMENTE entro le 19 del giorno precedente l'arrivo) e riceverete le istruzioni circa 24 ore prima dell'arrivo.",
-            "L'Athens Studios sorge in una posizione molto centrale, a 100 metri dalla Stazione Metro Acropolis, a 150 metri dal Nuovo Museo dell'Acropoli e a 500 metri dall'ingresso dell'Acropoli. La struttura vanta un'area all'ultimo piano con vista sull'Acropoli, un bar-caffetteria e un Craft Beer & Sports Bar. Il WiFi è fruibile gratuitamente in tutto l’edificio.
-            Tutti climatizzati e spaziosi, i monolocali, le camere e gli appartamenti dell’Athens Studios sono dotati di arredi moderni e pavimenti piastrellati. Inoltre, includono un bagno interno e un angolo cottura ben attrezzato. La maggior parte degli alloggi presenta anche un balcone.
-            Al mattino vi attende una colazione gratuita a base di ingredienti locali. Potrete gustare il pranzo e la cena presso il ristorante, aperto tutti i giorni dalle 07.30 alle 24:00. I bar vi attendono con drink e spuntini.
-            
-            Attivo 24 ore su 24, il personale della reception sarà lieto di fornirvi informazioni sulle attrazioni della zona. Avrete modo di usufruire di armadietti con serratura, di una lavanderia self-service 24 ore su 24 e di una spaziosa area sul livello della strada con numerosi posti a sedere.
-            
-            La struttura dista meno di 10 minuti di cammino dalla centrale Piazza Syntagma e appena 1 km dal quartiere dello shopping di Ermou. Nelle strade vicine troverete un parcheggio pubblico gratuito.
-            
-            Questa zona di Atene è una delle preferite dai nostri ospiti, in base alle recensioni indipendenti.",
+            "La casa è situata in un podere adiacente ai parchi nazionali delle colline metallifere. A solo 1 Km dal paese di Montieri si affaccia su una vallata di boschi che comprende parte del senese. Il silenzio della natura circonda l'abitazione.
+            Lo spazio
+            L'alloggio è composto da 3 piani: al piano superiore c'è una camera con un letto matrimoniale e uno singolo; al piano centrale c'è una camera con letto a castello e il bagno; al piano inferiore c'è la cucina e la zona giorno. Terrazzo privato.
+            Accesso per gli ospiti
+            Gli ospiti sono liberi di girare in tutto il podere. A loro disposizione piscina con lettini e ombrelloni, e pergola toscana con vista panoramica.",
             "Ca Beo (URB120), casa 5 locali 300 m2 su 2 piani. Arredamento curato e accogliente: soggiorno con camino e TV. Uscita sulla terrazza. 1 camera con 1 letto doppio. Sala da pranzo con tavolo da pranzo. Cucina (forno, lavastoviglie, 5 fuochi, congelatore) con...
             Lo spazio
             ... tavolo da pranzo. Uscita sulla terrazza. Bagno/WC. Piano superiore: (scala senza ringhiera) 2 camere, ogni camera con 1 letto doppio e climatizzazione. Bagno/WC, doccia/WC. Riscaldamento a gas. Pavimenti in parquet. 2 terrazze coperta. Mobili da terrazza, sedie a sdraio. Bella vista panoramica sulla campagna. A disposizione: lavatrice, ferro da stiro. Internet (Wireless LAN [WLAN], gratis). Prego notare: casa per non fumatori. Il corrimano della galleria è alto 85 cm.
@@ -292,11 +288,11 @@ class ApartmentsTableSeeder extends Seeder
             "Viale Trentino, 36, 74121 Taranto TA",
         ];
         $apartmentTitleList=[
-            "Scannale for 11 persons",
-            "Intero alloggio: appartamento",
-            "Podere Casidote for 7 persons",
-            "Intero alloggio: unità in affitto",
-            "SHORT LETS DI PROIETTI",
+            "Stylish basement studio in Bologna City Centre",
+            "PrimoPiano - Melzo Flat",
+            "Podere Rachele - Casa Ghiandaia",
+            "Casa Das Areias",
+            "Casa immersa nel verde con piscina",
             "Lunattico 48 central station",
             "Lussuoso appartamento in centro storico",
             "TREVI Sweet Suite",
@@ -308,7 +304,7 @@ class ApartmentsTableSeeder extends Seeder
             "La Casa all'Oliveto",
             "Aurora, raffinata e romantica suite",
             "Moderno zona isola/corso Como",
-            "Grazioso appartamento sui Navigli",
+            "Appartamento sui Navigli",
             "Soggiorna nel cuore di Atene",
             "Acropolis & Lycavettus View Roof House",
             "Calm apartment near Panathenaic Stadium",
@@ -320,21 +316,21 @@ class ApartmentsTableSeeder extends Seeder
             'https://images.pexels.com/photos/2111768/pexels-photo-2111768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/276554/pexels-photo-276554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/3699656/pexels-photo-3699656.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            'https://images.pexels.com/photos/1571472/pexels-photo-1571472.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/245268/pexels-photo-245268.png?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            'https://images.pexels.com/photos/6775268/pexels-photo-6775268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/2850347/pexels-photo-2850347.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/4846461/pexels-photo-4846461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/2079249/pexels-photo-2079249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/6527069/pexels-photo-6527069.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            'https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/4846461/pexels-photo-4846461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/65225/boat-house-cottage-waters-lake-65225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/7227621/pexels-photo-7227621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
             'https://images.pexels.com/photos/460695/pexels-photo-460695.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            'https://images.pexels.com/photos/462205/pexels-photo-462205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/8134848/pexels-photo-8134848.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
             'https://images.pexels.com/photos/6585598/pexels-photo-6585598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',

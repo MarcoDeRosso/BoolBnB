@@ -6,11 +6,11 @@
     
     <div>
         @foreach ($apartment->service as $service)
-        <span class="badge badge-success">{{ $service->title }}</span>
+        <span class="badge badge-pill badge-success">{{ $service->title }}</span>
             
         @endforeach
     </div>
-    <img src="{{ $apartment->img_path }}" alt="" style="width: 100%">
+    <img class="mt-3 mb-3" src="{{ $apartment->img_path }}" alt="" style="width: 100%">
     <div>
         <p> {{ $apartment->description }}</p>
     </div>

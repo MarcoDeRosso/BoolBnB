@@ -11009,8 +11009,22 @@ footer.my_footer .footer_bottom {
   border-top: 1px solid black;
 }
 
+h2 {
+  color: #FF8964;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+img {
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
 .navbar {
-  background-color: orange !important;
+  background-color: #FF8964 !important;
 }
 
 .navbar .navbar-nav {
@@ -11041,11 +11055,21 @@ a:hover {
   color: inherit;
 }
 
-h1 {
+.home .articol-card:hover h1 {
+  color: #FF8964;
+  cursor: pointer;
+}
+
+.home .articol-card:hover .img-apartment {
+  box-shadow: #FF8964 0px 10px 20px, #FF8964 0px 6px 6px;
+}
+
+.home h1 {
   font-weight: bold;
 }
 
-h1:hover {
-  color: #FF8964;
+.home .img-apartment {
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 

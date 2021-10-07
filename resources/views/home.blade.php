@@ -6,12 +6,12 @@
 <div class="container home">
     <div class="row">
         @foreach ($apartments as $apartment)
-        <div class="col-12 col-md-6 col-lg-4 articol-card">
+        <div class="col-12 col-md-6 col-lg-4 articol-card mt-3 mb-3">
             <a href="{{ route('apartmentShow', $apartment) }}">
                 <h1>{{ $apartment->title }}</h1>
             </a>  
-            <img src="{{ $apartment->img_path }}" alt="" style="width: 100%;">
-            <div>{{ $apartment->description }}</div>
+            <img class="img-apartment mb-3" src="{{ $apartment->img_path }}" alt="" style="width: 100%;">
+            <div class="text-description">{{ $apartment->description }}</div>
     
         </div>        
         @endforeach

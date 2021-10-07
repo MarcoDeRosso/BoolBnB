@@ -1,17 +1,39 @@
 .home{
-    .articol-card:hover h1{
-        color: $arancionesalmone;
-            cursor: pointer;
-    }
-    .articol-card:hover .img-apartment{
-        box-shadow: $arancionesalmone 0px 10px 20px, $arancionesalmone 0px 6px 6px;
-    }
-    h1 {
-        font-weight: bold;
+    .apartment{
+
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        h1 {
+            font-weight: bold;
+            max-height: 100%;     
+            flex-grow: 1; 
+            display: flex;
+            justify-content: center;
+            align-items: center;      
+        }
+        
+        .img-apartment{
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+
+        &:hover {
+            h1{
+                color: $arancionesalmone;
+                cursor: pointer;
+            }
+
+            .img-apartment{
+                box-shadow: $arancionesalmone 0px 10px 20px, $arancionesalmone 0px 6px 6px;
+            }
+        }    
+        
+        
+
+            
         
     }
-    .img-apartment{
-        border-radius: 15px;
-        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    }
+    
 }

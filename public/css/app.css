@@ -11055,21 +11055,32 @@ a:hover {
   color: inherit;
 }
 
-.home .articol-card:hover h1 {
+.home .apartment {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.home .apartment h1 {
+  font-weight: bold;
+  max-height: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .apartment .img-apartment {
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.home .apartment:hover h1 {
   color: #FF8964;
   cursor: pointer;
 }
 
-.home .articol-card:hover .img-apartment {
+.home .apartment:hover .img-apartment {
   box-shadow: #FF8964 0px 10px 20px, #FF8964 0px 6px 6px;
-}
-
-.home h1 {
-  font-weight: bold;
-}
-
-.home .img-apartment {
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 

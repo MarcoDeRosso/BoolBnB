@@ -26,7 +26,7 @@ class HomeController extends Controller
     }
     
     private function cutText ($text) {
-        $cutText = substr($text,0, 200);
+        $cutText = substr($text,0, 190);
         $cutText =  $cutText . "...";
         return $cutText;
     }

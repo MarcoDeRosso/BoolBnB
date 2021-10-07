@@ -36,7 +36,7 @@ class BackOfficeController extends Controller
     {
         $apartment = new Apartment();
         $this->fillAndSave($request, $apartment);
-        return redirect()->route('apartments.show', $apartment);
+        return redirect()->route('apartmentShow', $apartment);
     }
 
 
@@ -67,10 +67,12 @@ class BackOfficeController extends Controller
         $apartment->delete();
         return redirect()->route('apartments.index');
     }
-
+    
     private function fillAndSave (Request $request, Apartment $apartment) {
         
         $data= $request->all();
+
+        $coordinate= $this->getGeoCode($data['address']);
         // dd($data);
 
         $request->validate([
@@ -93,21 +95,39 @@ class BackOfficeController extends Controller
         $apartment->meters_size = $data['meters_size'];
         $apartment->address = $data['address'];
         $apartment->visible = $data['visible'];
+        $apartment->latitude = $coordinate['lat'];
+        $apartment->longitude = $coordinate['lon'];
 
 
+        
+        
         if(array_key_exists('img_path',$data))
         {
             $picturePath = Storage::put('img', $data['img_path']);
             $apartment->img_path  = $picturePath; 
         };
-
+        
         $apartment->price_night = $data['price_night'];        
         
         $apartment->save();
-
+        
         if(array_key_exists('services',$data))
         {
             $apartment->service()->sync($data['services']);
         };
+    }
+    private function getGeoCode($address)
+    {
+        // 'https://api.tomtom.com/search/2/geocode/'+this.address+'.json?limit=1&key=RagRFtF86mML8SeN6kqbSiihdZpGAE1d'
+        // geocoding api url
+        $url = "https://api.tomtom.com/search/2/geocode/$address.json?limit=1&key=RagRFtF86mML8SeN6kqbSiihdZpGAE1d";
+        // send api request
+        $geocode = file_get_contents($url);
+        $json = json_decode($geocode);
+        //dd($json->results[0]->position->lat);
+        $coordinate['lat'] = $json->results[0]->position->lat;
+        $coordinate['lon'] = $json->results[0]->position->lon;
+        //dd($coordinate);
+        return $coordinate;
     }
 }

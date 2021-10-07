@@ -7,4 +7,15 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+
 #map-div { width: 300px; height: 300px; }
+
+@import 'footer';
+@import 'index';
+@import 'create';
+@import 'edit';
+@import 'show';
+@import 'navbar';
+@import 'reset';
+@import 'home';
+

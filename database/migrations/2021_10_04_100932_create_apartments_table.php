@@ -27,8 +27,8 @@ class CreateApartmentsTable extends Migration
             $table->boolean('visible');
             $table->text('img_path');
             $table->unsignedSmallInteger('price_night');
-            $table->float('longitude', 10, 8);
-            $table->float('latitude', 10, 8);
+            $table->float('longitude', 8, 5);
+            $table->float('latitude', 8, 5);
             $table->timestamps();
         });
     }

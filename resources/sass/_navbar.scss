@@ -1,0 +1,20 @@
+.navbar{
+    background-color: $arancionesalmone!important;
+    .navbar-nav{
+        align-items: flex-end;
+    }
+    a{
+        color: grey!important;
+    }
+    a:hover{
+        color: black!important;
+    }
+}
+
+
+.jumbotron{
+    background-image: $jumbotron-bg;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}

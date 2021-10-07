@@ -18,13 +18,17 @@
         </div>
     
         <div class="form-group">
-            <label for="description">Descrizione:</label>
-            <textarea id="description" name="description" rows="5" placeholder="Scrivi qui la descrizione dell'appartamento"></textarea>
+
+            <label for="description">Descrizione:</label> <br>
+            <textarea id="description" name="description" rows="5" placeholder="Scrivi qui la descrizione dell'appartamento" style="width: 100%"></textarea>
+
         </div>
 
         <div class="form-group">
             <label for="rooms_num">Numero di camere:</label>
-            <input type="number" id="rooms_num" name="rooms_num" min="1" max="15">
+
+            <input type="number" id="rooms_num" name="rooms_num" min="1" max="15" >
+
         </div>
 
         <div class="form-group">
@@ -33,8 +37,10 @@
         </div>
 
         <div class="form-group">
-            <label for="bath_room">Numero bagni:</label>
-            <input type="number" id="bath_room" name="bath_room" min="1" max="5">
+
+            <label for="bath_num">Numero bagni:</label>
+            <input type="number" id="bath_num" name="bath_num" min="1" max="5">
+
         </div>
 
         <div class="form-group">
@@ -57,6 +63,7 @@
             <input type="number" id="price_night" name="price_night" min="1" max="65000">
         </div>
 
+
         <button type="submit" class="btn btn-success">Submit</button>
     
     </form>
@@ -67,6 +74,31 @@
         <button id="geocodeBtn">Submit</button> 
     </div>  
     <div id="map-div"></div>
+
+
+        <h3>Servizi:</h3>
+
+        <div>
+            @foreach ($services as $service)
+            <input type="checkbox" id="{{ $service->id }}" name="services[]" value="{{ $service->id }}">
+            <label for="{{ $service->id }}"> {{ $service->title }}</label>            
+            @endforeach
+
+        </div>
+
+        <div class="form-group">
+            <label for="visible" >Vuoi rendere l'annuncio visibile sulla piattaforma?</label>
+            <select name="visible" id="visible">
+                <option value="0">No</option>
+                <option value="1">Si</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    
+    </form>
+
+    
 
 </div>
 @endsection

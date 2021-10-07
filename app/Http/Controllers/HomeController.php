@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Apartment;
 
 use App\Apartment;
 use Illuminate\Http\Request;
@@ -17,9 +18,16 @@ class HomeController extends Controller
         return view('home', compact('apartments'));        
     }
 
-
+    public function show($id)
+    {
+        $apartment= Apartment::find($id);
+        return view('apartments.show', compact('apartment'));
+        
+    }
+    
     private function cutText ($text) {
-        $cutText = substr($text,0, 200);
+        $cutText = substr($text,0, 190);
+
         $cutText =  $cutText . "...";
         return $cutText;
     }

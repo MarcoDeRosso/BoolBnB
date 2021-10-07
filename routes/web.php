@@ -16,7 +16,10 @@ Auth::routes();
 
 // Route::resource('/', 'HomeController');
 Route::resource('apartments', 'BackOfficeController');
-Route::resource('messages', 'MessageController');
+// Route::resource('messages', 'MessageController');
+Route::get('messages','MessageController@index')->name('messages.index');
+Route::post('messages','MessageController@store')->name('messages.store');
+
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/{id}', 'HomeController@show')->name('apartmentShow');

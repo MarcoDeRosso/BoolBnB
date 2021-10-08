@@ -3,7 +3,22 @@
 @section('content')
 <div class="container-fluid jumbotron"></div>
 
-<search-home v-bind:services="{{ $services }}" v-bind:apartments="{{ $apartments }}" v-bind:listSrvApps="{{ $listSrvApps }}"> </search-home>
+<search-home
+:services="{{ json_encode($services) }}" 
+:apartments="{{$apartments}}"
+:lista="{{json_encode($lista)}}"
+>
+</search-home>
+
+
+
+@foreach ($lista as $list)
+<br>
+@foreach ($list as $item)
+    {{ $item}}
+@endforeach
+    
+@endforeach
 
 <div class="container home">
     <div class="row">

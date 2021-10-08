@@ -26,10 +26,10 @@
         </div>
         <div class="container">
             <apartment v-bind:filtederApartments='filtederApartments'></apartment>
-            <div v-for="(service,index) in listSrvApps" :key="index">
+            <!-- <div v-for="(service,index) in listSrvApps" :key="index">
                 
 
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -41,7 +41,7 @@ import CardApartment from './CardApartment.vue';
         components: {
             CardApartment
         },
-        props:['services','apartments','listSrvApps'],
+        props:['services','apartments', 'lista'],
         mounted() {
             console.log('Component mounted.')
         },

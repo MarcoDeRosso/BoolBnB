@@ -2009,7 +2009,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     CardApartment: _CardApartment_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['services', 'apartments', 'listSrvApps'],
+  props: ['services', 'apartments', 'lista'],
   mounted: function mounted() {
     console.log('Component mounted.');
   },
@@ -37939,13 +37939,9 @@ var render = function() {
       [
         _c("apartment", {
           attrs: { filtederApartments: _vm.filtederApartments }
-        }),
-        _vm._v(" "),
-        _vm._l(_vm.listSrvApps, function(service, index) {
-          return _c("div", { key: index })
         })
       ],
-      2
+      1
     )
   ])
 }

@@ -11,27 +11,26 @@ class HomeController extends Controller
     {
         $apartments= Apartment::all();
         $services = Service::all();
-        $listSrvApps=[];
-        $listServicesArray =[];
 
+        $listServicesArray =[];
         foreach($apartments as $apartment) {
             $apartment->description=$this->cutText($apartment->description);
 
             $listServices =($apartment->service()->where('apartment_id','=', $apartment->id)->get())->toArray();
 
             foreach($listServices as $service){
-                $listServicesArray[] = $service['id'];
+                $listServicesArray[] = $service['id'];               
             }
+            $lista[] = $listServicesArray;            
+            $listServicesArray=[];
 
-            $listSrvApps[] =$listServicesArray;
-            $listServicesArray = [];
         }
 
-        $listSrvApps = collect($listSrvApps);
+        // dd($lista);
 
-        dd($apartments);
         
-        return view('home', compact('apartments','services','listSrvApps'));        
+        return view('home', compact('apartments','services','lista'));        
+      
     }
 
     public function show($id)

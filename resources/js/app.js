@@ -20,6 +20,8 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('search-home', require('./components/SearchHomeComponent.vue').default);
+Vue.component('apartment', require('./components/CardApartment.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,4 +34,4 @@ const app = new Vue({
 });
 
 
-<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"></script>
+{/* <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"></script> */}

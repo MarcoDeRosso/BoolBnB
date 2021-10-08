@@ -3,6 +3,13 @@
 @section('content')
 <div class="container-fluid jumbotron"></div>
 
+<search-home
+:services="{{ json_encode($services) }}" 
+:apartments="{{json_encode($apartments)}}"
+:lista="{{json_encode($lista)}}"
+>
+</search-home>
+
 <div class="container home">
     <div class="row">
         @foreach ($apartments as $apartment)
@@ -14,7 +21,6 @@
             </a>      
         </div>        
         @endforeach
-
     </div>
 
    {{-- <div class="row justify-content-center">

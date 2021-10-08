@@ -3,6 +3,8 @@
 @section('content')
 <div class="container-fluid jumbotron"></div>
 
+<search-home v-bind:services="{{ $services }}" v-bind:apartments="{{ $apartments }}" v-bind:listSrvApps="{{ $listSrvApps }}"> </search-home>
+
 <div class="container home">
     <div class="row">
         @foreach ($apartments as $apartment)
@@ -14,7 +16,6 @@
             </a>      
         </div>        
         @endforeach
-
     </div>
 
    {{-- <div class="row justify-content-center">

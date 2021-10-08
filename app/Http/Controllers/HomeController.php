@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Apartment;
+use App\Service;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -9,11 +10,28 @@ class HomeController extends Controller
     public function index()
     {
         $apartments= Apartment::all();
+        $services = Service::all();
+        $listSrvApps=[];
+        $listServicesArray =[];
 
         foreach($apartments as $apartment) {
             $apartment->description=$this->cutText($apartment->description);
+
+            $listServices =($apartment->service()->where('apartment_id','=', $apartment->id)->get())->toArray();
+
+            foreach($listServices as $service){
+                $listServicesArray[] = $service['id'];
+            }
+
+            $listSrvApps[] =$listServicesArray;
+            $listServicesArray = [];
         }
-        return view('home', compact('apartments'));        
+
+        $listSrvApps = collect($listSrvApps);
+
+        dd($apartments);
+        
+        return view('home', compact('apartments','services','listSrvApps'));        
     }
 
     public function show($id)

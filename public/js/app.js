@@ -2016,14 +2016,31 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       city: '',
-      rooms_num: 0,
-      beds_num: 0,
+      rooms: 0,
+      beds: 0,
       distance: 0,
       service: '',
-      filtederApartments: []
+      filteredApartments: []
     };
   },
-  methods: {}
+  methods: {
+    filterSearch: function filterSearch() {
+      var _this = this;
+
+      this.filteredApartments = this.apartments.filter(function (apa) {
+        return apa.rooms_num == _this.rooms;
+      });
+      this.filteredApartments = this.filteredApartments.filter(function (apa) {
+        return apa.beds_num == _this.beds;
+      });
+
+      if (this.city.trim() != '') {
+        this.filteredApartments = this.filteredApartments.filter(function (apa) {
+          return apa.address.toLowerCase().includes(_this.city.toLowerCase().trim());
+        });
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -37786,6 +37803,9 @@ var render = function() {
           attrs: { type: "text", id: "city", name: "city" },
           domProps: { value: _vm.city },
           on: {
+            keyup: function($event) {
+              return _vm.filterSearch()
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -37806,24 +37826,21 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.rooms_num,
-              expression: "rooms_num"
+              value: _vm.rooms,
+              expression: "rooms"
             }
           ],
-          attrs: {
-            type: "number",
-            id: "rooms_num",
-            name: "rooms_num",
-            min: "1",
-            max: "15"
-          },
-          domProps: { value: _vm.rooms_num },
+          attrs: { type: "number", min: "5", max: "8" },
+          domProps: { value: _vm.rooms },
           on: {
+            click: function($event) {
+              return _vm.filterSearch()
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.rooms_num = $event.target.value
+              _vm.rooms = $event.target.value
             }
           }
         })
@@ -37839,24 +37856,21 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.beds_num,
-              expression: "beds_num"
+              value: _vm.beds,
+              expression: "beds"
             }
           ],
-          attrs: {
-            type: "number",
-            id: "beds_num",
-            name: "beds_num",
-            min: "1",
-            max: "10"
-          },
-          domProps: { value: _vm.beds_num },
+          attrs: { type: "number", min: "1", max: "3" },
+          domProps: { value: _vm.beds },
           on: {
+            click: function($event) {
+              return _vm.filterSearch()
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.beds_num = $event.target.value
+              _vm.beds = $event.target.value
             }
           }
         })
@@ -37875,13 +37889,7 @@ var render = function() {
             expression: "distance"
           }
         ],
-        attrs: {
-          type: "range",
-          id: "distance",
-          name: "distance",
-          min: "0",
-          max: "20"
-        },
+        attrs: { type: "range", min: "0", max: "20" },
         domProps: { value: _vm.distance },
         on: {
           __r: function($event) {
@@ -37936,12 +37944,12 @@ var render = function() {
     _c(
       "div",
       { staticClass: "container" },
-      [
-        _c("apartment", {
-          attrs: { filtederApartments: _vm.filtederApartments }
-        })
-      ],
-      1
+      _vm._l(_vm.filteredApartments, function(apa, index) {
+        return _c("div", { key: index }, [
+          _c("h1", [_vm._v(" " + _vm._s(apa.title) + " ")])
+        ])
+      }),
+      0
     )
   ])
 }

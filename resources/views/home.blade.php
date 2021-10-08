@@ -5,20 +5,10 @@
 
 <search-home
 :services="{{ json_encode($services) }}" 
-:apartments="{{$apartments}}"
+:apartments="{{json_encode($apartments)}}"
 :lista="{{json_encode($lista)}}"
 >
 </search-home>
-
-
-
-@foreach ($lista as $list)
-<br>
-@foreach ($list as $item)
-    {{ $item}}
-@endforeach
-    
-@endforeach
 
 <div class="container home">
     <div class="row">

@@ -3,21 +3,21 @@
         <div class="container">
             <div class="form-group">
                 <label for="city">Città:</label>
-                <input type="text" id="city" name="city" v-model="city">
+                <input @keyup="filterSearch()"  type="text" id="city" name="city" v-model="city">
             </div>
 
             <div class="form-group">
                 <label for="rooms_num">Numero di camere:</label>
-                <input type="number" id="rooms_num" name="rooms_num" min="1" max="15" v-model="rooms_num">
+                <input @click="filterSearch()" type="number" min="5" max="8" v-model="rooms">
             </div>
 
             <div class="form-group">
                 <label for="beds_num">Numero di posti letto:</label>
-                <input type="number" id="beds_num" name="beds_num" min="1" max="10" v-model="beds_num">
+                <input @click="filterSearch()"  type="number" min="1" max="3" v-model="beds">
             </div>
 
             <label for="distance">Raggio della ricera(0-20km):</label>
-            <input type="range" id="distance" name="distance" min="0" max="20" v-model="distance">       
+            <input type="range" min="0" max="20" v-model="distance">       
 
             <label for="services">Servizi aggiuntivi:</label>
             <select name="services" id="services" v-model="service">
@@ -25,11 +25,11 @@
             </select>
         </div>
         <div class="container">
-            <apartment v-bind:filtederApartments='filtederApartments'></apartment>
-            <!-- <div v-for="(service,index) in listSrvApps" :key="index">
-                
+            <!-- <apartment v-bind:filtederApartments='filtederApartments'></apartment> -->
+            <div v-for="(apa,index) in filteredApartments" :key="index">
+                <h1> {{ apa.title }} </h1>
 
-            </div> -->
+            </div>
         </div>
     </div>
 </template>
@@ -48,15 +48,31 @@ import CardApartment from './CardApartment.vue';
         data () {
             return {
                 city:'',
-                rooms_num: 0,
-                beds_num: 0,
+                rooms: 0,
+                beds: 0,
                 distance: 0,
                 service: '',
-                filtederApartments: []
+                filteredApartments: []
             }
         },
         methods: {
+            filterSearch() {
 
+                this.filteredApartments = this.apartments.filter((apa)=>{
+                    return apa.rooms_num == this.rooms
+                })
+
+                this.filteredApartments = this.filteredApartments.filter((apa)=>{
+                    return apa.beds_num == this.beds
+                })
+
+                if(this.city.trim() != '') {
+                    
+                    this.filteredApartments = this.filteredApartments.filter((apa)=>{
+                        return apa.address.toLowerCase().includes(this.city.toLowerCase().trim())                        
+                    })
+                }
+            },
         }
     }
 </script>

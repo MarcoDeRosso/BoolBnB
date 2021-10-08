@@ -5,3 +5,15 @@ a {
         color:inherit;
     }
 }
+
+body {
+    color: $bluscuropastello;
+}
+input{
+    outline: none;
+    width: 100%;
+}
+
+.no-box-shadow {
+    box-shadow: none;
+}

@@ -1,5 +1,9 @@
 .navbar{
+
     background-color: $arancionesalmone!important;
+    font-weight: bold;
+    font-size: 20px;
+
     .navbar-nav{
         align-items: flex-end;
     }
@@ -9,6 +13,11 @@
     a:hover{
         color: black!important;
     }
+}
+
+.navbar-brand {
+    font-size: 20px;
+
 }
 
 

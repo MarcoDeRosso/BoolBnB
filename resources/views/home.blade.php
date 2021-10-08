@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid jumbotron"></div>
-
 <search-home
 :services="{{ json_encode($services) }}" 
 :apartments="{{json_encode($apartments)}}"

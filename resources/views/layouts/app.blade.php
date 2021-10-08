@@ -96,6 +96,7 @@
         <main class="py-0">
             @yield('content')
         </main>
+            @yield('script')
         @include('layouts.footer')
     </div>
 </body>

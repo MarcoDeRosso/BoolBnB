@@ -58,7 +58,7 @@ class BackOfficeController extends Controller
     public function update(Request $request, Apartment $apartment)
     {
         $this->fillAndSave($request, $apartment);
-        return redirect()->route('apartments.show', $apartment);
+        return redirect()->route('apartmentShow', $apartment);
     }
 
 

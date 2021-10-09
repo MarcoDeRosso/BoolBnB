@@ -11,14 +11,14 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right" for="city">Città:</label>
                                 <div class="col-md-4">
-                                    <input @keyup="filterSearch()"  type="text" id="city" name="city" v-model="city">
+                                    <input class="box-shadow" @keyup="filterSearch()"  type="text" id="city" name="city" v-model="city">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right" for="rooms_num">Numero di camere:</label>
                                 <div class="col-2">
-                                    <input @click="filterSearch()" type="number" min="5" max="8" v-model="rooms">
+                                    <input class="box-shadow" @click="filterSearch()" type="number" min="5" max="8" v-model="rooms">
 
                                 </div>
                             </div>
@@ -26,19 +26,19 @@
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right" for="beds_num">Numero di posti letto:</label>
                                 <div class="col-2">
-                                    <input @click="filterSearch()"  type="number" min="1" max="3" v-model="beds">
+                                    <input class="box-shadow" @click="filterSearch()"  type="number" min="1" max="3" v-model="beds">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right" for="distance">Raggio della ricera(0-20km):</label>
-                                <div class="col-2">
+                                <div class="col-2 align-self-center">
                                     <input class="no-box-shadow" type="range" min="0" max="20" v-model="distance">       
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right" for="services">Servizi aggiuntivi:</label>
-                                <div class="col-2">
+                                <div class="col-2 align-self-center">
                                     <select name="services" id="services" v-model="service">
                                         <option v-for="service in services" :key="service.id" :value="`${service.id}`">{{ service.title }}</option>               
                                     </select>

@@ -132,30 +132,32 @@ import CardApartment from './CardApartment.vue';
                 this.copyFilteredApartments = this.filteredApartments
 
                 this.serviceList = []
+                this.serviceListFlag = true
             },
             filterServices () {
-                // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
-                if(this.copyFilteredApartments.length > 0) {
-
-                    // entra solo se almeno un servizio è selezionato     
-                    if(this.serviceList.length > 0) {
-
-                        //per ogni appartamento confronta i servizi            
-                        this.filteredApartments = this.copyFilteredApartments.filter((apa)=>{
-
-                            //per ogni servizio nella lista di quelli selezionati, 
-                            //controlla che sia presente nei servizi dell'appartamento
-                            this.serviceList.forEach((service)=>{
-                                if (apa.services.includes(parseInt(service))) {
-                                    this.serviceListFlag = true
-
-                                } else {
-                                    this.serviceListFlag = false
-                                }                                
-                            })
-                            return this.serviceListFlag  
-                        })
-
+                if(this.serviceListFlag) {
+                    // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
+                    if(this.copyFilteredApartments.length > 0) {
+    
+                        // entra solo se almeno un servizio è selezionato     
+                        if(this.serviceList.length > 0) {
+    
+                            //per ogni appartamento confronta i servizi            
+                            this.filteredApartments = this.copyFilteredApartments.filter((apa)=>{
+    
+                                //per ogni servizio nella lista di quelli selezionati, 
+                                //controlla che sia presente nei servizi dell'appartamento
+                                this.serviceList.forEach((service)=>{
+                                    if (apa.services.includes(parseInt(service))) {
+                                        this.serviceListFlag = true
+    
+                                    } else {
+                                        this.serviceListFlag = false
+                                    }                                
+                                })
+                                return this.serviceListFlag  
+                            })    
+                        }
                     }
                 }
             }

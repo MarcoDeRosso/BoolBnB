@@ -2085,28 +2085,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.copyFilteredApartments = this.filteredApartments;
       this.serviceList = [];
+      this.serviceListFlag = true;
     },
     filterServices: function filterServices() {
       var _this2 = this;
 
-      // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
-      if (this.copyFilteredApartments.length > 0) {
-        // entra solo se almeno un servizio è selezionato     
-        if (this.serviceList.length > 0) {
-          //per ogni appartamento confronta i servizi            
-          this.filteredApartments = this.copyFilteredApartments.filter(function (apa) {
-            //per ogni servizio nella lista di quelli selezionati, 
-            //controlla che sia presente nei servizi dell'appartamento
-            _this2.serviceList.forEach(function (service) {
-              if (apa.services.includes(parseInt(service))) {
-                _this2.serviceListFlag = true;
-              } else {
-                _this2.serviceListFlag = false;
-              }
-            });
+      if (this.serviceListFlag) {
+        // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
+        if (this.copyFilteredApartments.length > 0) {
+          // entra solo se almeno un servizio è selezionato     
+          if (this.serviceList.length > 0) {
+            //per ogni appartamento confronta i servizi            
+            this.filteredApartments = this.copyFilteredApartments.filter(function (apa) {
+              //per ogni servizio nella lista di quelli selezionati, 
+              //controlla che sia presente nei servizi dell'appartamento
+              _this2.serviceList.forEach(function (service) {
+                if (apa.services.includes(parseInt(service))) {
+                  _this2.serviceListFlag = true;
+                } else {
+                  _this2.serviceListFlag = false;
+                }
+              });
 
-            return _this2.serviceListFlag;
-          });
+              return _this2.serviceListFlag;
+            });
+          }
         }
       }
     }

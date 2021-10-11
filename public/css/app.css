@@ -11028,8 +11028,42 @@ img {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+input,
+textarea {
+  border: none;
+  border-bottom: 2px solid #FF8964;
+  color: #034f84;
+}
+
+.box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+label {
+  color: #034f84;
+}
+
+label:hover {
+  color: #FF8964;
+}
+
+.box-edit {
+  border: 2px solid #FF8964;
+  border-radius: 15px;
+  padding: 15px auto;
+  background: white;
+}
+
+.bg {
+  background: url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F04%2F20%2Fbali-bamboo-house-airbnb-AIRZOOM0420.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .navbar {
   background-color: #FF8964 !important;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .navbar .navbar-nav {
@@ -11042,6 +11076,10 @@ img {
 
 .navbar a:hover {
   color: black !important;
+}
+
+.navbar-brand {
+  font-size: 20px;
 }
 
 .jumbotron {
@@ -11058,6 +11096,29 @@ a {
 a:hover {
   text-decoration: none;
   color: inherit;
+}
+
+body {
+  color: #034f84;
+}
+
+input {
+  outline: none;
+  width: 100%;
+}
+
+.no-box-shadow {
+  box-shadow: none;
+}
+
+div.login.jumbotron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register input {
+  width: 100%;
 }
 
 .home .apartment {

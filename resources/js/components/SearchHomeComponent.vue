@@ -1,11 +1,11 @@
 <template>
 <div>
-    <div class="container-fluid jumbotron login">
+    <!-- <div class="container-fluid jumbotron login"> -->
         <div class="container login">
             <div class="row justify-content-center">
                 <div class="col-md-7">
                     <div class="card">
-                        <div class="card-header">Ricerca Avanzata</div>
+                        <div class="card-header">Ricerca per Città</div>
 
                         <div class="card-body">
                             <div class="form-group row">
@@ -15,33 +15,34 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label class="col-md-4 col-form-label text-md-right" for="rooms_num">Numero di camere:</label>
-                                <div class="col-2">
-                                    <input class="box-shadow" @click="filterSearch()" type="number" min="5" max="8" v-model="rooms">
+                            <div v-show="city != ''">
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right" for="rooms_num">Numero di camere:</label>
+                                    <div class="col-2">
+                                        <input class="box-shadow" @click="filterSearch()" type="number" min="5" max="8" v-model="rooms">
 
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label class="col-md-4 col-form-label text-md-right" for="beds_num">Numero di posti letto:</label>
-                                <div class="col-2">
-                                    <input class="box-shadow" @click="filterSearch()"  type="number" min="1" max="3" v-model="beds">
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right" for="beds_num">Numero di posti letto:</label>
+                                    <div class="col-2">
+                                        <input class="box-shadow" @click="filterSearch()"  type="number" min="1" max="3" v-model="beds">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-md-4 col-form-label text-md-right" for="distance">Raggio della ricera(0-20km):</label>
-                                <div class="col-2 align-self-center">
-                                    <input class="no-box-shadow" type="range" min="0" max="20" v-model="distance">       
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right" for="distance">Raggio della ricera(0-20km):</label>
+                                    <div class="col-2 align-self-center">
+                                        <input class="no-box-shadow" type="range" min="0" max="20" v-model="distance">       
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label class="col-md-4 col-form-label text-md-right" for="services">Servizi aggiuntivi:</label>
-                                <div class="col-2 align-self-center">
-                                    <select name="services" id="services" v-model="service">
-                                        <option v-for="service in services" :key="service.id" :value="`${service.id}`">{{ service.title }}</option>               
-                                    </select>
+
+                                <div class="form-group row">
+                                    <div class="col-6" v-for="service in services" :key="service.id" >
+                                        <input @change="filterServices()"  id="`${service.title}`" type="checkbox" :value="`${service.id}`" v-model="serviceList">
+                                        <label for="`${service.title}`">{{ service.title }}</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -49,9 +50,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
     <div class="container">
-        <apartment v-bind:filtederApartments='filtederApartments'></apartment>
+        <!-- <apartment v-bind:filtederApartments='filtederApartments'></apartment> -->
         <div v-for="(apa,index) in filteredApartments" :key="index">
             <h1> {{ apa.title }} </h1>
         </div>
@@ -68,6 +69,7 @@ import CardApartment from './CardApartment.vue';
         props:['services','apartments', 'lista'],
         mounted() {
             console.log('Component mounted.')
+            this.addApartmentsToService()
         },
         data () {
             return {
@@ -75,25 +77,81 @@ import CardApartment from './CardApartment.vue';
                 rooms: 0,
                 beds: 0,
                 distance: 0,
-                service: '',
-                filteredApartments: []
+                serviceList: [],
+                filteredApartments: [],
+                apartmentsAndService:[],
+                serviceListFlag : true
             }
         },
         methods: {
-            filterSearch() {
-                this.filteredApartments = this.apartments.filter((apa)=>{
-                    return apa.rooms_num == this.rooms
-                })
-                this.filteredApartments = this.filteredApartments.filter((apa)=>{
-                    return apa.beds_num == this.beds
-                })
-                if(this.city.trim() != '') {
-                    
-                    this.filteredApartments = this.filteredApartments.filter((apa)=>{
-                        return apa.address.toLowerCase().includes(this.city.toLowerCase().trim())                        
-                    })
+            addApartmentsToService () {
+                for(let i= 0; i< this.apartments.length; i++){
+                    let apaAndServ = {...this.apartments[i], 'services' : this.lista[i]}
+                    this.apartmentsAndService.push(apaAndServ)
                 }
+
             },
+            filterSearch() {
+                if(this.city.trim() != '') {
+                    if (this.filteredApartments.length === 0) {
+
+                        this.filteredApartments = this.apartmentsAndService.filter((apa)=>{
+                        return apa.address.toLowerCase().includes(this.city.toLowerCase().trim())                        
+                        })
+                    } else {
+
+                        this.filteredApartments = this.filteredApartments.filter((apa)=>{
+                        return apa.address.toLowerCase().includes(this.city.toLowerCase().trim())   
+                        })
+                    }
+                }
+
+                if(this.rooms != 0) {
+                    this.filteredApartments = this.filteredApartments.filter((apa)=>{
+                    return apa.rooms_num == this.rooms
+                })}
+
+                if(this.beds != 0) {
+                    this.filteredApartments = this.filteredApartments.filter((apa)=>{
+                    return apa.beds_num == this.beds  
+                })}
+
+                //reset se si cancella la città
+                if(this.city === '') {
+                    this.filteredApartments = []
+                    this.beds = 0
+                    this.rooms = 0
+                }
+
+
+            },
+             filterServices () {
+                // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
+                if(this.filteredApartments.length > 0) {
+
+                    // entra solo se almeno un servizio è selezionato     
+                    if(this.serviceList.length > 0) {
+                            console.log('ciao')
+                            
+     
+                        // serviceListFlag = true;         
+                        // this.filteredApartments = this.filteredApartments.forEach((apa)=>{
+                        //     console.log('ciao')
+                        //     // console.log(apa.services)
+                        //     for( let x = 0; x < this.serviceList.length; x++){
+                        //         // se il singolo di servicesList è contenuto return true
+                        //         if (this.serviceListFlag === true ) {
+                        //             if(apa.services.includes(this.serviceList[x])) {
+                        //                 return this.serviceListFlag = true
+                        //             } else {
+                        //                 return this.serviceListFlag = false    
+                        //             }
+                        //         }    
+                        //     }    
+                        // })
+                    }
+                }
+            }
         }
     }
 </script>

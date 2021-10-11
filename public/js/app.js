@@ -2081,7 +2081,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (this.filteredApartments.length > 0) {
         // entra solo se almeno un servizio è selezionato     
         if (this.serviceList.length > 0) {
-          console.log('ciao'); // serviceListFlag = true;
+          console.log('ciao'); // serviceListFlag = true;         
           // this.filteredApartments = this.filteredApartments.forEach((apa)=>{
           //     console.log('ciao')
           //     // console.log(apa.services)

@@ -53,9 +53,15 @@
     <!-- </div> -->
     <div class="container">
         <!-- <apartment v-bind:filtederApartments='filtederApartments'></apartment> -->
-        <div v-for="(apa,index) in filteredApartments" :key="index">
-            <h1> {{ apa.title }} </h1>
+        <div v-if="filteredApartments.length > 0">
+            <div v-for="(apa,index) in filteredApartments" :key="index">
+                <h1> {{ apa.title }} </h1>
+            </div>
         </div>
+        <div v-else>
+            <h1>Nessun appartamento trovato</h1>
+        </div>
+
     </div>
 </div>
 </template>
@@ -124,6 +130,8 @@ import CardApartment from './CardApartment.vue';
                     this.rooms = 0
                 }
                 this.copyFilteredApartments = this.filteredApartments
+
+                this.serviceList = []
             },
             filterServices () {
                 // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati

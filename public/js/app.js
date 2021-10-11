@@ -2010,6 +2010,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2078,6 +2084,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       this.copyFilteredApartments = this.filteredApartments;
+      this.serviceList = [];
     },
     filterServices: function filterServices() {
       var _this2 = this;
@@ -38059,16 +38066,19 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "container" },
-      _vm._l(_vm.filteredApartments, function(apa, index) {
-        return _c("div", { key: index }, [
-          _c("h1", [_vm._v(" " + _vm._s(apa.title) + " ")])
-        ])
-      }),
-      0
-    )
+    _c("div", { staticClass: "container" }, [
+      _vm.filteredApartments.length > 0
+        ? _c(
+            "div",
+            _vm._l(_vm.filteredApartments, function(apa, index) {
+              return _c("div", { key: index }, [
+                _c("h1", [_vm._v(" " + _vm._s(apa.title) + " ")])
+              ])
+            }),
+            0
+          )
+        : _c("div", [_c("h1", [_vm._v("Nessun appartamento trovato")])])
+    ])
   ])
 }
 var staticRenderFns = []

@@ -59,20 +59,23 @@
 @section('script')
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"></script>
     <script>
-        const API_KEY = 'RagRFtF86mML8SeN6kqbSiihdZpGAE1d';
-        const APPLICATION_NAME = 'BoolBnb';
-        const APPLICATION_VERSION = '1.0';
-        const latitude = {!! json_encode($apartment->latitude) !!};      
-        const longitude = {!! json_encode($apartment->longitude) !!};      
-        const coordinates = {lat: latitude, lon: longitude};
-        var map = tt.map({
-            key: API_KEY,
-            container: 'map-div',
-            center: coordinates,
-            zoom: 16
-        });
-        map.addControl(new tt.FullscreenControl());
-        map.addControl(new tt.NavigationControl());
-        var marker = new tt.Marker().setLngLat(coordinates).addTo(map);
+        setTimeout(() => {
+            
+            const API_KEY = 'RagRFtF86mML8SeN6kqbSiihdZpGAE1d';
+            const APPLICATION_NAME = 'BoolBnb';
+            const APPLICATION_VERSION = '1.0';
+            const latitude = {!! json_encode($apartment->latitude) !!};      
+            const longitude = {!! json_encode($apartment->longitude) !!};      
+            const coordinates = {lat: latitude, lon: longitude};
+            var map = tt.map({
+                key: API_KEY,
+                container: 'map-div',
+                center: coordinates,
+                zoom: 16
+            });
+            map.addControl(new tt.FullscreenControl());
+            map.addControl(new tt.NavigationControl());
+            var marker = new tt.Marker().setLngLat(coordinates).addTo(map);
+        }, 1000);
     </script>
 @endsection

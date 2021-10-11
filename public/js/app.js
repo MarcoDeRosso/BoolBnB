@@ -2029,7 +2029,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       serviceList: [],
       filteredApartments: [],
       apartmentsAndService: [],
-      serviceListFlag: true
+      serviceListFlag: true,
+      copyFilteredApartments: []
     };
   },
   methods: {
@@ -2075,27 +2076,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.beds = 0;
         this.rooms = 0;
       }
+
+      this.copyFilteredApartments = this.filteredApartments;
     },
     filterServices: function filterServices() {
+      var _this2 = this;
+
       // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
-      if (this.filteredApartments.length > 0) {
+      if (this.copyFilteredApartments.length > 0) {
         // entra solo se almeno un servizio è selezionato     
         if (this.serviceList.length > 0) {
-          console.log('ciao'); // serviceListFlag = true;         
-          // this.filteredApartments = this.filteredApartments.forEach((apa)=>{
-          //     console.log('ciao')
-          //     // console.log(apa.services)
-          //     for( let x = 0; x < this.serviceList.length; x++){
-          //         // se il singolo di servicesList è contenuto return true
-          //         if (this.serviceListFlag === true ) {
-          //             if(apa.services.includes(this.serviceList[x])) {
-          //                 return this.serviceListFlag = true
-          //             } else {
-          //                 return this.serviceListFlag = false    
-          //             }
-          //         }    
-          //     }    
-          // })
+          //per ogni appartamento confronta i servizi            
+          this.filteredApartments = this.copyFilteredApartments.filter(function (apa) {
+            //per ogni servizio nella lista di quelli selezionati, 
+            //controlla che sia presente nei servizi dell'appartamento
+            _this2.serviceList.forEach(function (service) {
+              if (apa.services.includes(parseInt(service))) {
+                _this2.serviceListFlag = true;
+              } else {
+                _this2.serviceListFlag = false;
+              }
+            });
+
+            return _this2.serviceListFlag;
+          });
         }
       }
     }

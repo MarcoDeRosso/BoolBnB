@@ -1,31 +1,30 @@
-input, textarea{
-    border: none;
-    border-bottom: 2px solid $arancionesalmone;
-    color: $bluscuropastello;
-}
-
-.box-shadow{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-}
-
-
-label{
-    color: $bluscuropastello;
-}
-
-label:hover{
-    color: $arancionesalmone;
-}
-
-.box-edit {
-    border: 2px solid $arancionesalmone;
-    border-radius: 15px;
-    padding: 15px auto;
-    background: white;
-}
-
 .bg{
     background: $jumbotron-bg;
     padding-top: 15px;
     padding-bottom: 15px;
+    .box-edit {
+        border: 2px solid $arancionesalmone;
+        border-radius: 15px;
+        padding: 15px auto;
+        background: white;
+        input, textarea{
+            border: none;
+            border-bottom: 2px solid $arancionesalmone;
+            color: $bluscuropastello;
+        }
+        
+        label{
+            color: $bluscuropastello;
+        }
+        label:hover{
+            color: $arancionesalmone;
+        }
+        .box-shadow{
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        }
+    }
 }
+
+
+
+

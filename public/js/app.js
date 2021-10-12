@@ -2068,7 +2068,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       serviceListFlag: true,
       copyFilteredApartments: [],
       apartmentsInRange: [],
-      api: ''
+      api: '',
+      lastService: ''
     };
   },
   methods: {
@@ -2079,6 +2080,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios.get(this.api).then(function (res) {
         console.log(res);
         _this.apartmentsInRange = res.data;
+
+        _this.filterSearch();
       });
     },
     addApartmentsToService: function addApartmentsToService() {
@@ -2136,7 +2139,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     filterServices: function filterServices() {
       var _this3 = this;
 
-      if (this.serviceListFlag) {
+      if (!this.serviceList.includes(this.lastService)) {
         // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
         if (this.copyFilteredApartments.length > 0) {
           // entra solo se almeno un servizio è selezionato     
@@ -2148,8 +2151,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this3.serviceList.forEach(function (service) {
                 if (apa.services.includes(parseInt(service))) {
                   _this3.serviceListFlag = true;
+                  _this3.lastService = '';
                 } else {
                   _this3.serviceListFlag = false;
+                  _this3.lastService = service; //è una stringa, mi salvo il servizio non presente
                 }
               });
 
@@ -50734,8 +50739,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

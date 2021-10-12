@@ -120,6 +120,7 @@ import CardApartment from './CardApartment.vue';
                 copyFilteredApartments: [],
                 apartmentsInRange:[],
                 api:'',
+                lastService: ''
             }
         },
         methods: {
@@ -128,6 +129,7 @@ import CardApartment from './CardApartment.vue';
                 axios.get(this.api).then(res=>{
                     console.log(res)
                     this.apartmentsInRange=res.data
+                    this.filterSearch()
                 })
             },
             addApartmentsToService () {
@@ -178,7 +180,7 @@ import CardApartment from './CardApartment.vue';
                 this.serviceListFlag = true
             },
             filterServices () {
-                if(this.serviceListFlag) {
+                if(!this.serviceList.includes(this.lastService)) {
                     // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
                     if(this.copyFilteredApartments.length > 0) {
     
@@ -193,9 +195,11 @@ import CardApartment from './CardApartment.vue';
                                 this.serviceList.forEach((service)=>{
                                     if (apa.services.includes(parseInt(service))) {
                                         this.serviceListFlag = true
-    
+                                        this.lastService = ''
+
                                     } else {
                                         this.serviceListFlag = false
+                                        this.lastService = service //è una stringa, mi salvo il servizio non presente
                                     }                                
                                 })
                                 return this.serviceListFlag  

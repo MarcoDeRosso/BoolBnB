@@ -2036,10 +2036,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       filteredApartments: [],
       apartmentsAndService: [],
       serviceListFlag: true,
-      copyFilteredApartments: []
+      copyFilteredApartments: [],
+      apartmentsInRange: [],
+      api: ''
     };
   },
   methods: {
+    postRange: function postRange() {
+      this.api = "http://127.0.01:8000/api/rangeapartments?city=".concat(this.city, "&radius=").concat(this.distance);
+      console.log('Ciao viva il miele');
+      console.log(this.api);
+      axios.post(this.api);
+      this.getRange();
+    },
+    getRange: function getRange() {
+      var _this = this;
+
+      axios.get('http://127.0.01:8000/api/rangeapartments').then(function (response) {
+        _this.apartmentsInRange = response.data;
+      });
+    },
     addApartmentsToService: function addApartmentsToService() {
       for (var i = 0; i < this.apartments.length; i++) {
         var apaAndServ = _objectSpread(_objectSpread({}, this.apartments[i]), {}, {
@@ -2050,29 +2066,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     filterSearch: function filterSearch() {
-      var _this = this;
+      var _this2 = this;
+
+      console.log('ciao');
 
       if (this.city.trim() != '') {
         if (this.filteredApartments.length === 0) {
           this.filteredApartments = this.apartmentsAndService.filter(function (apa) {
-            return apa.address.toLowerCase().includes(_this.city.toLowerCase().trim());
+            return apa.address.toLowerCase().includes(_this2.city.toLowerCase().trim());
           });
         } else {
           this.filteredApartments = this.filteredApartments.filter(function (apa) {
-            return apa.address.toLowerCase().includes(_this.city.toLowerCase().trim());
+            return apa.address.toLowerCase().includes(_this2.city.toLowerCase().trim());
           });
         }
       }
 
       if (this.rooms != 0) {
         this.filteredApartments = this.filteredApartments.filter(function (apa) {
-          return apa.rooms_num == _this.rooms;
+          return apa.rooms_num == _this2.rooms;
         });
       }
 
       if (this.beds != 0) {
         this.filteredApartments = this.filteredApartments.filter(function (apa) {
-          return apa.beds_num == _this.beds;
+          return apa.beds_num == _this2.beds;
         });
       } //reset se si cancella la città
 
@@ -2088,7 +2106,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.serviceListFlag = true;
     },
     filterServices: function filterServices() {
-      var _this2 = this;
+      var _this3 = this;
 
       if (this.serviceListFlag) {
         // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
@@ -2099,15 +2117,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             this.filteredApartments = this.copyFilteredApartments.filter(function (apa) {
               //per ogni servizio nella lista di quelli selezionati, 
               //controlla che sia presente nei servizi dell'appartamento
-              _this2.serviceList.forEach(function (service) {
+              _this3.serviceList.forEach(function (service) {
                 if (apa.services.includes(parseInt(service))) {
-                  _this2.serviceListFlag = true;
+                  _this3.serviceListFlag = true;
                 } else {
-                  _this2.serviceListFlag = false;
+                  _this3.serviceListFlag = false;
                 }
               });
 
-              return _this2.serviceListFlag;
+              return _this3.serviceListFlag;
             });
           }
         }
@@ -37984,9 +38002,17 @@ var render = function() {
                           }
                         ],
                         staticClass: "no-box-shadow",
-                        attrs: { type: "range", min: "0", max: "20" },
+                        attrs: {
+                          step: "1",
+                          type: "range",
+                          min: "0",
+                          max: "20"
+                        },
                         domProps: { value: _vm.distance },
                         on: {
+                          change: function($event) {
+                            return _vm.postRange()
+                          },
                           __r: function($event) {
                             _vm.distance = $event.target.value
                           }
@@ -50575,8 +50601,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

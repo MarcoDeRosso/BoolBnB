@@ -33,7 +33,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right" for="distance">Raggio della ricera(0-20km):</label>
                                     <div class="col-2 align-self-center">
-                                        <input class="no-box-shadow" type="range" min="0" max="20" v-model="distance">       
+                                        <input class="no-box-shadow" @change="postRange()" step="1" type="range" min="0" max="20" v-model="distance">       
                                     </div>
                                 </div>
 
@@ -87,10 +87,24 @@ import CardApartment from './CardApartment.vue';
                 filteredApartments: [],
                 apartmentsAndService:[],
                 serviceListFlag : true,
-                copyFilteredApartments: []
+                copyFilteredApartments: [],
+                apartmentsInRange:[],
+                api:''
             }
         },
         methods: {
+            postRange(){
+                this.api=`http://127.0.01:8000/api/rangeapartments?city=${this.city}&radius=${this.distance}`
+                console.log('Ciao viva il miele')
+                console.log(this.api)
+                axios.post(this.api)
+                this.getRange()
+            },
+            getRange(){
+                axios.get('http://127.0.01:8000/api/rangeapartments').then((response)=>{
+                    this.apartmentsInRange=response.data;
+                })
+            },
             addApartmentsToService () {
                 for(let i= 0; i< this.apartments.length; i++){
                     let apaAndServ = {...this.apartments[i], 'services' : this.lista[i]}
@@ -99,7 +113,9 @@ import CardApartment from './CardApartment.vue';
 
             },
             filterSearch() {
+                console.log('ciao')
                 if(this.city.trim() != '') {
+
                     if (this.filteredApartments.length === 0) {
 
                         this.filteredApartments = this.apartmentsAndService.filter((apa)=>{
@@ -164,3 +180,5 @@ import CardApartment from './CardApartment.vue';
         }
     }
 </script>
+
+    

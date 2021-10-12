@@ -2041,6 +2041,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2076,11 +2081,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this.apartmentsInRange = res.data;
       });
     },
-    // getRange(){
-    //     axios.get('http://127.0.01:8000/api/rangeapartments').then((response)=>{
-    //         this.apartmentsInRange=response.data;
-    //     })
-    // },
     addApartmentsToService: function addApartmentsToService() {
       for (var i = 0; i < this.apartments.length; i++) {
         var apaAndServ = _objectSpread(_objectSpread({}, this.apartments[i]), {}, {
@@ -2093,7 +2093,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     filterSearch: function filterSearch() {
       var _this2 = this;
 
-      console.log('ciao');
+      if (this.apartmentsInRange.length != 0) {
+        this.filteredApartments = this.apartmentsInRange;
+        this.apartmentsInRange = [];
+      }
 
       if (this.city.trim() != '') {
         if (this.filteredApartments.length === 0) {
@@ -38150,7 +38153,17 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
-      _vm.filteredApartments.length > 0
+      _vm.apartmentsInRange.length > 0
+        ? _c(
+            "div",
+            _vm._l(_vm.apartmentsInRange, function(apa, index) {
+              return _c("div", { key: index }, [
+                _c("h1", [_vm._v(" " + _vm._s(apa.title) + " ")])
+              ])
+            }),
+            0
+          )
+        : _vm.filteredApartments.length > 0
         ? _c(
             "div",
             _vm._l(_vm.filteredApartments, function(apa, index) {
@@ -50721,8 +50734,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

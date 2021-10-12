@@ -78,7 +78,12 @@
     <!-- </div> -->
     <div class="container">
         <!-- <apartment v-bind:filtederApartments='filtederApartments'></apartment> -->
-        <div v-if="filteredApartments.length > 0">
+        <div v-if="apartmentsInRange.length > 0">
+            <div v-for="(apa,index) in apartmentsInRange" :key="index">
+                <h1> {{ apa.title }} </h1>
+            </div>
+        </div>
+        <div v-else-if="filteredApartments.length > 0">
             <div v-for="(apa,index) in filteredApartments" :key="index">
                 <h1> {{ apa.title }} </h1>
             </div>
@@ -114,7 +119,7 @@ import CardApartment from './CardApartment.vue';
                 serviceListFlag : true,
                 copyFilteredApartments: [],
                 apartmentsInRange:[],
-                api:''
+                api:'',
             }
         },
         methods: {
@@ -125,11 +130,6 @@ import CardApartment from './CardApartment.vue';
                     this.apartmentsInRange=res.data
                 })
             },
-            // getRange(){
-            //     axios.get('http://127.0.01:8000/api/rangeapartments').then((response)=>{
-            //         this.apartmentsInRange=response.data;
-            //     })
-            // },
             addApartmentsToService () {
                 for(let i= 0; i< this.apartments.length; i++){
                     let apaAndServ = {...this.apartments[i], 'services' : this.lista[i]}
@@ -137,7 +137,10 @@ import CardApartment from './CardApartment.vue';
                 }
             },
             filterSearch() {
-                console.log('ciao')
+                if(this.apartmentsInRange.length != 0){
+                    this.filteredApartments=this.apartmentsInRange;
+                    this.apartmentsInRange= [];
+                }
                 if(this.city.trim() != '') {
 
                     if (this.filteredApartments.length === 0) {

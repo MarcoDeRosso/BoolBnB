@@ -2043,19 +2043,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   methods: {
     postRange: function postRange() {
-      this.api = "http://127.0.01:8000/api/rangeapartments?city=".concat(this.city, "&radius=").concat(this.distance);
-      console.log('Ciao viva il miele');
-      console.log(this.api);
-      axios.post(this.api);
-      this.getRange();
-    },
-    getRange: function getRange() {
       var _this = this;
 
-      axios.get('http://127.0.01:8000/api/rangeapartments').then(function (response) {
-        _this.apartmentsInRange = response.data;
+      this.api = "http://127.0.01:8000/api/rangeapartments?city=".concat(this.city, "&radius=").concat(this.distance);
+      axios.get(this.api).then(function (res) {
+        console.log(res);
+        _this.apartmentsInRange = res.data;
       });
     },
+    // getRange(){
+    //     axios.get('http://127.0.01:8000/api/rangeapartments').then((response)=>{
+    //         this.apartmentsInRange=response.data;
+    //     })
+    // },
     addApartmentsToService: function addApartmentsToService() {
       for (var i = 0; i < this.apartments.length; i++) {
         var apaAndServ = _objectSpread(_objectSpread({}, this.apartments[i]), {}, {

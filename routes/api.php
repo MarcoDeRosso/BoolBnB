@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('rangeapartments', Api\DistanceController::class);
+//Route::post('rangeapartments/', Api\DistContro::class);

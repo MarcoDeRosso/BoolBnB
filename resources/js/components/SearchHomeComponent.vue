@@ -95,16 +95,16 @@ import CardApartment from './CardApartment.vue';
         methods: {
             postRange(){
                 this.api=`http://127.0.01:8000/api/rangeapartments?city=${this.city}&radius=${this.distance}`
-                console.log('Ciao viva il miele')
-                console.log(this.api)
-                axios.post(this.api)
-                this.getRange()
-            },
-            getRange(){
-                axios.get('http://127.0.01:8000/api/rangeapartments').then((response)=>{
-                    this.apartmentsInRange=response.data;
+                axios.get(this.api).then(res=>{
+                    console.log(res)
+                    this.apartmentsInRange=res.data
                 })
             },
+            // getRange(){
+            //     axios.get('http://127.0.01:8000/api/rangeapartments').then((response)=>{
+            //         this.apartmentsInRange=response.data;
+            //     })
+            // },
             addApartmentsToService () {
                 for(let i= 0; i< this.apartments.length; i++){
                     let apaAndServ = {...this.apartments[i], 'services' : this.lista[i]}

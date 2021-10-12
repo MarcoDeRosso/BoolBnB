@@ -16,7 +16,7 @@ class DistanceController extends Controller
     public function index(Request $request)
     {
         $data=$request->all();
-        $apartments= Apartment::all();
+        $apartments=Apartment::all();
         $city=$data['city'];
         $distance=$data['radius'];
         $coordinate= $this->getGeoCode($city);
@@ -30,10 +30,12 @@ class DistanceController extends Controller
                 $apartmentsInRange[]=$apa;
             }
         };
-       //dd($apartmentsInRange);
+        //\Log::info($apartmentsInRange);
+       $apartmentsInRange=$apartmentsInRange;
+       //dd(response()->json($apartmentsInRange));
        return response()->json($apartmentsInRange);
-    }
 
+    }
     /**
      * Show the form for creating a new resource.
      *

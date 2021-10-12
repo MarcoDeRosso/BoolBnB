@@ -2016,6 +2016,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -38021,71 +38046,100 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
+                  _vm._m(0),
+                  _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "form-group row" },
-                    _vm._l(_vm.services, function(service) {
-                      return _c(
-                        "div",
-                        { key: service.id, staticClass: "col-6" },
-                        [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.serviceList,
-                                expression: "serviceList"
-                              }
-                            ],
-                            attrs: {
-                              id: "`${service.title}`",
-                              type: "checkbox"
-                            },
-                            domProps: {
-                              value: "" + service.id,
-                              checked: Array.isArray(_vm.serviceList)
-                                ? _vm._i(_vm.serviceList, "" + service.id) > -1
-                                : _vm.serviceList
-                            },
-                            on: {
-                              change: [
-                                function($event) {
-                                  var $$a = _vm.serviceList,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = "" + service.id,
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        (_vm.serviceList = $$a.concat([$$v]))
-                                    } else {
-                                      $$i > -1 &&
-                                        (_vm.serviceList = $$a
-                                          .slice(0, $$i)
-                                          .concat($$a.slice($$i + 1)))
-                                    }
-                                  } else {
-                                    _vm.serviceList = $$c
-                                  }
-                                },
-                                function($event) {
-                                  return _vm.filterServices()
-                                }
-                              ]
-                            }
-                          }),
+                    {
+                      staticClass: "modal fade",
+                      attrs: {
+                        id: "servicesExtra",
+                        tabindex: "-1",
+                        "aria-labelledby": "servicesExtraLabel",
+                        "aria-hidden": "true"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "modal-dialog" }, [
+                        _c("div", { staticClass: "modal-content" }, [
+                          _vm._m(1),
                           _vm._v(" "),
                           _c(
-                            "label",
-                            { attrs: { for: "`${service.title}`" } },
-                            [_vm._v(_vm._s(service.title))]
-                          )
-                        ]
-                      )
-                    }),
-                    0
+                            "div",
+                            { staticClass: "modal-body row" },
+                            _vm._l(_vm.services, function(service) {
+                              return _c(
+                                "div",
+                                { key: service.id, staticClass: "col-6" },
+                                [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.serviceList,
+                                        expression: "serviceList"
+                                      }
+                                    ],
+                                    attrs: {
+                                      id: "`${service.title}`",
+                                      type: "checkbox"
+                                    },
+                                    domProps: {
+                                      value: "" + service.id,
+                                      checked: Array.isArray(_vm.serviceList)
+                                        ? _vm._i(
+                                            _vm.serviceList,
+                                            "" + service.id
+                                          ) > -1
+                                        : _vm.serviceList
+                                    },
+                                    on: {
+                                      change: [
+                                        function($event) {
+                                          var $$a = _vm.serviceList,
+                                            $$el = $event.target,
+                                            $$c = $$el.checked ? true : false
+                                          if (Array.isArray($$a)) {
+                                            var $$v = "" + service.id,
+                                              $$i = _vm._i($$a, $$v)
+                                            if ($$el.checked) {
+                                              $$i < 0 &&
+                                                (_vm.serviceList = $$a.concat([
+                                                  $$v
+                                                ]))
+                                            } else {
+                                              $$i > -1 &&
+                                                (_vm.serviceList = $$a
+                                                  .slice(0, $$i)
+                                                  .concat($$a.slice($$i + 1)))
+                                            }
+                                          } else {
+                                            _vm.serviceList = $$c
+                                          }
+                                        },
+                                        function($event) {
+                                          return _vm.filterServices()
+                                        }
+                                      ]
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "label",
+                                    { attrs: { for: "`${service.title}`" } },
+                                    [_vm._v(_vm._s(service.title))]
+                                  )
+                                ]
+                              )
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _vm._m(2)
+                        ])
+                      ])
+                    ]
                   )
                 ]
               )
@@ -38110,7 +38164,73 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "offset-md-5" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: {
+              type: "button",
+              "data-toggle": "modal",
+              "data-target": "#servicesExtra"
+            }
+          },
+          [
+            _vm._v(
+              "\r\n                                            Servizi Extra\r\n                                        "
+            )
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "servicesExtraLabel" } },
+        [_vm._v("Servizi Aggiuntivi")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Fatto")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -50601,8 +50721,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

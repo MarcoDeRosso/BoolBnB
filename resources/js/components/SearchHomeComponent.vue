@@ -37,11 +37,36 @@
                                     </div>
                                 </div>
 
+                                 <!-- Button Modal  -->
+                                <div class="row">
+                                    <div class="offset-md-5">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servicesExtra">
+                                            Servizi Extra
+                                        </button>
+                                    </div>
+                                </div>
 
-                                <div class="form-group row">
-                                    <div class="col-6" v-for="service in services" :key="service.id" >
-                                        <input @change="filterServices()"  id="`${service.title}`" type="checkbox" :value="`${service.id}`" v-model="serviceList">
-                                        <label for="`${service.title}`">{{ service.title }}</label>
+                                <!-- Modal -->
+                                <div class="modal fade" id="servicesExtra" tabindex="-1" aria-labelledby="servicesExtraLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="servicesExtraLabel">Servizi Aggiuntivi</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body row">
+                                            <div class="col-6" v-for="service in services" :key="service.id" >
+                                                <input @change="filterServices()"  id="`${service.title}`" type="checkbox" :value="`${service.id}`" v-model="serviceList">
+                                                <label for="`${service.title}`">{{ service.title }}</label>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fatto</button>
+                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +135,6 @@ import CardApartment from './CardApartment.vue';
                     let apaAndServ = {...this.apartments[i], 'services' : this.lista[i]}
                     this.apartmentsAndService.push(apaAndServ)
                 }
-
             },
             filterSearch() {
                 console.log('ciao')

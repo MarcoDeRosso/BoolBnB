@@ -33,7 +33,15 @@
                                 <div class="form-group row">
                                     <label class="col-md-5 col-form-label text-md-right" for="distance"> Raggio della ricera (0-20 km):</label>
                                     <div class="col-md-4 align-self-center">
-                                        <input class="no-box-shadow slider" @change="postRange()" type="range" min="0" max="20" v-model="distance">       
+                                        <!-- <input class="no-box-shadow slider" @change="postRange()" type="range" min="0" max="20" step="5"  v-model="distance"> -->
+                                        <input class="no-box-shadow " @change="postRange()" type="range" list="tickmarks" min="0" max="20" step="5" v-model="distance">
+                                        <datalist id="tickmarks">
+                                        <option value="0"></option>
+                                        <option value="5"></option>
+                                        <option value="10"></option>
+                                        <option value="15"></option>
+                                        <option value="20"></option>
+                                        </datalist>
                                     </div>
                                 </div>
 
@@ -50,8 +58,8 @@
                                 <div class="modal fade" id="servicesExtra" tabindex="-1" aria-labelledby="servicesExtraLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title justify-content-center" style="color:grey" id="servicesExtraLabel">Servizi Aggiuntivi</h5>  
+                                        <div class="modal-header" style=" background-color:#92a8d1">
+                                            <h5 class="modal-title" style="color:#034f84" id="servicesExtraLabel">Servizi Aggiuntivi</h5>  
                                         </div>
                                         <div class="modal-body row">
                                             <div class="col-6 text-center align-items-center" v-for="service in services" :key="service.id" >
@@ -251,6 +259,14 @@ import CardApartment from './CardApartment.vue';
     border-radius: 15px;
     padding: 15px auto;
     background: white;
+    }
+    .modal-header{
+    justify-content: center!important;
+    }
+    .modal-content{     
+    border: 2px solid #034f84;
+    
+    
    
 }
 </style>

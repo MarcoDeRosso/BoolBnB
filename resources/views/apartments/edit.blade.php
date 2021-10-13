@@ -86,13 +86,13 @@
                     <div class="row">
                         
                         @foreach ($services as $service)
-                            <div class="col-6 col-xl-3 col-md-4 col-sm-5 box-shadow text-center align-items-center pt-3">
+                            <div class="col-6 col-xl-3 col-md-4 col-sm-5 box-shadow-orange text-center align-items-center row m-1 py-1">
                             @if ($apartment->service->contains($service->id))
-                            <label style="width: 80px;"  for="{{ $service->id }}">{{ $service->title }}</label>
-                            <input checked name="services[]" type="radio" id="{{ $service->id }}" value="{{ $service->id }}">
+                            <label class="col-xl-10 col-md-12"  for="{{ $service->id }}">{{ $service->title }}</label>
+                            <input class="col-xl-2 col-md-12" checked name="services[]" type="checkbox" id="{{ $service->id }}" value="{{ $service->id }}">
                             @else
-                            <label style="width: 80px" for="{{ $service->id }}">{{ $service->title }}</label>
-                            <input name="services[]" type="radio" id="{{ $service->id }}" value="{{ $service->id }}">
+                            <label class="col-xl-10 col-md-12" for="{{ $service->id }}">{{ $service->title }}</label>
+                            <input class="col-xl-2 col-md-12" name="services[]" type="checkbox" id="{{ $service->id }}" value="{{ $service->id }}">
                             @endif
         
                             </div>

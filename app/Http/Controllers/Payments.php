@@ -5,9 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Braintree\Transaction;
 use Braintree\Gateway;
+use App\Payment;
+use App\Sponsor;
+use App\Apartment;
 
 class Payments extends Controller
 {
+    public function store (Request $request){
+      $payment= new Payment();
+      $data = $request->all();
+      $sponsor= Sponsor::find($data['sponsor_id']);
+      
+      dd($data);
+      //salvare il pagamento e fare la redirect 
+    }
+
     public function process(Request $request)
     {
         $payload = $request->input('payload', false);

@@ -20,6 +20,8 @@ Route::get('/', 'WelcomeController@welcome')->name('welcome');
 Route::resource('apartments', 'BackOfficeController');
 Route::get('/apartments/{id}/sponsor', 'BackOfficeController@toSponsor')->name('sponsor');
 
+Route::post('/apartments/{id}/sponsor', 'BackOfficeController@storePayments')->name('sponsor.store');
+
 Route::get('/messages','MessageController@index')->name('messages.index');
 Route::post('/messages','MessageController@store')->name('messages.store');
 

@@ -15784,3 +15784,136 @@ div.login.jumbotron {
   padding: 7px;
 }
 
+#sponsorships .col-md-8 {
+  margin: 0 auto 10px;
+  text-align: center;
+  padding-top: 80px;
+}
+
+#sponsorships .col-md-8 h5 {
+  margin-bottom: 5px;
+}
+
+#sponsorships .col-md-8 h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0 7px;
+  font-size: 15px;
+}
+
+#sponsorships .form-check {
+  padding: 0 !important;
+}
+
+#sponsorships .card-bronze {
+  transition: 0.5s;
+}
+
+#sponsorships .card-bronze:hover {
+  background: #cd7f32;
+  background-image: linear-gradient(0deg, #cd7f32 0%, rgba(252, 221, 190, 0.962) 49%, #cd7f32 100%);
+  color: black !important;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+#sponsorships .card-bronze:hover h5 {
+  color: black !important;
+}
+
+#sponsorships .card-silver {
+  transition: 0.5s;
+}
+
+#sponsorships .card-silver:hover {
+  background: #cecece;
+  background: linear-gradient(0deg, #cecece 0%, rgba(243, 243, 243, 0.9139005944) 49%, rgba(206, 206, 206, 0.9559174011) 100%);
+  color: black !important;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+#sponsorships .card-silver:hover h5 {
+  color: black !important;
+}
+
+#sponsorships .card-gold {
+  transition: 0.5s;
+}
+
+#sponsorships .card-gold:hover {
+  background: #ffd105;
+  background: linear-gradient(0deg, #ffac05 0%, rgba(250, 226, 166, 0.914) 49%, rgba(255, 209, 5, 0.9279061967) 100%);
+  color: black !important;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+#sponsorships .card-gold:hover h5 {
+  color: black !important;
+}
+
+#sponsorships .card {
+  margin-bottom: 15px;
+  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.3);
+}
+
+#sponsorships .card .card-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#sponsorships .card label {
+  cursor: pointer;
+}
+
+#sponsorships .card .color {
+  margin-bottom: 20px;
+}
+
+#sponsorships .card .color .bronze {
+  color: #CD7F32;
+}
+
+#sponsorships .card .color .silver {
+  color: #C0C0C0;
+}
+
+#sponsorships .card .color .gold {
+  color: #ff9900;
+}
+
+#sponsorships .card .color h6:last-child {
+  font-weight: bold;
+}
+
+#sponsorships .card .color img {
+  width: 50px;
+}
+
+#sponsorships .card .form-check-input {
+  transform: translate(-50%, -50%);
+  left: 50%;
+  height: 15px;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+#sponsorships .card:hover {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.bnb-totalMain .bnb-mainPayment {
+  text-align: center;
+}
+
+.bnb-totalMain .row,
+.bnb-totalMain .bnb-totalContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.bnb-totalMain #submit-button {
+  margin: 0 auto;
+}
+

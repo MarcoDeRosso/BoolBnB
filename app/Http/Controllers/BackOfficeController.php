@@ -6,6 +6,7 @@ use App\Apartment;
 use App\Message;
 use App\Service;
 use App\Sponsor;
+use App\Payment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -49,6 +50,15 @@ class BackOfficeController extends Controller
         $this->fillAndSave($request, $apartment);
         return redirect()->route('apartmentShow', $apartment);
     }
+
+    public function storePayments (Request $request, Apartment $apartment){
+        $payment= new Payment();
+        $data = $request->all();
+        $sponsor= Sponsor::find($data['sponsor_id']);
+        $apartment= Apartment::find($apartment);
+        dd($apartment);
+        //salvare il pagamento e fare la redirect 
+      }
 
 
     public function show($id)

@@ -24,6 +24,12 @@ Route::post('/messages','MessageController@store')->name('messages.store');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/{id}', 'HomeController@show')->name('apartmentShow');
 
+Route::get('/payment/make', 'Payments@make')->name('payment.make');
+Route::get('/createCustomer', 'Payments@createCustomer');
+Route::get('/saveCard', 'Payments@saveCard');
+Route::get('/getSavedCard', 'Payments@getSavedCard');
+Route::get('/getPaymentToken', 'Payments@getPaymentToken');
+Route::get('/deleteCard', 'Payments@deleteCard');
 
 
 

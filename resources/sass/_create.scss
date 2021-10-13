@@ -1,0 +1,8 @@
+.box-shadow-orange {
+    border-radius: 5px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.box-shadow-orange:active{
+    // box-shadow: $arancionesalmone 0px 4px 6px -1px, $arancionesalmone 0px 2px 4px -1px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}

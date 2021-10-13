@@ -2041,6 +2041,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2063,7 +2068,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       serviceListFlag: true,
       copyFilteredApartments: [],
       apartmentsInRange: [],
-      api: ''
+      api: '',
+      lastService: ''
     };
   },
   methods: {
@@ -2074,13 +2080,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios.get(this.api).then(function (res) {
         console.log(res);
         _this.apartmentsInRange = res.data;
+
+        _this.filterSearch();
       });
     },
-    // getRange(){
-    //     axios.get('http://127.0.01:8000/api/rangeapartments').then((response)=>{
-    //         this.apartmentsInRange=response.data;
-    //     })
-    // },
     addApartmentsToService: function addApartmentsToService() {
       for (var i = 0; i < this.apartments.length; i++) {
         var apaAndServ = _objectSpread(_objectSpread({}, this.apartments[i]), {}, {
@@ -2093,7 +2096,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     filterSearch: function filterSearch() {
       var _this2 = this;
 
-      console.log('ciao');
+      if (this.apartmentsInRange.length != 0) {
+        this.filteredApartments = this.apartmentsInRange;
+        this.apartmentsInRange = [];
+      }
 
       if (this.city.trim() != '') {
         if (this.filteredApartments.length === 0) {
@@ -2133,7 +2139,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     filterServices: function filterServices() {
       var _this3 = this;
 
-      if (this.serviceListFlag) {
+      if (!this.serviceList.includes(this.lastService)) {
         // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
         if (this.copyFilteredApartments.length > 0) {
           // entra solo se almeno un servizio è selezionato     
@@ -2145,8 +2151,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this3.serviceList.forEach(function (service) {
                 if (apa.services.includes(parseInt(service))) {
                   _this3.serviceListFlag = true;
+                  _this3.lastService = '';
                 } else {
                   _this3.serviceListFlag = false;
+                  _this3.lastService = service; //è una stringa, mi salvo il servizio non presente
                 }
               });
 
@@ -38150,7 +38158,17 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
-      _vm.filteredApartments.length > 0
+      _vm.apartmentsInRange.length > 0
+        ? _c(
+            "div",
+            _vm._l(_vm.apartmentsInRange, function(apa, index) {
+              return _c("div", { key: index }, [
+                _c("h1", [_vm._v(" " + _vm._s(apa.title) + " ")])
+              ])
+            }),
+            0
+          )
+        : _vm.filteredApartments.length > 0
         ? _c(
             "div",
             _vm._l(_vm.filteredApartments, function(apa, index) {

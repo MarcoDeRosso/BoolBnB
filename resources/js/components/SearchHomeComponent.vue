@@ -83,6 +83,7 @@
     </div>
     <div class="container">
         <!-- <apartment v-bind:filtederApartments='filtederApartments'></apartment> -->
+
         <h1>I risultati della tua ricerca:</h1>
         <div class="row " v-if="filteredApartments.length > 0">
             <div class="col-4" v-for="(apa,index) in filteredApartments" :key="index">
@@ -90,6 +91,8 @@
                     <h1> {{ apa.title }} </h1>
                     <img class="img-apartment mb-3" style="width:100%" :src="apa.img_path" alt="">
                 </div>  
+
+
             </div>
         </div>
         <div v-else>
@@ -123,7 +126,8 @@ import CardApartment from './CardApartment.vue';
                 serviceListFlag : true,
                 copyFilteredApartments: [],
                 apartmentsInRange:[],
-                api:''
+                api:'',
+                lastService: ''
             }
         },
         methods: {
@@ -132,13 +136,9 @@ import CardApartment from './CardApartment.vue';
                 axios.get(this.api).then(res=>{
                     console.log(res)
                     this.apartmentsInRange=res.data
+                    this.filterSearch()
                 })
             },
-            // getRange(){
-            //     axios.get('http://127.0.01:8000/api/rangeapartments').then((response)=>{
-            //         this.apartmentsInRange=response.data;
-            //     })
-            // },
             addApartmentsToService () {
                 for(let i= 0; i< this.apartments.length; i++){
                     let apaAndServ = {...this.apartments[i], 'services' : this.lista[i]}
@@ -146,7 +146,10 @@ import CardApartment from './CardApartment.vue';
                 }
             },
             filterSearch() {
-                console.log('ciao')
+                if(this.apartmentsInRange.length != 0){
+                    this.filteredApartments=this.apartmentsInRange;
+                    this.apartmentsInRange= [];
+                }
                 if(this.city.trim() != '') {
 
                     if (this.filteredApartments.length === 0) {
@@ -184,7 +187,7 @@ import CardApartment from './CardApartment.vue';
                 this.serviceListFlag = true
             },
             filterServices () {
-                if(this.serviceListFlag) {
+                if(!this.serviceList.includes(this.lastService)) {
                     // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
                     if(this.copyFilteredApartments.length > 0) {
     
@@ -199,9 +202,11 @@ import CardApartment from './CardApartment.vue';
                                 this.serviceList.forEach((service)=>{
                                     if (apa.services.includes(parseInt(service))) {
                                         this.serviceListFlag = true
-    
+                                        this.lastService = ''
+
                                     } else {
                                         this.serviceListFlag = false
+                                        this.lastService = service //è una stringa, mi salvo il servizio non presente
                                     }                                
                                 })
                                 return this.serviceListFlag  

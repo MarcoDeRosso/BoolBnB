@@ -70,15 +70,15 @@
                </div>
                 <div class="text-center">
                     <div class="p-3">
-                        <a class=" mb-0 text-decoration-none" href="#"> s.r  </a>
+                        <a class=" mb-0 text-decoration-none" href="#"> Mariapia Coccioli </a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="#"> m.c  </a>
+                        <a class=" mb-0 text-decoration-none" href="#"> Marco De Rosso  </a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="#"> m.d  </a>
+                        <a class=" mb-0 text-decoration-none" href="#"> Gianluca Argo  </a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="#"> g.c</a>
+                        <a class=" mb-0 text-decoration-none" href="#"> Gianluigi Celentano</a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="#"> g.a</a>
+                        <a class=" mb-0 text-decoration-none" href="#"> Sebastain Rizzo</a>
                     </div>
                 </div>
             </div>    

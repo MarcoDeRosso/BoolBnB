@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Apartment;
+use App\Message;
 use App\Service;
 use App\Sponsor;
 use Illuminate\Support\Facades\Auth;
@@ -33,8 +34,7 @@ class BackOfficeController extends Controller
 
         return view('apartments.index', compact('apartments'));
     }
-
-
+    
     public function create()
     {
         $apartments= Apartment::all();

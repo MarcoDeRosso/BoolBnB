@@ -2,14 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="text-center">
-        <button class="btn btn-warning">
-            <a href="{{ route('apartments.create') }}">
-                Aggiungi un appartamento            
-            </a>
-        </button>
-
-    </div>
+    
     <h1>DASHBORAD</h1>
     <h1>Appartamenti pubblicati sulla piattaforma:</h1>
     
@@ -35,12 +28,23 @@
                     <td>{{ $apa->address }}</td>
                     <td>{{ $apa->title }}</td>
                     <td>{{ $apa->visible }}</td>
-                    <td><button type="button" class="btn btn-primary"><i class="fas fa-search-plus"></i></button></td>
+                    <td>
+                        <a href="{{route('apartments.show', $apa)}}">
+                            <button type="button" class="btn btn-primary"><i class="fas fa-search-plus"></i></button>
+                        </a>
+                    </td>
                 </tr>  
             @endforeach
                        
             </tbody>
         </table>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-warning">
+            <a href="{{ route('apartments.create') }}">
+                Aggiungi un appartamento            
+            </a>
+        </button>
     </div>
     <div class="container">
         <div class="row">

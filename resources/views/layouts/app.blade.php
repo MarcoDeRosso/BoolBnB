@@ -37,13 +37,10 @@
                     <ul class="navbar-nav ml-auto flex-center">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="">I tuoi Appartamenti</a>
+                                <a class="nav-link" href="{{ route('apartments.index') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">Aggiungi Appartamento</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">La tua Dashboard</a>
                             </li>
                         @endauth   
 

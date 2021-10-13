@@ -17,6 +17,7 @@
 </div>
 <div class="container">
     <button class="btn btn-success">
+        {{-- sei qui --}}
         <a href="{{ route('apartments.edit', $apartment) }}">
             Modifica Info
         </a>
@@ -27,7 +28,11 @@
         @method('DELETE')                  
         <button type="submit" class="btn btn-danger">Elimina Appartamento</button>
     </form>
-    <button class="btn btn-success">Sponsorizza Appartamento</button>
+    <button class="btn btn-success">
+        <a href=" {{ route('sponsor', $apartment) }}">
+            Sponsorizza Appartamento
+        </a>
+    </button>
 
 </div>
 @endsection

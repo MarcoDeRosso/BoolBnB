@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container">
-
     <table class="table table-striped">
         <thead>
           <tr>
@@ -21,10 +20,8 @@
               <td>€ {{$sponsor->cost }}</td>
               <td> 
                   <button>Seleziona</button> 
-                </td>
-
-            </tr>
-                
+              </td>
+            </tr>                
             @endforeach
         </tbody>
       </table>

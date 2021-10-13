@@ -14,8 +14,6 @@ class HomeController extends Controller
 
         $listServicesArray =[];
         foreach($apartments as $apartment) {
-            $apartment->description=$this->cutText($apartment->description);
-
             $listServices =($apartment->service()->where('apartment_id','=', $apartment->id)->get())->toArray();
 
             foreach($listServices as $service){
@@ -23,27 +21,13 @@ class HomeController extends Controller
             }
             $lista[] = $listServicesArray;            
             $listServicesArray=[];
-
-        }
-
-        // dd($lista);
-
-        
-        return view('home', compact('apartments','services','lista'));        
-      
+        }       
+        return view('home', compact('apartments','services','lista'));       
     }
 
     public function show($id)
     {
         $apartment= Apartment::find($id);
-        return view('apartments.show', compact('apartment'));
-        
-    }
-    
-    private function cutText ($text) {
-        $cutText = substr($text,0, 190);
-
-        $cutText =  $cutText . "...";
-        return $cutText;
+        return view('show', compact('apartment'));        
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackOfficeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,7 @@ Auth::routes();
 // Route::resource('/', 'HomeController');
 Route::get('/', 'WelcomeController@welcome')->name('welcome');
 Route::resource('apartments', 'BackOfficeController');
+Route::get('/apartments/{id}/sponsor', 'BackOfficeController@toSponsor')->name('sponsor');
 
 Route::get('/messages','MessageController@index')->name('messages.index');
 Route::post('/messages','MessageController@store')->name('messages.store');

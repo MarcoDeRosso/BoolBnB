@@ -14,33 +14,34 @@
     <h1>Appartamenti pubblicati sulla piattaforma:</h1>
     
     <div class="row">
-        @foreach ($apartments as $apartment)
-        <div class="col-12 col-md-6 col-lg-6 articol-card mt-3 mb-3">
-            <a href="{{ route('apartmentShow', $apartment) }}">
-                <h2>{{ $apartment->title }}</h2>
-            </a>  
-
-                @foreach ($apartment->service as $service)
-                <span class="badge badge-pill badge-success">{{ $service->title }}</span>
-                @endforeach
-
-            <img class="img-apartment mb-3" src="{{ $apartment->img_path }}" alt="" style="width: 100%;">
-            <div class="text-description">{{ $apartment->description }}</div>
-
-            <button class="btn btn-success">
-                <a href="{{ route('apartments.edit', $apartment) }}">
-                    Modifica Info
-                </a>
-            </button>
-        
-            <form action=" {{ route('apartments.destroy', $apartment) }} " method="POST">
-                @csrf
-                @method('DELETE')                  
-                <button type="submit" class="btn btn-danger">Elimina Appartamento</button>
-            </form>
-    
-        </div>        
-        @endforeach
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Immagine</th>
+                    <th scope="col">Via</th>
+                    <th scope="col">Titolo</th>
+                    <th scope="col">Visibile</th>
+                    <th scope="col">Modifica</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach ($apartments as $apa)
+                <tr>
+                    <th scope="row"> {{ $loop->iteration }} </th>
+                    <td>
+                        <img src="{{ $apa->img_path }}" style="width: 100px; border-radius: 0;" alt="">
+                    </td>
+                    <td>{{ $apa->address }}</td>
+                    <td>{{ $apa->title }}</td>
+                    <td>{{ $apa->visible }}</td>
+                    <td><button type="button" class="btn btn-primary"><i class="fas fa-search-plus"></i></button></td>
+                </tr>  
+            @endforeach
+                       
+            </tbody>
+        </table>
+    </div>
     <div class="container">
         <div class="row">
         <div class="col-md-8 col-md-offset-2">

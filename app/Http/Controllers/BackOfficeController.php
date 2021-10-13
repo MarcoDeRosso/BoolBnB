@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Apartment;
 use App\Service;
+use App\Sponsor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -20,6 +21,16 @@ class BackOfficeController extends Controller
     {
         $current_user_id = Auth::id();
         $apartments = Apartment::where('user_id',$current_user_id)->get();
+
+        foreach($apartments as $apa) {
+            if($apa->visible){
+                $apa->visible = 'Si';
+            } else {
+                $apa->visible = 'No';
+            }
+        }
+
+
         return view('apartments.index', compact('apartments'));
     }
 
@@ -40,11 +51,11 @@ class BackOfficeController extends Controller
     }
 
 
-    // public function show($id)
-    // {
-    //     $apartment= Apartment::find($id);
-    //     return view('apartments.show', compact('apartment'));
-    // }
+    public function show($id)
+    {
+        $apartment= Apartment::find($id);
+        return view('apartments.show', compact('apartment'));
+    }
 
 
     public function edit(Apartment $apartment)
@@ -66,6 +77,15 @@ class BackOfficeController extends Controller
     {
         $apartment->delete();
         return redirect()->route('apartments.index');
+    }
+
+    public function toSponsor ($id) {
+
+        $apartment = Apartment::find($id);
+        $sponsors = Sponsor::all();
+
+        return view('apartments.sponsor', compact('apartment','sponsors'));
+
     }
     
     private function fillAndSave (Request $request, Apartment $apartment) {

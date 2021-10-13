@@ -81,18 +81,16 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container home">
         <!-- <apartment v-bind:filtederApartments='filtederApartments'></apartment> -->
 
         <h1>I risultati della tua ricerca:</h1>
         <div class="row " v-if="filteredApartments.length > 0">
-            <div class="col-4" v-for="(apa,index) in filteredApartments" :key="index">
-                <div>
+            <div class="articol-card col-4" v-for="(apa,index) in filteredApartments" :key="index">
+                <a class="apartment">
                     <h1> {{ apa.title }} </h1>
                     <img class="img-apartment mb-3" style="width:100%" :src="apa.img_path" alt="">
-                </div>  
-
-
+                </a>  
             </div>
         </div>
         <div v-else>
@@ -219,40 +217,6 @@ import CardApartment from './CardApartment.vue';
     }
 </script>
 <style scoped>
-.slider {
-        -webkit-appearance: none;
-        width: 100%;
-        height: 10px;
-        border-radius: 5px;
-        background: #d3d3d3;
-        outline: none;
-        opacity: 0.7;
-        -webkit-transition: .2s;
-        transition: opacity .2s;
-      }
-      
-      .slider:hover {
-        opacity: 1;
-      }
-      
-      .slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background:#FF8964;
-        cursor: pointer;
-      }
-      
-      .slider::-moz-range-thumb {
-        width: 25px;
-        height: 5px;
-        border-radius: 50%;
-        background: #04AA6D;
-        cursor: pointer;
-    }
-    
     .bkg{
         background-color: #92a8d1;
     }
@@ -270,9 +234,7 @@ import CardApartment from './CardApartment.vue';
     }
     .modal-content{     
     border: 2px solid #034f84;
-    
-    
-   
+
 }
 </style>
 

@@ -10947,6 +10947,9 @@ a.text-dark:focus {
 #map-div {
   width: 100%;
   height: 400px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  border: 2px solid #034f84;
 }
 
 footer.my_footer {
@@ -11035,6 +11038,10 @@ textarea {
   color: #034f84;
 }
 
+.input-home {
+  text-align: center;
+}
+
 .box-shadow {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
@@ -11086,7 +11093,7 @@ label:hover {
   background-image: url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F04%2F20%2Fbali-bamboo-house-airbnb-AIRZOOM0420.jpg);
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 60vh;
 }
 
 a {
@@ -11148,5 +11155,20 @@ div.login.jumbotron {
 
 .home .apartment:hover .img-apartment {
   box-shadow: #FF8964 0px 10px 20px, #FF8964 0px 6px 6px;
+}
+
+.btn-often {
+  border-radius: 25px;
+  background-color: #FF8964;
+  color: grey;
+  font-weight: bold;
+}
+
+.badge-pill-custom {
+  border-radius: 25px;
+  background-color: #92a8d1;
+  color: #fff;
+  font-weight: bold;
+  padding: 7px;
 }
 

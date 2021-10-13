@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 // Route::resource('/', 'HomeController');
+Route::get('/', 'WelcomeController@welcome')->name('welcome');
 Route::resource('apartments', 'BackOfficeController');
-Route::get('/welcome', 'WelcomeController@welcome')->name('welcome');
-// Route::resource('messages', 'MessageController');
+
 Route::get('/messages','MessageController@index')->name('messages.index');
 Route::post('/messages','MessageController@store')->name('messages.store');
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/{id}', 'HomeController@show')->name('apartmentShow');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/{id}', 'HomeController@show')->name('apartmentShow');
 
 
 

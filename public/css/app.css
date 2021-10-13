@@ -11031,40 +11031,46 @@ img {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-input,
-textarea {
-  border: none;
-  border-bottom: 2px solid #FF8964;
-  color: #034f84;
+.box-shadow-orange {
+  border-radius: 5px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
-.input-home {
-  text-align: center;
+.box-shadow-orange:active {
+  box-shadow: #ccdbe8 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
-.box-shadow {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+.bg {
+  background: url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F04%2F20%2Fbali-bamboo-house-airbnb-AIRZOOM0420.jpg);
+  background-repeat: no-repeat;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-label {
-  color: #034f84;
-}
-
-label:hover {
-  color: #FF8964;
-}
-
-.box-edit {
+.bg .box-edit {
   border: 2px solid #FF8964;
   border-radius: 15px;
   padding: 15px auto;
   background: white;
 }
 
-.bg {
-  background: url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F04%2F20%2Fbali-bamboo-house-airbnb-AIRZOOM0420.jpg);
-  padding-top: 15px;
-  padding-bottom: 15px;
+.bg .box-edit input,
+.bg .box-edit textarea {
+  border: none;
+  border-bottom: 2px solid #FF8964;
+  color: #034f84;
+}
+
+.bg .box-edit label {
+  color: #034f84;
+}
+
+.bg .box-edit label:hover {
+  color: #FF8964;
+}
+
+.bg .box-edit .box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .navbar {
@@ -11094,6 +11100,7 @@ label:hover {
   background-position: center;
   background-size: cover;
   height: 60vh;
+  border-radius: 0px !important;
 }
 
 a {

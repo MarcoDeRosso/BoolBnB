@@ -10,6 +10,7 @@
         </button>
 
     </div>
+    <h1>DASHBORAD</h1>
     <h1>Appartamenti pubblicati sulla piattaforma:</h1>
     
     <div class="row">

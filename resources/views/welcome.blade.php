@@ -3,7 +3,9 @@
 @section('content')
 <div class="container home">
     <h1>SLIDER Appartmanti Sponsorizzati</h1>
-    <h1>BUTTON Ricerca Avanzata</h1> 
+    <a href="{{ route('home') }}">
+        <h1>BUTTON Ricerca Avanzata</h1>         
+    </a>
     <h1>Iscriviti o Accedi</h1>
 
     @foreach ($apartmentsSponsored as $apa)    

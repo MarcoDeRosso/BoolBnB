@@ -1,0 +1,34 @@
+.jumbotron-home{
+    background-image: $jumbotron-home;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+    border-radius: 0px!important;
+    .reg-top{
+        border-radius: 50px!important;
+        padding: 22px 46px !important;
+        margin-top: 16px;
+    }
+}
+.jumbotron-footer{
+    background-image: $jumbotron-footer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+    border-radius: 0px!important;
+    background-color: rgba($color: #000000, $alpha: 0.9);
+
+    h3{
+        color: white;
+        text-align: center;
+        font-weight: bold;
+    }
+    .reg-btn{
+        border-radius: 35px!important;
+        width: 150px;
+        margin-top: 16px;
+        padding: 22px 16px !important;
+    }
+}

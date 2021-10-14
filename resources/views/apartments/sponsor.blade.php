@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{ route('sponsor.store', $apartment->id) }}" method='POST' >
+{{-- perchè il primo elemento dell'array non lo prense ? --}}
+<form action="{{ route('sponsor.store', ['id'=>$apartment->id,'id_apa'=>$apartment->id]) }}" method='POST' >
 @csrf
 <div class="container">
   {{$apartment->id}}

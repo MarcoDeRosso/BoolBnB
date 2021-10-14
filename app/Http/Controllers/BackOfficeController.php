@@ -51,12 +51,14 @@ class BackOfficeController extends Controller
         return redirect()->route('apartmentShow', $apartment);
     }
 
-    public function storePayments (Request $request, Apartment $apartment){
-        $payment= new Payment();
+    // devo mettere come secondo paramentro apartment?
+    public function storePayments (Request $request){
         $data = $request->all();
+        dd($data);
+        // $apa = $apartment;
+        $payment= new Payment();
         $sponsor= Sponsor::find($data['sponsor_id']);
-        $apartment= Apartment::find($apartment);
-        dd($apartment);
+        // $apartment= Apartment::find($apartment);
         //salvare il pagamento e fare la redirect 
       }
 

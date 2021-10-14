@@ -8,10 +8,10 @@
             <img class="mt-3 mb-3" src="{{ $apartment->img_path }}" alt="" style="width: 100%">
             <div class="features">
                 <h4>CARATTERISTICHE</h4>
-                <h6><i class="fas fa-home gradient"></i> Locali: {{$apartment->rooms_num}}</h6>
-                <h6><i class="fas fa-bed gradient"></i> Letti: {{$apartment->beds_num}}</h6>
-                <h6><i class="fas fa-shower gradient"></i> Bagni: {{$apartment->bath_num}}</h6>
-                <h6><i class="fas fa-th gradient"></i> Metri Quadri: {{$apartment->meters_size}}</h6>
+                <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-home gradient"></i> Locali: {{$apartment->rooms_num}}</h6>
+                <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-bed gradient" ></i> Letti: {{$apartment->beds_num}}</h6>
+                <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-shower gradient" ></i> Bagni: {{$apartment->bath_num}}</h6>
+                <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-th gradient"></i> Metri Quadri: {{$apartment->meters_size}}</h6>
             </div>
             @foreach ($apartment->service as $service)
                 <span class="badge badge-pill-custom badge-success">{{ $service->title }}</span> 

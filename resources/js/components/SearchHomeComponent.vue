@@ -82,7 +82,6 @@
         </div>
     </div>
     <div class="container home">
-        <!-- <apartment v-bind:filtederApartments='filtederApartments'></apartment> -->
 
         <h1>I risultati della tua ricerca:</h1>
         <div class="row " v-if="filteredApartments.length > 0">
@@ -102,11 +101,7 @@
 </template>
 
 <script>
-import CardApartment from './CardApartment.vue';
     export default {
-        components: {
-            CardApartment
-        },
         props:['services','apartments', 'lista'],
         mounted() {
             console.log('Component mounted.')

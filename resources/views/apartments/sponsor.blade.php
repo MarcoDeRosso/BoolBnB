@@ -2,7 +2,7 @@
 
 @section('content')
 {{-- perchè il primo elemento dell'array non lo prense ? --}}
-<form action="{{ route('sponsor.store', ['id'=>$apartment->id,'id_apa'=>$apartment->id]) }}" method='POST' >
+<form action="{{ route('sponsor.store', ['id'=>$apartment->id]) }}" method='POST' >
 @csrf
 <div class="container">
   {{$apartment->id}}

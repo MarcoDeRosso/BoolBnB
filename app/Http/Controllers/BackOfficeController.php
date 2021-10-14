@@ -52,9 +52,9 @@ class BackOfficeController extends Controller
     }
 
     // devo mettere come secondo paramentro apartment?
-    public function storePayments (Request $request){
+    public function storePayments (Request $request, $id){
         $data = $request->all();
-        dd($data);
+        //dd($id);
         // $apa = $apartment;
         $payment= new Payment();
         $sponsor= Sponsor::find($data['sponsor_id']);

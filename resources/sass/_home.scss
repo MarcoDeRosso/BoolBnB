@@ -1,34 +1,47 @@
-.home{
-    .apartment{
-
+.home {
+    .apartment {
+        // border: 1px solid black;
+        border-radius: 15px;
         display: flex;
         flex-direction: column;
         height: 100%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
-        h1 {
+        h2 {
             font-weight: bold;
-            max-height: 100%;     
-            flex-grow: 1; 
+            max-height: 100%;
+            flex-grow: 1;
             display: flex;
             justify-content: center;
-            align-items: center;      
+            align-items: center;
+            color: $bluscuropastello;
+            text-align: center;
         }
-        
-        .img-apartment{
-            border-radius: 15px;
+
+        .img-apartment {
+            width: 100%;
+            border-radius: 15px 15px 0 0;
             box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        .price-tag {
+            width: 20%;
+            font-weight: bold;
+            background-color: $arancionesalmone;
+            text-align: center;
+            position: relative;
+            bottom: 20%;
+            left: 80%;
         }
 
         &:hover {
-            h1{
+            h2 {
                 color: $arancionesalmone;
                 cursor: pointer;
             }
 
-            .img-apartment{
-                box-shadow: $arancionesalmone 0px 10px 20px, $arancionesalmone 0px 6px 6px;
-            }
+            transform: scale(1.1);
+            transition: 0.5s;
+            box-shadow:  $arancionesalmone  0px 6px 24px 0px, $arancionesalmone  0px 0px 0px 1px;
         }
-    }   
-     
+    }
 }

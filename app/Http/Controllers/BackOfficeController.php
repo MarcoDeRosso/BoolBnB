@@ -60,7 +60,10 @@ class BackOfficeController extends Controller
     public function show($id)
     {
         $apartment= Apartment::find($id);
-        return view('apartments.show', compact('apartment'));
+        $payment= Payment::where('apartment_id','=', $apartment->id)->get();
+        $payment=$payment->toArray();
+        //dd($payment);
+        return view('apartments.show', compact('apartment','payment'));
     }
 
 

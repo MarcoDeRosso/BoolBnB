@@ -8,10 +8,10 @@
             <img class="mt-3 mb-3" src="{{ $apartment->img_path }}" alt="" style="width: 100%">
             <div class="features">
                 <h4>CARATTERISTICHE</h4>
-                <h6><i class="fas fa-home gradient"></i> Locali: {{$apartment->rooms_num}}</h6>
-                <h6><i class="fas fa-bed gradient"></i> Letti: {{$apartment->beds_num}}</h6>
-                <h6><i class="fas fa-shower gradient"></i> Bagni: {{$apartment->bath_num}}</h6>
-                <h6><i class="fas fa-th gradient"></i> Metri Quadri: {{$apartment->meters_size}}</h6>
+                <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-home gradient"></i> Locali: {{$apartment->rooms_num}}</h6>
+                <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-bed gradient" ></i> Letti: {{$apartment->beds_num}}</h6>
+                <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-shower gradient" ></i> Bagni: {{$apartment->bath_num}}</h6>
+                <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-th gradient"></i> Metri Quadri: {{$apartment->meters_size}}</h6>
             </div>
             @foreach ($apartment->service as $service)
                 <span class="badge badge-pill-custom badge-success">{{ $service->title }}</span> 
@@ -27,24 +27,26 @@
 </div>
 <div class="container">
     <button class="btn btn-success">
-        {{-- sei qui --}}
         <a href="{{ route('apartments.edit', $apartment) }}">
             Modifica Info
         </a>
-    </button>
+    </button> 
     
-    <form action=" {{ route('apartments.destroy', $apartment) }} " method="POST">
+     <form action=" {{ route('apartments.destroy', $apartment) }} " method="POST">
         @csrf
         @method('DELETE')                  
         <button type="submit" class="btn btn-danger">Elimina Appartamento</button>
-    </form>
-    <button class="btn btn-success">
-        <a href=" {{ route('sponsor', $apartment) }}">
-            Sponsorizza Appartamento
-        </a>
-    </button>
-
+    </form> 
 </div>
+
+<div class="jumbotron-sponsor d-flex justify-content-center align-items-center">
+    <div class="text-center sponsor ">
+        <h3><strong>Metti in evidenza il tuo appartamento!
+            <br> Puoi scegliere tra diverse tipologie <br> di sponsorizzazione.</strong></h3>
+        <a href="{{ route('sponsor', $apartment) }}"><button class=" btn btn-often"> Sponsorizza Adesso</button></a>
+    </div>
+</div>
+
 @endsection
 @section('script')
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"></script>

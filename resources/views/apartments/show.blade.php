@@ -1,6 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="jumbotron-sponsor d-flex justify-content-center align-items-center">
+    @if ($apartment->sponsorActive)
+    <div class="text-center sponsor ">
+        <h3><strong>Complimenti! il tuo appartamento è in evidenza <br> sulla nostra piattaforma.</strong></h3>
+    </div>
+    @else
+    <div class="text-center sponsor ">
+        <h3><strong>Metti in evidenza il tuo appartamento!
+            <br> Puoi scegliere tra diverse tipologie <br> di sponsorizzazione.</strong></h3>
+        <a href="{{ route('sponsor', $apartment) }}"><button class=" btn btn-often"> Sponsorizza Adesso</button></a>
+    </div>
+    @endif
+</div>   
 <div class="container">
     <h1 class="text-center mt-4">{{ $apartment->title }}</h1>
     <div class="row">
@@ -16,14 +29,23 @@
             @foreach ($apartment->service as $service)
                 <span class="badge badge-pill-custom badge-success">{{ $service->title }}</span> 
             @endforeach
-            <p class="mt-3"> {{ $apartment->description }}</p>
+
+            {{-- TODO --}}
+            @if ($apartment->sponsorActive)
+            <h2>Appartamento in sponsorizzato</h2>           
+            @endif
+
             <input type="hidden" name="latitude" id="latitude" value="{{ $apartment->latitude }}">
             <input type="hidden" name="longitude" id="longitude" value="{{ $apartment->longitude }}">
         </div>
         <div class="col-12 col-md-6 col-lg-6 articol-card mt-3 mb-3">
             <div id="map-div"></div>             
         </div>
+        <div class="col-12">
+            <p class="mt-3"> {{ $apartment->description }}</p>
+        </div>
     </div>
+    
 </div>
 <div class="container">
     <button class="btn btn-success">
@@ -39,13 +61,10 @@
     </form> 
 </div>
 
-<div class="jumbotron-sponsor d-flex justify-content-center align-items-center">
-    <div class="text-center sponsor ">
-        <h3><strong>Metti in evidenza il tuo appartamento!
-            <br> Puoi scegliere tra diverse tipologie <br> di sponsorizzazione.</strong></h3>
-        <a href="{{ route('sponsor', $apartment) }}"><button class=" btn btn-often"> Sponsorizza Adesso</button></a>
-    </div>
-</div>
+
+
+
+
 
 @endsection
 @section('script')

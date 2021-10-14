@@ -30,6 +30,12 @@ class BackOfficeController extends Controller
             } else {
                 $apa->visible = 'No';
             }
+            if($apa->sponsorActive){
+                $apa->sponsorActive = 'Si';
+            } else {
+                $apa->sponsorActive = 'No';
+
+            }
         }
         return view('apartments.index', compact('apartments'));
     }

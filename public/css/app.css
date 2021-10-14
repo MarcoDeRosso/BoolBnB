@@ -15683,6 +15683,21 @@ img {
   margin-left: 7px;
 }
 
+.jumbotron-sponsor {
+  background-image: url(https://images.pexels.com/photos/34639/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  border-radius: 0px !important;
+}
+
+.jumbotron-sponsor .sponsor {
+  background-color: white;
+  padding: 25px;
+  border-radius: 25px;
+}
+
 .navbar {
   background-color: #FF8964 !important;
   font-weight: bold;
@@ -15746,32 +15761,49 @@ div.login.jumbotron {
 }
 
 .home .apartment {
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.home .apartment h1 {
+.home .apartment h2 {
   font-weight: bold;
   max-height: 100%;
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #034f84;
+  text-align: center;
 }
 
 .home .apartment .img-apartment {
-  border-radius: 15px;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-.home .apartment:hover h1 {
-  color: #FF8964;
-  cursor: pointer;
+.home .apartment .price-tag {
+  width: 20%;
+  font-weight: bold;
+  background-color: #FF8964;
+  text-align: center;
+  position: relative;
+  bottom: 20%;
+  left: 80%;
 }
 
-.home .apartment:hover .img-apartment {
-  box-shadow: #FF8964 0px 10px 20px, #FF8964 0px 6px 6px;
+.home .apartment:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  box-shadow: #FF8964 0px 6px 24px 0px, #FF8964 0px 0px 0px 1px;
+}
+
+.home .apartment:hover h2 {
+  color: #FF8964;
+  cursor: pointer;
 }
 
 .btn-often {
@@ -15920,5 +15952,43 @@ div.login.jumbotron {
 
 .bnb-totalMain #submit-button {
   margin: 0 auto;
+}
+
+.jumbotron-home {
+  background-image: url(https://a0.muscache.com/im/pictures/0c38042b-8685-4180-8d9b-12a6892ac6d8.jpg?im_q=highq&im_w=720);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60vh;
+  border-radius: 0px !important;
+}
+
+.jumbotron-home .reg-top {
+  border-radius: 50px !important;
+  padding: 22px 46px !important;
+  margin-top: 16px;
+}
+
+.jumbotron-footer {
+  background-image: url(https://images.pexels.com/photos/5541019/pexels-photo-5541019.png?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60vh;
+  border-radius: 0px !important;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.jumbotron-footer h3 {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.jumbotron-footer .reg-btn {
+  border-radius: 35px !important;
+  width: 150px;
+  margin-top: 16px;
+  padding: 22px 16px !important;
 }
 

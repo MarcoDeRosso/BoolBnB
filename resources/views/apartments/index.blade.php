@@ -14,6 +14,7 @@
                     <th scope="col">Immagine</th>
                     <th scope="col">Via</th>
                     <th scope="col">Titolo</th>
+                    <th scope="col">Sponsorizzato</th>
                     <th scope="col">Visibile</th>
                     <th scope="col">Modifica</th>
                 </tr>
@@ -27,6 +28,7 @@
                     </td>
                     <td class="align-middle">{{ $apa->address }}</td>
                     <td class="align-middle">{{ $apa->title }}</td>
+                    <td class="align-middle">{{ $apa->sponsorActive }}</td>
                     <td class="align-middle">{{ $apa->visible }}</td>
                     <td class="align-middle">
                         <a href="{{route('apartments.show', $apa)}}">

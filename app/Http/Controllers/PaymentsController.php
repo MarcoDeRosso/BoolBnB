@@ -13,6 +13,8 @@ class PaymentsController extends Controller
 {
   public function make(Request $request)
   {
+    $now = date("Y-m-d H-i-s");
+
     $data = $request->all();
     $sponsor = Sponsor::find($data['sponsor']);
     $apartment = Apartment::find($data['apa']);
@@ -24,7 +26,7 @@ class PaymentsController extends Controller
       'amount' => $sponsor->cost,
       'paymentMethodNonce' => $nonce,
       'options' => [
-        'submitForSettlement' => True
+      'submitForSettlement' => True
       ]
     ]);
 

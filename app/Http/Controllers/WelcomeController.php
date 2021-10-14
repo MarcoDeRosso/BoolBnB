@@ -13,7 +13,7 @@ class WelcomeController extends Controller
         $apartments= Apartment::paginate(6);
         $services = Service::all();
   
-        $now = date("Y-m-d H-i-s");
+
 
         $apartmentsSponsored = DB::table('payments')
                                 ->leftJoin('apartments','payments.apartment_id', '=', 'apartments.id')

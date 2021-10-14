@@ -2016,6 +2016,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['services', 'apartments', 'lista'],
   mounted: function mounted() {
@@ -38832,16 +38846,53 @@ var render = function() {
             _vm._l(_vm.filteredApartments, function(apa, index) {
               return _c(
                 "div",
-                { key: index, staticClass: "articol-card col-4" },
+                {
+                  key: index,
+                  staticClass: "articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3"
+                },
                 [
-                  _c("a", { staticClass: "apartment" }, [
-                    _c("h1", [_vm._v(" " + _vm._s(apa.title) + " ")]),
+                  _c("a", { staticClass: "apartment", attrs: { href: "" } }, [
+                    _c("div", [
+                      _c("img", {
+                        staticClass: "img-apartment mb-3",
+                        attrs: { src: apa.img_path, alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price-tag" }, [
+                        _vm._v(" " + _vm._s(apa.price_night) + "  €")
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("img", {
-                      staticClass: "img-apartment mb-3",
-                      staticStyle: { width: "100%" },
-                      attrs: { src: apa.img_path, alt: "" }
-                    })
+                    _c("h2", [_vm._v(" " + _vm._s(apa.title) + " ")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "features d-flex justify-content-around pt-2"
+                      },
+                      [
+                        _c("h6", [
+                          _c("i", { staticClass: "fas fa-home gradient" }),
+                          _vm._v(" Locali: " + _vm._s(apa.rooms_num))
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", [
+                          _c("i", { staticClass: "fas fa-bed gradient" }),
+                          _vm._v(" Letti: " + _vm._s(apa.beds_num))
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", [
+                          _c("i", { staticClass: "fas fa-shower gradient" }),
+                          _vm._v(" Bagni: " + _vm._s(apa.bath_num))
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", [
+                          _c("i", { staticClass: "fas fa-th gradient" }),
+                          _vm._v(" Mq: " + _vm._s(apa.meters_size))
+                        ])
+                      ]
+                    )
                   ])
                 ]
               )

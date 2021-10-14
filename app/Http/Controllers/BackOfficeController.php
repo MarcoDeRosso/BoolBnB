@@ -7,6 +7,7 @@ use App\Message;
 use App\Service;
 use App\Sponsor;
 use App\Payment;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -23,7 +24,8 @@ class BackOfficeController extends Controller
     {
         $current_user_id = Auth::id();
         $apartments = Apartment::where('user_id',$current_user_id)->get();
-
+        $now= new Carbon();
+        $time= Carbon::now('Europe/Rome');
         foreach($apartments as $apa) {
             if($apa->visible){
                 $apa->visible = 'Si';
@@ -37,7 +39,7 @@ class BackOfficeController extends Controller
 
             }
         }
-        return view('apartments.index', compact('apartments'));
+        return view('apartments.index', compact('apartments', 'time'));
     }
     
     public function create()

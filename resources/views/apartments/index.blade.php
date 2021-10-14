@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container-fluid">
-    
     <h1 class="mt-3">Ciao {{ Auth::user()->name }} {{ Auth::user()->surname }}, questa è la tua Dashboard</h1>
     <h2 class="text-center mb-3" >I tuoi appartamenti pubblicati sulla piattaforma sono i seguenti:</h2>
     

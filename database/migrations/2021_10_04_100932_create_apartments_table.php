@@ -18,6 +18,7 @@ class CreateApartmentsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->text('description');
+            $table->boolean('sponsorActive')->default(false);
             $table->unsignedTinyInteger('rooms_num');
             $table->unsignedTinyInteger('beds_num');
             $table->unsignedTinyInteger('bath_num');

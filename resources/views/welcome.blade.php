@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="jumbotron-home d-flex justify-content-center align-items-center">
     <div class="text-center ">
         <h3 style="color: black"><strong>Non sai dove andare? Nessun problema!</strong></h3>
@@ -9,6 +10,7 @@
 </div>
 <div class="container home">
     <h1>Appartamenti in evidenza :</h1>
+
     <slider-card 
     :apartments="{{json_encode($apartmentsSponsored)}}"
     ></slider-card>

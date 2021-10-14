@@ -5,10 +5,17 @@
     <h1 class="text-center mt-4">{{ $apartment->title }}</h1>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-6 articol-card mt-3 mb-3">
+            <img class="mt-3 mb-3" src="{{ $apartment->img_path }}" alt="" style="width: 100%">
+            <div class="features">
+                <h4>CARATTERISTICHE</h4>
+                <h6><i class="fas fa-home gradient"></i> Locali: {{$apartment->rooms_num}}</h6>
+                <h6><i class="fas fa-bed gradient"></i> Letti: {{$apartment->beds_num}}</h6>
+                <h6><i class="fas fa-shower gradient"></i> Bagni: {{$apartment->bath_num}}</h6>
+                <h6><i class="fas fa-th gradient"></i> Metri Quadri: {{$apartment->meters_size}}</h6>
+            </div>
             @foreach ($apartment->service as $service)
                 <span class="badge badge-pill-custom badge-success">{{ $service->title }}</span> 
             @endforeach
-            <img class="mt-3 mb-3" src="{{ $apartment->img_path }}" alt="" style="width: 100%">
             <p class="mt-3"> {{ $apartment->description }}</p>
             <input type="hidden" name="latitude" id="latitude" value="{{ $apartment->latitude }}">
             <input type="hidden" name="longitude" id="longitude" value="{{ $apartment->longitude }}">

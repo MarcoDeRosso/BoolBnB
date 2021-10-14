@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     
-    <h1>DASHBORAD</h1>
-    <h1>Appartamenti pubblicati sulla piattaforma:</h1>
+    <h1 class="mt-3">Ciao {{ Auth::user()->name }} {{ Auth::user()->surname }}, questa è la tua Dashboard</h1>
+    <h2 class="text-center mb-3" >I tuoi appartamenti pubblicati sulla piattaforma sono i seguenti:</h2>
     
     <div class="row">
-        <table class="table table-striped">
+        <table class="table table-striped text-center ">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -20,17 +20,17 @@
             </thead>
             <tbody>
             @foreach ($apartments as $apa)
-                <tr>
-                    <th scope="row"> {{ $loop->iteration }} </th>
-                    <td>
+                <tr >
+                    <th class="align-middle" scope="row"> {{ $loop->iteration }} </th>
+                    <td class="align-middle">
                         <img src="{{ $apa->img_path }}" style="width: 100px; border-radius: 0;" alt="">
                     </td>
-                    <td>{{ $apa->address }}</td>
-                    <td>{{ $apa->title }}</td>
-                    <td>{{ $apa->visible }}</td>
-                    <td>
+                    <td class="align-middle">{{ $apa->address }}</td>
+                    <td class="align-middle">{{ $apa->title }}</td>
+                    <td class="align-middle">{{ $apa->visible }}</td>
+                    <td class="align-middle">
                         <a href="{{route('apartments.show', $apa)}}">
-                            <button type="button" class="btn btn-primary"><i class="fas fa-search-plus"></i></button>
+                            <button type="button" class="btn btn-primary"><i class="fas fa-search-plus" style="color: black"></i></button>
                         </a>
                     </td>
                 </tr>  
@@ -40,7 +40,7 @@
         </table>
     </div>
     <div class="text-center">
-        <button class="btn btn-warning">
+        <button class="btn btn-often mb-3">
             <a href="{{ route('apartments.create') }}">
                 Aggiungi un appartamento            
             </a>

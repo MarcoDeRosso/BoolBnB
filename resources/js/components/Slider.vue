@@ -3,6 +3,7 @@
         <carousel :autoplay="true" :centerMode="true" :loop="true" :perPage="1">
             <slide v-for="apa in apartments" :key="apa.id">
                 <div class="container-card" :style="'background-image:url('+apa.img_path+')'">
+                    <div class="sponsor-tag text-capitalize">in evidenza</div>
                     <h1>{{apa.title}}</h1>
                 </div>
             </slide>
@@ -40,11 +41,22 @@ export default {
         align-items: flex-end;
         justify-content: center;
         box-shadow: 10px 10px 10px #ff8964 ;
+        position: relative;
         h1{
             color: #ff8964;
             background-color: rgba($color: #000000, $alpha: 0.7);
             width: 100%;
             padding: 12px 0;
+        }
+        div{
+            background-color: gray ;
+            position: absolute;
+            top: 40px;
+            left: -40px;
+            transform: rotate(-45deg);
+            width: 200px;
+            text-align: center;
+            color: honeydew;
         }
     }
 </style>

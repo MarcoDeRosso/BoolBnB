@@ -2,17 +2,13 @@
 
 @section('content')
 <div class="container home">
-    <h1>SLIDER Appartmanti Sponsorizzati</h1>
+    <h1>Appartamenti in evidenza :</h1>
+    <slider-card 
+    :apartments="{{json_encode($apartmentsSponsored)}}"
+    ></slider-card>
     <a href="{{ route('home') }}">
         <h1>BUTTON Ricerca Avanzata</h1>         
     </a>
     <h1>Iscriviti o Accedi</h1>
-
-    @foreach ($apartmentsSponsored as $apa)    
-    <h1> {{ $apa->title }}</h1>
-    <img class="img-apartment mb-3" style="width:100%" src="{{ $apa->img_path}}" alt="">    
-        
-    @endforeach
-
 </div>
 @endsection

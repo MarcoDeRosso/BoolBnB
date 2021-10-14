@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
-        "font-awesome": "^4.7.0"
+        "font-awesome": "^4.7.0",
+        "vue-carousel": "^0.18.0"
     }
 }

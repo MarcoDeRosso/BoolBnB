@@ -5,6 +5,7 @@
     @if ($apartment->sponsorActive)
     <div class="text-center sponsor ">
         <h3><strong>Complimenti! il tuo appartamento è in evidenza <br> sulla nostra piattaforma.</strong></h3>
+        <div>Fino all {{$apartment->payment->contains('expire_date')}}</div>
     </div>
     @else
     <div class="text-center sponsor ">

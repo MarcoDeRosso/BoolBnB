@@ -8,8 +8,8 @@
         <a href="{{ route('home') }}"><button class=" btn btn-primary reg-top text-capitalize">Cerca la tua prossima casa</button></a>
     </div>
 </div>
-<div class="container home">
-    <h1>Appartamenti in evidenza :</h1>
+<div class="container home p-3">
+    <h1 class="p-5">Lasciati ispirare dalle nostre Case:</h1>
 
     <slider-card 
     :apartments="{{json_encode($apartmentsSponsored)}}"

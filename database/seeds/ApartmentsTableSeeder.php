@@ -101,11 +101,8 @@ class ApartmentsTableSeeder extends Seeder
         }
 
         $apartmentDescriptionList=[
-            "Stylish and cosy basement studio located in Via Marsala in the heart of Bologna historic city centre. The studio is located in a renovated historic building. The studio has original stone ceilings, a duble bed, kitchenette and bathroom.
-            Elegante e accogliente monolocale seminterrato situato in Via Marsala nel cuore del centro storico di Bologna. Il monolocale si trova in un palazzo storico ristrutturato. Lo studio ha soffitti in pietra originali, letto matrimoniale, angolo cottura e bagno.
+            "Elegante e accogliente monolocale seminterrato situato in Via Marsala nel cuore del centro storico di Bologna. Il monolocale si trova in un palazzo storico ristrutturato. Lo studio ha soffitti in pietra originali, letto matrimoniale, angolo cottura e bagno.
             Lo spazio
-            The 32 sq m studio is newly renovated and located in the basement floor of an historic building. The design is simple, modern and stylish. This is a basement floor so the amount of natural light is limited, but there are two windows (one in the studio and one in the bathroom).
-            Read carefully: being a basement apartment, the mobile telephone line does not work. You will have at your disposal a very fast wi-fi with which you can work, communicate, surf, chat, watch movies or videos and use all your apps.
             Il monolocale di 32 mq è stato recentemente ristrutturato e si trova al piano seminterrato di un palazzo storico. Il design è semplice, moderno ed elegante. Si tratta di un piano seminterrato quindi la quantità di luce naturale è limitata, ma ci sono due finestre (una in studio e una in bagno).
             Leggere con attenzione: essendo un appartamento al piano seminterrato la linea telefonica mobile non funziona. Avrete a vostra disposizione un wi-fi velocissimo con cui potrete lavorare, comunicare, navigare, chattare, vedere film o video e utilizzare tutte le vostre app.",
             "Piccolo monolocale appena ristrutturato al quarto piano (senza ascensore) nel cuore della zona Liberty di Milano, a due passi dalla fermata di Porta Venezia M1. Comodo divano letto, TV, WiFi, doccia ed aria condizionata.
@@ -288,28 +285,28 @@ class ApartmentsTableSeeder extends Seeder
             "Viale Regina Margherita, 316, 00161 Roma RM",
         ];
         $apartmentTitleList=[
-            "Stylish basement studio in Bologna City Centre",
-            "PrimoPiano - Melzo Flat",
+            "Attico sul mare a Palermo",
+            "La Casa di Davide",
             "Podere Rachele - Casa Ghiandaia",
             "Casa Das Areias",
-            "Casa immersa nel verde con piscina",
-            "Lunattico 48 central station",
-            "Lussuoso appartamento in centro storico",
-            "TREVI Sweet Suite",
-            "Alzarti la mattina con una vista fantastica",
-            "Sweet home on the Lake of Como",
-            "Ca` Beo (URB120) for 6 persons.",
-            "CASA MOTOM: rifugio urbano per famiglie in viaggio",
+            "G&G - Green Garden",
+            "Lunattico 48 Central Milano",
+            "The Milky House Milan",
+            "Suite Sweet Dreams",
+            "Villa Prada, sul mare",
+            "Chalet sul Lago di Como",
+            "Imperial House",
+            "Casa Momom, con ampio patio",
             "Casetta con fantastica vista lago!",
             "La Casa all'Oliveto",
-            "Aurora, raffinata e romantica suite",
-            "Moderno zona isola/corso Como",
-            "Appartamento sui Navigli",
-            "Soggiorna nel cuore di Atene",
-            "Acropolis & Lycavettus View Roof House",
-            "Calm apartment near Panathenaic Stadium",
-            "Sweet one bedroom apartment",
-            "Museum of Modern Art Private Double Room",
+            "Aurora, raffinata e romantica",
+            "Moderno zona corso Como",
+            "Appartamento Lontano dal Caos",
+            "Soggiorna nel cuore di Milano",
+            "Venice Vacation House",
+            "The Greek Venetian Studio",
+            "Ca' Milla: La Magia di Venezia",
+            "Trevi Sweet Suite",
 
         ];
         $apartmentImgList=[

@@ -70,15 +70,15 @@
                </div>
                 <div class="text-center">
                     <div class="p-3">
-                        <a class=" mb-0 text-decoration-none" href="#"> Mariapia Coccioli </a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/mariapiacoccioli/"> Mariapia Coccioli </a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="#"> Marco De Rosso  </a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/marco-de-rosso-82776b1a1/"> Marco De Rosso  </a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="#"> Gianluca Argo  </a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluca-argo-913a8a220/"> Gianluca Argo  </a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="#"> Gianluigi Celentano</a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluigi-celentano-1157891a3"> Gianluigi Celentano</a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="#"> Sebastain Rizzo</a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/sebastian-rizzo-ba84a2159"> Sebastian Rizzo</a>
                     </div>
                 </div>
             </div>    

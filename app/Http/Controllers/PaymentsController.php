@@ -9,7 +9,7 @@ use App\Payment;
 use App\Sponsor;
 use App\Apartment;
 
-class Payments extends Controller
+class PaymentsController extends Controller
 {
     public function store (Request $request){
       $payment= new Payment();

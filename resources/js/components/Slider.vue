@@ -39,6 +39,7 @@ export default {
         display: flex;
         align-items: flex-end;
         justify-content: center;
+        box-shadow: 10px 10px 10px #ff8964 ;
         h1{
             color: #ff8964;
             background-color: rgba($color: #000000, $alpha: 0.7);

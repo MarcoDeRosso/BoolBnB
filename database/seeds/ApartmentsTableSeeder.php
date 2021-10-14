@@ -384,6 +384,7 @@ class ApartmentsTableSeeder extends Seeder
             $apartment = new Apartment();
             $apartment->user_id=rand(1,5);
             $apartment->description=$apartmentDescriptionList[$x];
+            $apartment->sponsorActive=false;
             $apartment->rooms_num=rand(5,8);
             $apartment->beds_num=rand(1,3);
             $apartment->bath_num=rand(1,2);
@@ -503,8 +504,14 @@ class ApartmentsTableSeeder extends Seeder
         }
 
         for($s=0;$s<4;$s++){
+
+            $apa_id = rand(1,20);
             $payment=new Payment();
-            $payment->apartment_id=rand(1,20);
+            $payment->apartment_id = $apa_id;
+            $apartment = Apartment::find($apa_id);
+            $apartment->sponsorActive = true;            
+            $apartment->save();
+
             $payment->sponsor_id=rand(1,3);
             $payment->status=true;
             $payment->expire_date='2999/12/31';

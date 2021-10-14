@@ -31,8 +31,6 @@ class BackOfficeController extends Controller
                 $apa->visible = 'No';
             }
         }
-
-
         return view('apartments.index', compact('apartments'));
     }
     
@@ -50,18 +48,6 @@ class BackOfficeController extends Controller
         $this->fillAndSave($request, $apartment);
         return redirect()->route('apartmentShow', $apartment);
     }
-
-    // devo mettere come secondo paramentro apartment?
-    public function storePayments (Request $request, $id){
-        $data = $request->all();
-        //dd($id);
-        // $apa = $apartment;
-        $payment= new Payment();
-        $sponsor= Sponsor::find($data['sponsor_id']);
-        // $apartment= Apartment::find($apartment);
-        //salvare il pagamento e fare la redirect 
-      }
-
 
     public function show($id)
     {

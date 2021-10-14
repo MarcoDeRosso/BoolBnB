@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container home">
-    <h1>Appartamenti in evidenza :</h1>
+<div class="home">
+    {{-- <h1>Appartamenti in evidenza :</h1> --}}
     <slider-card 
     :apartments="{{json_encode($apartmentsSponsored)}}"
     ></slider-card>

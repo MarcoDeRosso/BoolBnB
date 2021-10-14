@@ -10,6 +10,8 @@ class WelcomeController extends Controller
 {
     public function welcome () {
 
+        $now = date("Y-m-d H-i-s");
+
         $apartmentsSponsored = DB::table('payments')
                                 ->leftJoin('apartments','payments.apartment_id', '=', 'apartments.id')
                                 ->where('expire_date', '>', '2021-10-15')

@@ -20,7 +20,7 @@ class CreatePaymentsTable extends Migration
             $table->unsignedBigInteger('sponsor_id');
             $table->foreign('sponsor_id')->references('id')->on('sponsors');
             $table->boolean('status');
-            $table->date('expire_date');
+            $table->dateTime('expire_date');
             $table->double('total', 3, 2);
             $table->timestamps();
         });

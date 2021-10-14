@@ -19,6 +19,7 @@ class HomeController extends Controller
             foreach($listServices as $service){
                 $listServicesArray[] = $service['id'];               
             }
+            
             $lista[] = $listServicesArray;            
             $listServicesArray=[];
         }       

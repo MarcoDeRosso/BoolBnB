@@ -4,9 +4,9 @@
 <div class="jumbotron-sponsor d-flex justify-content-center align-items-center">
     @if ($apartment->sponsorActive)
     <div class="text-center sponsor ">
-        <h3><strong>Complimenti! il tuo appartamento è in evidenza <br> sulla nostra piattaforma.</strong></h3>
+        <h3><strong>Complimenti! Il tuo appartamento è in evidenza <br> sulla nostra piattaforma.</strong></h3>
         @foreach ($payment as $pay)
-        <div>Fino all {{$pay['expire_date']}}</div>
+        <div>Fino al {{$pay['expire_date']}}</div>
             
         @endforeach
     </div>

@@ -8,8 +8,10 @@
         <a href="{{ route('home') }}"><button class=" btn btn-primary reg-top text-capitalize">Cerca la tua prossima casa</button></a>
     </div>
 </div>
+
 <div class="container home p-5">
     <h1 class="p-3">Lasciati ispirare dalle nostre Case:</h1>
+
 
     <slider-card 
     :apartments="{{json_encode($apartmentsSponsored)}}"
@@ -41,11 +43,7 @@
 
 </div>
 
-<div class="d-flex justify-content-center mt-3">
-    {{ $apartments->links() }}
-</div>
-
-<div class="jumbotron-footer d-flex justify-content-center align-items-center">
+<div class="jumbotron-footer d-flex justify-content-center align-items-center mt-3">
     <div class="text-center ">
         <h3><strong>Condividi il tuo spazio per guadagnare qualcosa in più e cogliere nuove opportunità.</strong></h3>
         <a href="{{ route('register') }}"><button class=" btn btn-primary reg-btn"> Diventa Host</button></a>

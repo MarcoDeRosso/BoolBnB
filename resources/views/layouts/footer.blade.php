@@ -58,7 +58,7 @@
            <div class="row d-flex align-items-center  justify-content-between">
                <div class="text-center">
                    <div class="p-3">
-                      <strong> © 2021 Boolbnb. Team 1  </strong>- 
+                      <strong> © 2021 BoolBnb. Team 1  </strong>- 
                        <a class=" mb-0 text-decoration-none" href="#"> Privacy  </a>
                        <span>-</span>
                        <a class=" mb-0 text-decoration-none" href="#"> Termini  </a>

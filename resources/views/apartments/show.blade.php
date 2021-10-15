@@ -14,7 +14,7 @@
     <div class="text-center sponsor ">
         <h3><strong>Metti in evidenza il tuo appartamento!
             <br> Puoi scegliere tra diverse tipologie <br> di sponsorizzazione.</strong></h3>
-        <a href="{{ route('sponsor', $apartment) }}"><button class=" btn btn-often"> Sponsorizza Adesso</button></a>
+        <a href="{{ route('sponsor', $apartment) }}"><button class=" bn632-hover bn21"> Sponsorizza Adesso</button></a>
     </div>
     @endif
 </div>   
@@ -46,8 +46,8 @@
     </div>
     
 </div>
-<div class="container">
-    <button class="btn btn-success">
+<div class="container d-flex justify-content-around">
+    <button class="bn632-hover bn21">
         <a href="{{ route('apartments.edit', $apartment) }}">
             Modifica Info
         </a>
@@ -55,7 +55,7 @@
      <form action=" {{ route('apartments.destroy', $apartment) }} " method="POST">
         @csrf
         @method('DELETE')                  
-        <button type="submit" class="btn btn-danger">Elimina Appartamento</button>
+        <button type="submit" class="bn632-hover bn21">Elimina Appartamento</button>
     </form> 
 </div>
 
@@ -67,7 +67,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col"></th>
                 <th scope="col">Email</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Messaggio</th>
@@ -139,7 +139,7 @@
                             @endforeach
 
                         ],
-                        backgroundColor:'green'
+                        backgroundColor: '#FF8964'
                     }],
                 },
                 option:{}

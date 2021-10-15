@@ -70,7 +70,7 @@ class BackOfficeController extends Controller
         foreach($allDate as $dat){
             $dat = substr($dat->created_at,0,-9); 
 
-            $dat =str_replace('-',',',$dat);
+            $dat =str_replace('-','/',$dat);
             if(!in_array($dat, $newDate)) {
                 $newDate[] = $dat;
             }
@@ -85,6 +85,8 @@ class BackOfficeController extends Controller
             $statisticForThisDay = DB::table('statistics')->whereDate('created_at', $date)->count();
             // $statisticByDay[] =array($date => $statisticForThisDay);
             $statisticByDay[]=array($date, $statisticForThisDay);
+            // $statisticByDay[]=array('x' => $date, 'y' =>$statisticForThisDay);
+
         }
     
         // dd($statisticByDay);

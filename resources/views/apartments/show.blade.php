@@ -88,10 +88,6 @@
     <h1>Ops, peccato, ancora nessun messaggio <br> per {{ $apartment->title }}</h1>
     <h2 class="text-center">Sponsorizza l'apparmantento per ricevere più messaggi!</h2>    
     @endif
-        
-    @foreach ($statisticByDay as $item)
-    <p>giorno <span class="day-date">{{$item[0]}}</span> , numero visualizzazioni {{$item[1]}}</p>       
-    @endforeach
 </div>
 
 
@@ -132,7 +128,7 @@
                 data:{
                     labels:[
                         @foreach ($statisticByDay as $item)
-                            {{$item[0]}},       
+                            '{{$item[0]}}',       
                         @endforeach
                     ],
                     datasets:[{

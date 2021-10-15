@@ -5,6 +5,18 @@
 {{-- <form action="{{ route('sponsor.store', ['id'=>$apartment->id]) }}" method='POST' > --}}
 {{-- @csrf --}}
   <div class="container">
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <p id="p-text-modal">Pagamento andato a buon fine</p>
+      <a href="{{ route('apartments.show', $apartment) }}">
+        <button class="btn-route">Chiudi</button>
+      </a>
+    </div>
+  </div>
+
+
     <div id="sponsorships" class="container">
       <div class="col-md-8">
         <div class="row justify-content-around">
@@ -52,6 +64,13 @@
 @section('script')
     <script>
         setTimeout(() => {
+          // modal
+          var modal = document.getElementById('myModal');
+          let textModal = document.getElementById('p-text-modal');
+
+          // x modal ->button invere con redirect
+          var span = document.getElementsByClassName("btn-route")[0];
+
           var button = document.getElementById('submit-button');
           var apa = {{ $apartment->id }};
           console.log(apa);
@@ -80,9 +99,11 @@
                 },
                 function(response) {
                   if (response.success) {
-                    alert('Pagamento riuscito!');
+                    modal.style.display = "block";
+                    textModal.innerHTML = "Pagamento riuscito";
                   } else {
-                    alert('Transazione fallita, riprova piu tardi!');
+                    textModal.innerHTML = "Pagamento non riuscito";
+
                    }
                   }, 'json');
                 });

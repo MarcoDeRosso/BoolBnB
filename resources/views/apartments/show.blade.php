@@ -136,8 +136,30 @@
             map.addControl(new tt.NavigationControl());
             var marker = new tt.Marker().setLngLat(coordinates).addTo(map);
         }, 1000);
-          var myChart = new Chart(
-            document.getElementById('myChart'),
+        setTimeout(() => {
+            let myChart = document.getElementById('myChart').getContext('2d');
+            let statisticChart = new Chart(myChart,{
+                type:'bar',// bar, horizontalBar, pie, line, doughnut, radar
+                data:{
+                    labels:['dato1', 'dato2', 'dato3','dato4'],
+                    datasets:[{
+                        label:'Visite',
+                        data:[
+                            1,
+                            2,
+                            3,
+                            4,
+                        ],
+                        backgroundColor:'green'
+                    }],
+                },
+                option:{}
+            });
+            
+        }, 1000);
+        /*
+        var myChart = new Chart(
+            document.getElementById('myChart').getContext('2d');
             config
         );
         const config = {
@@ -162,5 +184,6 @@
                 data: [0, 10, 5, 2, 20, 30, 45],
             }]
         };
+        */
     </script>
 @endsection

@@ -2177,9 +2177,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Slider',
@@ -6646,7 +6643,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container-card[data-v-872262e8] {\n  width: 100%;\n  height: 600px;\n  background-size: cover;\n  background-position: center;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  box-shadow: 10px 10px 10px #ff8964;\n  position: relative;\n}\n.container-card a.slider-a[data-v-872262e8] {\n  background-color: rgba(0, 0, 0, 0.7);\n  width: 100%;\n}\n.container-card a.slider-a h1[data-v-872262e8] {\n  color: #ff8964;\n  padding: 12px 0;\n}\n.container-card div[data-v-872262e8] {\n  background-color: gray;\n  position: absolute;\n  top: 40px;\n  left: -40px;\n  transform: rotate(-45deg);\n  width: 200px;\n  text-align: center;\n  color: honeydew;\n}", ""]);
+exports.push([module.i, ".container-card[data-v-872262e8] {\n  width: 100%;\n  height: 600px;\n  background-size: cover;\n  background-position: center;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  box-shadow: 10px 10px 10px #ff8964;\n  position: relative;\n}\n.container-card h1[data-v-872262e8] {\n  background-color: rgba(0, 0, 0, 0.7);\n  width: 100%;\n  color: #ff8964;\n  padding: 12px 0;\n}\n.container-card div[data-v-872262e8] {\n  background-color: gray;\n  position: absolute;\n  top: 40px;\n  left: -40px;\n  transform: rotate(-45deg);\n  width: 200px;\n  text-align: center;\n  color: honeydew;\n}", ""]);
 
 // exports
 
@@ -39068,27 +39065,22 @@ var render = function() {
         { attrs: { autoplay: true, centerMode: true, loop: true, perPage: 1 } },
         _vm._l(_vm.apartments, function(apa) {
           return _c("slide", { key: apa.id }, [
-            _c(
-              "div",
-              {
-                staticClass: "container-card",
-                style: "background-image:url(" + apa.img_path + ")"
-              },
-              [
-                _c("div", { staticClass: "sponsor-tag text-capitalize" }, [
-                  _vm._v("in evidenza")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "slider-a",
-                    attrs: { href: "home/" + apa.id }
-                  },
-                  [_c("h1", [_vm._v(_vm._s(apa.title))])]
-                )
-              ]
-            )
+            _c("a", { attrs: { href: "home/" + apa.id } }, [
+              _c(
+                "div",
+                {
+                  staticClass: "container-card",
+                  style: "background-image:url(" + apa.img_path + ")"
+                },
+                [
+                  _c("div", { staticClass: "sponsor-tag text-capitalize" }, [
+                    _vm._v("in evidenza")
+                  ]),
+                  _vm._v(" "),
+                  _c("h1", [_vm._v(_vm._s(apa.title))])
+                ]
+              )
+            ])
           ])
         }),
         1

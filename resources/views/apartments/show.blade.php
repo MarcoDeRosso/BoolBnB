@@ -51,8 +51,7 @@
         <a href="{{ route('apartments.edit', $apartment) }}">
             Modifica Info
         </a>
-    </button> 
-    
+    </button>     
      <form action=" {{ route('apartments.destroy', $apartment) }} " method="POST">
         @csrf
         @method('DELETE')                  
@@ -60,13 +59,9 @@
     </form> 
 </div>
 
-
-
-
-
 {{-- messaggi  --}}
 <div class="container">
-@if (count($apartment->message) > 0)    
+    @if (count($apartment->message) > 0)    
     <h1>Inbox Mail per {{ $apartment->title }}</h1>
     
     <table class="table table-striped">
@@ -91,9 +86,12 @@
     </table>   
     @else
     <h1>Ops, peccato, ancora nessun messaggio <br> per {{ $apartment->title }}</h1>
-    <h2 class="text-center">Sponsorizza l'apparmantento per ricevere più messaggi!</h2>
-    
+    <h2 class="text-center">Sponsorizza l'apparmantento per ricevere più messaggi!</h2>    
     @endif
+        
+    @foreach ($statisticByDay as $item)
+    <p>giorno <span class="day-date">{{$item[0]}}</span> , numero visualizzazioni {{$item[1]}}</p>       
+    @endforeach
 </div>
 
 
@@ -132,14 +130,18 @@
             let statisticChart = new Chart(myChart,{
                 type:'bar',// bar, horizontalBar, pie, line, doughnut, radar
                 data:{
-                    labels:['dato1', 'dato2', 'dato3','dato4'],
+                    labels:[
+                        @foreach ($statisticByDay as $item)
+                            {{$item[0]}},       
+                        @endforeach
+                    ],
                     datasets:[{
                         label:'Visite',
                         data:[
-                            1,
-                            2,
-                            3,
-                            4,
+                            @foreach ($statisticByDay as $item)
+                            {{$item[1]}},       
+                            @endforeach
+
                         ],
                         backgroundColor:'green'
                     }],

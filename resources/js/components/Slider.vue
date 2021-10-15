@@ -2,15 +2,12 @@
     <div>
         <carousel :autoplay="true" :centerMode="true" :loop="true" :perPage="1">
             <slide v-for="apa in apartments" :key="apa.id">
-                <div class="container-card" :style="'background-image:url('+apa.img_path+')'">
+                <a :href='`home/${apa.id}`'>
+                    <div class="container-card" :style="'background-image:url('+apa.img_path+')'">
                     <div class="sponsor-tag text-capitalize">in evidenza</div>
-
-                    <a class="slider-a" :href='`home/${apa.id}`'>
                         <h1>{{apa.title}}</h1>
-                    </a>
-
-
-                </div>
+                    </div>
+                </a>
             </slide>
         </carousel>
        
@@ -40,15 +37,14 @@ export default {
         justify-content: center;
         box-shadow: 10px 10px 10px #ff8964 ;
         position: relative;
-        a.slider-a {
 
+        h1{
             background-color: rgba($color: #000000, $alpha: 0.7);
             width: 100%;
-            h1{
-                color: #ff8964;
-                padding: 12px 0;
-            }
+            color: #ff8964;
+            padding: 12px 0;
         }
+
         div{
             background-color: gray ;
             position: absolute;

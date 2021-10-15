@@ -8,8 +8,8 @@
 >
 </search-home>
 
-<div class="container home">
-    <h1>Le mete più gettonate:</h1>
+<div class="container home p-4">
+    <h1 class="p-2">Le mete più gettonate:</h1>
     <div class="row box-wrap">
         @foreach ($apartments as $apartment)
         <div class="articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3">

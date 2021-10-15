@@ -17,8 +17,8 @@
         ></slider-card>
     </div>    
 </div>
-<div class="container home">
-    <h1>Le mete più gettonate:</h1>
+<div class="container home p-3">
+    <h1 class="pt-5 pb-3">Le mete più gettonate:</h1>
     <div class="row">
         @foreach ($apartments as $apartment)
         <div class="articol-card col-12 col-md-6 col-lg-4 mt-3 mb-5">

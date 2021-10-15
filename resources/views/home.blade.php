@@ -10,7 +10,7 @@
 
 <div class="container home">
     <h1>Le mete più gettonate:</h1>
-    <div class="row">
+    <div class="row box-wrap">
         @foreach ($apartments as $apartment)
         <div class="articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3">
             <a href="{{ route('apartmentShow', $apartment) }}" class="apartment">

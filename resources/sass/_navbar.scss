@@ -1,14 +1,21 @@
 .navbar{
 
-    background-color: $arancionesalmone!important;
+    background-image: linear-gradient(
+        to right,
+        #fc6076,
+        #ff9a44,
+        #ef9d43,
+        #e75516
+      );
     font-weight: bold;
     font-size: 20px;
+    
 
     .navbar-nav{
         align-items: flex-end;
     }
     a{
-        color: grey!important;
+        color: $bluscuropastello!important;
     }
     a:hover{
         color: black!important;

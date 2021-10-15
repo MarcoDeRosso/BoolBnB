@@ -15698,8 +15698,39 @@ img {
   border-radius: 25px;
 }
 
+.bn632-hover {
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #034f84;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn21 {
+  background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+  box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+
 .navbar {
-  background-color: #FF8964 !important;
+  background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
   font-weight: bold;
   font-size: 20px;
 }
@@ -15709,7 +15740,7 @@ img {
 }
 
 .navbar a {
-  color: grey !important;
+  color: #034f84 !important;
 }
 
 .navbar a:hover {
@@ -15788,7 +15819,7 @@ div.login.jumbotron {
 .home .apartment .price-tag {
   width: 20%;
   font-weight: bold;
-  background-color: #FF8964;
+  background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
   text-align: center;
   position: relative;
   bottom: 20%;

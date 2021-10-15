@@ -31,6 +31,26 @@ class HomeController extends Controller
 
     public function show($id)
     {
+        $allDate = (DB::table('statistics')->select('created_at')->groupBy('created_at')->get())->toArray();
+        $newDate = []; //ho tutte le date presenti nel db, in formato Y-m-d
+        foreach($allDate as $dat){
+            $dat = substr($dat->created_at,0,-9); 
+            if(!in_array($dat, $newDate)) {
+                $newDate[] = $dat;
+            }
+        }
+
+        // restituisce il numero di visualizzazioni per giorno
+        //DB::table('statistics')->whereDate('created_at', '2021-10-15')->count(); 
+
+        $statisticByDay =[];   //array chiave valore, 'giorno' 'totale visite'
+
+        foreach($newDate as $date) {
+            $statisticForThisDay = DB::table('statistics')->whereDate('created_at', $date)->count();
+            $statisticByDay[] =array($date => $statisticForThisDay);
+        }
+        
+
         $apartment= Apartment::find($id);
         $today=date('Y-m-d');
         //$ip=Hash::make($_SERVER['REMOTE_ADDR']);
@@ -44,7 +64,7 @@ class HomeController extends Controller
           $statistic->guest_ip=$ip;
           $statistic->save(); 
         }
-
-        return view('show', compact('apartment'));        
+        
+        return view('show', compact('apartment','statisticByDay'));        
     }
 }

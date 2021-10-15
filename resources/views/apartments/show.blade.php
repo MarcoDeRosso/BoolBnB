@@ -6,7 +6,7 @@
     <div class="text-center sponsor ">
         <h3><strong>Complimenti! Il tuo appartamento è in evidenza <br> sulla nostra piattaforma.</strong></h3>
         @foreach ($payment as $pay)
-        <div>Fino al {{$pay['expire_date']}}</div>
+        <div>Fino al {{$pay['expire_date']}} (UTC)</div>
             
         @endforeach
     </div>

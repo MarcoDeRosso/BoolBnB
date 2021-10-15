@@ -298,8 +298,6 @@ class ApartmentsTableSeeder extends Seeder
             "Imperial House",
             "Casa Momom, con ampio patio",
             "Casetta con fantastica vista lago!",
-            "La Casa all'Oliveto",
-            "Aurora, raffinata e romantica",
             "Moderno zona corso Como",
             "Appartamento Lontano dal Caos",
             "Soggiorna nel cuore di Milano",
@@ -500,9 +498,10 @@ class ApartmentsTableSeeder extends Seeder
             $sponsor->save();
         }
 
-        for($s=0;$s<4;$s++){
+        $arrayApaID = [2,4,9,13,14];
+        for($s=0;$s<count($arrayApaID);$s++){
 
-            $apa_id = rand(1,20);
+            $apa_id = $arrayApaID[$s];
             $payment=new Payment();
             $payment->apartment_id = $apa_id;
             $apartment = Apartment::find($apa_id);

@@ -201,8 +201,7 @@
                     if(this.serviceList.length > 0) {
     
                         //per ogni appartamento confronta i servizi            
-                        this.filteredApartments = this.copyFilteredApartments.filter((apa)=>{
-                            
+                        this.filteredApartments = this.copyFilteredApartments.filter((apa)=>{                            
                             let nexStepFlag = true
     
                             //per ogni servizio nella lista di quelli selezionati, 

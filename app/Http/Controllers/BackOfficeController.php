@@ -8,6 +8,7 @@ use App\Service;
 use App\Sponsor;
 use App\Payment;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -63,7 +64,31 @@ class BackOfficeController extends Controller
         $payment= Payment::where('apartment_id','=', $apartment->id)->get();
         $payment=$payment->toArray();
         //dd($payment);
-        return view('apartments.show', compact('apartment','payment'));
+
+        $allDate = (DB::table('statistics')->select('created_at')->groupBy('created_at')->get())->toArray();
+        $newDate = []; //ho tutte le date presenti nel db, in formato Y-m-d
+        foreach($allDate as $dat){
+            $dat = substr($dat->created_at,0,-9); 
+
+            $dat =str_replace('-',',',$dat);
+            if(!in_array($dat, $newDate)) {
+                $newDate[] = $dat;
+            }
+        }
+
+        // restituisce il numero di visualizzazioni per giorno
+        //DB::table('statistics')->whereDate('created_at', '2021-10-15')->count(); 
+
+        $statisticByDay =[];   //array posizione 0 giorno, posizione 1 totale visite
+
+        foreach($newDate as $date) {
+            $statisticForThisDay = DB::table('statistics')->whereDate('created_at', $date)->count();
+            // $statisticByDay[] =array($date => $statisticForThisDay);
+            $statisticByDay[]=array($date, $statisticForThisDay);
+        }
+    
+        // dd($statisticByDay);
+        return view('apartments.show', compact('apartment','payment','statisticByDay'));
     }
 
 

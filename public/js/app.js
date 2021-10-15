@@ -2175,6 +2175,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Slider',
@@ -2182,11 +2187,7 @@ __webpack_require__.r(__webpack_exports__);
     Carousel: vue_carousel__WEBPACK_IMPORTED_MODULE_0__["Carousel"],
     Slide: vue_carousel__WEBPACK_IMPORTED_MODULE_0__["Slide"]
   },
-  props: ['apartments'],
-  data: function data() {
-    return {};
-  },
-  methods: {}
+  props: ['apartments']
 });
 
 /***/ }),
@@ -6645,7 +6646,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container-card[data-v-872262e8] {\n  width: 100%;\n  height: 600px;\n  background-size: cover;\n  background-position: center;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  box-shadow: 10px 10px 10px #ff8964;\n  position: relative;\n}\n.container-card h1[data-v-872262e8] {\n  color: #ff8964;\n  background-color: rgba(0, 0, 0, 0.7);\n  width: 100%;\n  padding: 12px 0;\n}\n.container-card div[data-v-872262e8] {\n  background-color: gray;\n  position: absolute;\n  top: 40px;\n  left: -40px;\n  transform: rotate(-45deg);\n  width: 200px;\n  text-align: center;\n  color: honeydew;\n}", ""]);
+exports.push([module.i, ".container-card[data-v-872262e8] {\n  width: 100%;\n  height: 600px;\n  background-size: cover;\n  background-position: center;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  box-shadow: 10px 10px 10px #ff8964;\n  position: relative;\n}\n.container-card a.slider-a[data-v-872262e8] {\n  background-color: rgba(0, 0, 0, 0.7);\n  width: 100%;\n}\n.container-card a.slider-a h1[data-v-872262e8] {\n  color: #ff8964;\n  padding: 12px 0;\n}\n.container-card div[data-v-872262e8] {\n  background-color: gray;\n  position: absolute;\n  top: 40px;\n  left: -40px;\n  transform: rotate(-45deg);\n  width: 200px;\n  text-align: center;\n  color: honeydew;\n}", ""]);
 
 // exports
 
@@ -38890,7 +38891,10 @@ var render = function() {
                     [
                       _c(
                         "a",
-                        { staticClass: "apartment", attrs: { href: "" } },
+                        {
+                          staticClass: "apartment",
+                          attrs: { href: "home/" + apa.id }
+                        },
                         [
                           _c("div", [
                             _c("img", {
@@ -39075,7 +39079,14 @@ var render = function() {
                   _vm._v("in evidenza")
                 ]),
                 _vm._v(" "),
-                _c("h1", [_vm._v(_vm._s(apa.title))])
+                _c(
+                  "a",
+                  {
+                    staticClass: "slider-a",
+                    attrs: { href: "home/" + apa.id }
+                  },
+                  [_c("h1", [_vm._v(_vm._s(apa.title))])]
+                )
               ]
             )
           ])
@@ -51589,8 +51600,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

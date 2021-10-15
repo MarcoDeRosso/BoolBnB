@@ -100,19 +100,10 @@
 {{-- statistiche  --}}
 
 <div class="container">
-    @foreach ($apartment->statistic as $sta)
-    @endforeach
-        <div>
-            <canvas id="myChart"></canvas>
-        </div>
-
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
 </div>
-
-
-
-
-
-
 
 @endsection
 @section('script')

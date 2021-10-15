@@ -86,7 +86,7 @@
             <h1>I risultati della tua ricerca:</h1>
             <div class="row " v-if="filteredApartments.length > 0">
                 <div class="articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3" v-for="(apa,index) in filteredApartments" :key="index">
-                    <a href="" class="apartment">
+                    <a :href='`home/${apa.id}`' class="apartment">
                     <div>
                         <img class="img-apartment mb-3" :src="apa.img_path" alt="" >
                         <div class="price-tag"> {{ apa.price_night }}  €</div>

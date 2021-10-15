@@ -4,7 +4,12 @@
             <slide v-for="apa in apartments" :key="apa.id">
                 <div class="container-card" :style="'background-image:url('+apa.img_path+')'">
                     <div class="sponsor-tag text-capitalize">in evidenza</div>
-                    <h1>{{apa.title}}</h1>
+
+                    <a class="slider-a" :href='`home/${apa.id}`'>
+                        <h1>{{apa.title}}</h1>
+                    </a>
+
+
                 </div>
             </slide>
         </carousel>
@@ -19,15 +24,8 @@ export default {
     components: {
         Carousel,
         Slide
-     },
-     props:['apartments'],
-        data() {
-        return {
-        }
     },
-
-    methods:{
-    }
+    props:['apartments'],
 }
 </script>
 
@@ -42,11 +40,14 @@ export default {
         justify-content: center;
         box-shadow: 10px 10px 10px #ff8964 ;
         position: relative;
-        h1{
-            color: #ff8964;
+        a.slider-a {
+
             background-color: rgba($color: #000000, $alpha: 0.7);
             width: 100%;
-            padding: 12px 0;
+            h1{
+                color: #ff8964;
+                padding: 12px 0;
+            }
         }
         div{
             background-color: gray ;

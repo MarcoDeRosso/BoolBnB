@@ -17,7 +17,7 @@ class PaymentsController extends Controller
   {
     //$now = date("Y-m-d H-i-s");
     $now= new Carbon();
-    $time= Carbon::now('Europe/Rome');
+    $time= Carbon::now();
     $data = $request->all();
     $sponsor = Sponsor::find($data['sponsor']);
     $apartment = Apartment::find($data['apa']);

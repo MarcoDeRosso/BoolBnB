@@ -2026,10 +2026,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['services', 'apartments', 'lista'],
   mounted: function mounted() {
@@ -2049,7 +2045,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       copyFilteredApartments: [],
       apartmentsInRange: [],
       api: '',
-      lastService: ''
+      numberOfServices: '',
+      startSearchFlag: false
     };
   },
   methods: {
@@ -2075,6 +2072,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     filterSearch: function filterSearch() {
       var _this2 = this;
+
+      this.startSearchFlag = true;
 
       if (this.apartmentsInRange.length != 0) {
         this.filteredApartments = this.apartmentsInRange;
@@ -2119,28 +2118,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     filterServices: function filterServices() {
       var _this3 = this;
 
-      if (!this.serviceList.includes(this.lastService)) {
-        // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
-        if (this.copyFilteredApartments.length > 0) {
-          // entra solo se almeno un servizio è selezionato     
-          if (this.serviceList.length > 0) {
-            //per ogni appartamento confronta i servizi            
-            this.filteredApartments = this.copyFilteredApartments.filter(function (apa) {
-              //per ogni servizio nella lista di quelli selezionati, 
-              //controlla che sia presente nei servizi dell'appartamento
-              _this3.serviceList.forEach(function (service) {
-                if (apa.services.includes(parseInt(service))) {
-                  _this3.serviceListFlag = true;
-                  _this3.lastService = '';
-                } else {
-                  _this3.serviceListFlag = false;
-                  _this3.lastService = service; //è una stringa, mi salvo il servizio non presente
-                }
-              });
+      // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
+      if (this.copyFilteredApartments.length > 0) {
+        // entra solo se almeno un servizio è selezionato     
+        if (this.serviceList.length > 0) {
+          //per ogni appartamento confronta i servizi            
+          this.filteredApartments = this.copyFilteredApartments.filter(function (apa) {
+            var nexStepFlag = true; //per ogni servizio nella lista di quelli selezionati, 
+            //controlla che sia presente nei servizi dell'appartamento
 
-              return _this3.serviceListFlag;
+            _this3.serviceList.forEach(function (service) {
+              if (apa.services.includes(parseInt(service)) && nexStepFlag === true) {
+                _this3.serviceListFlag = true;
+              } else {
+                _this3.serviceListFlag = false;
+                nexStepFlag = false;
+              }
             });
-          }
+
+            return _this3.serviceListFlag;
+          });
+        }
+
+        if (this.serviceList.length === 0) {
+          this.filteredApartments = this.copyFilteredApartments;
         }
       }
     }
@@ -6643,7 +6644,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container-card[data-v-872262e8] {\n  width: 100%;\n  height: 500px;\n  background-size: cover;\n  background-position: center;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  box-shadow: 10px 10px 10px #ff8964;\n}\n.container-card h1[data-v-872262e8] {\n  color: #ff8964;\n  background-color: rgba(0, 0, 0, 0.7);\n  width: 100%;\n  padding: 12px 0;\n}", ""]);
+exports.push([module.i, ".container-card[data-v-872262e8] {\n  width: 100%;\n  height: 600px;\n  background-size: cover;\n  background-position: center;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  box-shadow: 10px 10px 10px #ff8964;\n}\n.container-card h1[data-v-872262e8] {\n  color: #ff8964;\n  background-color: rgba(0, 0, 0, 0.7);\n  width: 100%;\n  padding: 12px 0;\n}", ""]);
 
 // exports
 
@@ -38796,19 +38797,40 @@ var render = function() {
                                       ],
                                       attrs: {
                                         id: "`${service.title}`",
-                                        type: "radio"
+                                        type: "checkbox"
                                       },
                                       domProps: {
                                         value: "" + service.id,
-                                        checked: _vm._q(
-                                          _vm.serviceList,
-                                          "" + service.id
-                                        )
+                                        checked: Array.isArray(_vm.serviceList)
+                                          ? _vm._i(
+                                              _vm.serviceList,
+                                              "" + service.id
+                                            ) > -1
+                                          : _vm.serviceList
                                       },
                                       on: {
                                         change: [
                                           function($event) {
-                                            _vm.serviceList = "" + service.id
+                                            var $$a = _vm.serviceList,
+                                              $$el = $event.target,
+                                              $$c = $$el.checked ? true : false
+                                            if (Array.isArray($$a)) {
+                                              var $$v = "" + service.id,
+                                                $$i = _vm._i($$a, $$v)
+                                              if ($$el.checked) {
+                                                $$i < 0 &&
+                                                  (_vm.serviceList = $$a.concat(
+                                                    [$$v]
+                                                  ))
+                                              } else {
+                                                $$i > -1 &&
+                                                  (_vm.serviceList = $$a
+                                                    .slice(0, $$i)
+                                                    .concat($$a.slice($$i + 1)))
+                                              }
+                                            } else {
+                                              _vm.serviceList = $$c
+                                            }
                                           },
                                           function($event) {
                                             return _vm.filterServices()
@@ -38837,73 +38859,97 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "container home" }, [
-      _c("h1", [_vm._v("I risultati della tua ricerca:")]),
-      _vm._v(" "),
-      _vm.filteredApartments.length > 0
-        ? _c(
-            "div",
-            { staticClass: "row " },
-            _vm._l(_vm.filteredApartments, function(apa, index) {
-              return _c(
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.startSearchFlag,
+              expression: "startSearchFlag"
+            }
+          ]
+        },
+        [
+          _c("h1", [_vm._v("I risultati della tua ricerca:")]),
+          _vm._v(" "),
+          _vm.filteredApartments.length > 0
+            ? _c(
                 "div",
-                {
-                  key: index,
-                  staticClass: "articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3"
-                },
-                [
-                  _c("a", { staticClass: "apartment", attrs: { href: "" } }, [
-                    _c("div", [
-                      _c("img", {
-                        staticClass: "img-apartment mb-3",
-                        attrs: { src: apa.img_path, alt: "" }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price-tag" }, [
-                        _vm._v(" " + _vm._s(apa.price_night) + "  €")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("h2", [_vm._v(" " + _vm._s(apa.title) + " ")]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "features d-flex justify-content-around pt-2"
-                      },
-                      [
-                        _c("h6", [
-                          _c("i", { staticClass: "fas fa-home gradient" }),
-                          _vm._v(" Locali: " + _vm._s(apa.rooms_num))
-                        ]),
-                        _vm._v(" "),
-                        _c("h6", [
-                          _c("i", { staticClass: "fas fa-bed gradient" }),
-                          _vm._v(" Letti: " + _vm._s(apa.beds_num))
-                        ]),
-                        _vm._v(" "),
-                        _c("h6", [
-                          _c("i", { staticClass: "fas fa-shower gradient" }),
-                          _vm._v(" Bagni: " + _vm._s(apa.bath_num))
-                        ]),
-                        _vm._v(" "),
-                        _c("h6", [
-                          _c("i", { staticClass: "fas fa-th gradient" }),
-                          _vm._v(" Mq: " + _vm._s(apa.meters_size))
-                        ])
-                      ]
-                    )
-                  ])
-                ]
+                { staticClass: "row " },
+                _vm._l(_vm.filteredApartments, function(apa, index) {
+                  return _c(
+                    "div",
+                    {
+                      key: index,
+                      staticClass:
+                        "articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3"
+                    },
+                    [
+                      _c(
+                        "a",
+                        { staticClass: "apartment", attrs: { href: "" } },
+                        [
+                          _c("div", [
+                            _c("img", {
+                              staticClass: "img-apartment mb-3",
+                              attrs: { src: apa.img_path, alt: "" }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "price-tag" }, [
+                              _vm._v(" " + _vm._s(apa.price_night) + "  €")
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("h2", [_vm._v(" " + _vm._s(apa.title) + " ")]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "features d-flex justify-content-around pt-2"
+                            },
+                            [
+                              _c("h6", [
+                                _c("i", {
+                                  staticClass: "fas fa-home gradient"
+                                }),
+                                _vm._v(" Locali: " + _vm._s(apa.rooms_num))
+                              ]),
+                              _vm._v(" "),
+                              _c("h6", [
+                                _c("i", { staticClass: "fas fa-bed gradient" }),
+                                _vm._v(" Letti: " + _vm._s(apa.beds_num))
+                              ]),
+                              _vm._v(" "),
+                              _c("h6", [
+                                _c("i", {
+                                  staticClass: "fas fa-shower gradient"
+                                }),
+                                _vm._v(" Bagni: " + _vm._s(apa.bath_num))
+                              ]),
+                              _vm._v(" "),
+                              _c("h6", [
+                                _c("i", { staticClass: "fas fa-th gradient" }),
+                                _vm._v(" Mq: " + _vm._s(apa.meters_size))
+                              ])
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                }),
+                0
               )
-            }),
-            0
-          )
-        : _c("div", [
-            _c("h2", { staticClass: "text-center" }, [
-              _vm._v("Nessun appartamento trovato")
-            ])
-          ])
+            : _c("div", [
+                _c("h2", { staticClass: "text-center" }, [
+                  _vm._v("Nessun appartamento trovato")
+                ])
+              ])
+        ]
+      )
     ])
   ])
 }
@@ -51536,8 +51582,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

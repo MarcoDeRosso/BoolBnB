@@ -64,7 +64,7 @@
                                         <div class="modal-body row">
                                             <div class="col-6 text-center align-items-center" v-for="service in services" :key="service.id" >
                                                 <label class="pt-3" for="`${service.title}`">{{ service.title }}</label>
-                                                <input @change="filterServices()"  id="`${service.title}`" type="radio" :value="`${service.id}`" v-model="serviceList">
+                                                <input @change="filterServices()"  id="`${service.title}`" type="checkbox" :value="`${service.id}`" v-model="serviceList">
                                             </div>
                                         </div>
                                         <div class="modal-footer justify-content-center">
@@ -82,34 +82,30 @@
         </div>
     </div>
     <div class="container home">
-
-        <h1>I risultati della tua ricerca:</h1>
-        <div class="row " v-if="filteredApartments.length > 0">
-            <div class="articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3" v-for="(apa,index) in filteredApartments" :key="index">
-                <!-- <a class="apartment">
-                    <img class="img-apartment mb-3" style="width:100%" :src="apa.img_path" alt="">
-                    <h1> {{ apa.title }} </h1>
-                </a>   -->
-                <a href="" class="apartment">
-                <div>
-                    <img class="img-apartment mb-3" :src="apa.img_path" alt="" >
-                    <div class="price-tag"> {{ apa.price_night }}  €</div>
+        <div v-show="startSearchFlag">
+            <h1>I risultati della tua ricerca:</h1>
+            <div class="row " v-if="filteredApartments.length > 0">
+                <div class="articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3" v-for="(apa,index) in filteredApartments" :key="index">
+                    <a href="" class="apartment">
+                    <div>
+                        <img class="img-apartment mb-3" :src="apa.img_path" alt="" >
+                        <div class="price-tag"> {{ apa.price_night }}  €</div>
+                    </div>
+                    <h2> {{ apa.title }} </h2>
+                    <div class="features d-flex justify-content-around pt-2">
+                        <h6><i class="fas fa-home gradient"></i> Locali: {{ apa.rooms_num }}</h6>
+                        <h6><i class="fas fa-bed gradient"></i> Letti: {{ apa.beds_num }}</h6>
+                        <h6><i class="fas fa-shower gradient"></i> Bagni: {{ apa.bath_num }}</h6>
+                        <h6><i class="fas fa-th gradient"></i> Mq: {{ apa.meters_size }}</h6>
+                    </div>
+                    
+                </a>   
                 </div>
-                <h2> {{ apa.title }} </h2>
-                <div class="features d-flex justify-content-around pt-2">
-                    <h6><i class="fas fa-home gradient"></i> Locali: {{ apa.rooms_num }}</h6>
-                    <h6><i class="fas fa-bed gradient"></i> Letti: {{ apa.beds_num }}</h6>
-                    <h6><i class="fas fa-shower gradient"></i> Bagni: {{ apa.bath_num }}</h6>
-                    <h6><i class="fas fa-th gradient"></i> Mq: {{ apa.meters_size }}</h6>
-                </div>
-                
-            </a>   
+            </div>
+            <div v-else>
+                <h2 class="text-center">Nessun appartamento trovato</h2>
             </div>
         </div>
-        <div v-else>
-            <h2 class="text-center">Nessun appartamento trovato</h2>
-        </div>
-
     </div>
 </div>
 </template>
@@ -134,7 +130,8 @@
                 copyFilteredApartments: [],
                 apartmentsInRange:[],
                 api:'',
-                lastService: ''
+                numberOfServices:'',
+                startSearchFlag :false
             }
         },
         methods: {
@@ -153,6 +150,8 @@
                 }
             },
             filterSearch() {
+                this.startSearchFlag = true
+
                 if(this.apartmentsInRange.length != 0){
                     this.filteredApartments=this.apartmentsInRange;
                     this.apartmentsInRange= [];
@@ -194,31 +193,33 @@
                 this.serviceListFlag = true
             },
             filterServices () {
-                if(!this.serviceList.includes(this.lastService)) {
-                    // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
-                    if(this.copyFilteredApartments.length > 0) {
-    
-                        // entra solo se almeno un servizio è selezionato     
-                        if(this.serviceList.length > 0) {
-    
-                            //per ogni appartamento confronta i servizi            
-                            this.filteredApartments = this.copyFilteredApartments.filter((apa)=>{
-    
-                                //per ogni servizio nella lista di quelli selezionati, 
-                                //controlla che sia presente nei servizi dell'appartamento
-                                this.serviceList.forEach((service)=>{
-                                    if (apa.services.includes(parseInt(service))) {
-                                        this.serviceListFlag = true
-                                        this.lastService = ''
 
-                                    } else {
-                                        this.serviceListFlag = false
-                                        this.lastService = service //è una stringa, mi salvo il servizio non presente
-                                    }                                
-                                })
-                                return this.serviceListFlag  
-                            })    
-                        }
+                // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
+                if(this.copyFilteredApartments.length > 0) {
+                       
+                    // entra solo se almeno un servizio è selezionato     
+                    if(this.serviceList.length > 0) {
+    
+                        //per ogni appartamento confronta i servizi            
+                        this.filteredApartments = this.copyFilteredApartments.filter((apa)=>{                            
+                            let nexStepFlag = true
+    
+                            //per ogni servizio nella lista di quelli selezionati, 
+                            //controlla che sia presente nei servizi dell'appartamento
+                            this.serviceList.forEach((service)=>{
+                                if (apa.services.includes(parseInt(service)) && nexStepFlag === true)  {
+                                    this.serviceListFlag = true
+                                } else {
+                                    this.serviceListFlag = false
+                                    nexStepFlag = false
+                                }                                
+                            })
+                            return this.serviceListFlag  
+                        })    
+                    }
+
+                    if(this.serviceList.length === 0){
+                        this.filteredApartments = this.copyFilteredApartments
                     }
                 }
             }

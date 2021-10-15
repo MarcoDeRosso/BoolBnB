@@ -4,8 +4,11 @@
 <div class="jumbotron-sponsor d-flex justify-content-center align-items-center">
     @if ($apartment->sponsorActive)
     <div class="text-center sponsor ">
-        <h3><strong>Complimenti! il tuo appartamento è in evidenza <br> sulla nostra piattaforma.</strong></h3>
-        <div>Fino all {{$payment->expire_date}}</div>
+        <h3><strong>Complimenti! Il tuo appartamento è in evidenza <br> sulla nostra piattaforma.</strong></h3>
+        @foreach ($payment as $pay)
+        <div>Fino al {{$pay['expire_date']}}</div>
+            
+        @endforeach
     </div>
     @else
     <div class="text-center sponsor ">
@@ -30,11 +33,6 @@
             @foreach ($apartment->service as $service)
                 <span class="badge badge-pill-custom badge-success">{{ $service->title }}</span> 
             @endforeach
-
-            {{-- TODO --}}
-            @if ($apartment->sponsorActive)
-            <h2>Appartamento in sponsorizzato</h2>           
-            @endif
 
             <input type="hidden" name="latitude" id="latitude" value="{{ $apartment->latitude }}">
             <input type="hidden" name="longitude" id="longitude" value="{{ $apartment->longitude }}">
@@ -61,6 +59,53 @@
         <button type="submit" class="btn btn-danger">Elimina Appartamento</button>
     </form> 
 </div>
+
+
+
+
+
+{{-- messaggi  --}}
+<div class="container">
+@if (count($apartment->message) > 0)    
+    <h1>Inbox Mail per {{ $apartment->title }}</h1>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Messaggio</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($apartment->message as $msg)
+            <tr>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $msg->full_name}}</td>
+                <td>{{ $msg->email}}</td>
+                <td>{{ $msg->text}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>   
+    @else
+    <h1>Ops, peccato, ancora nessun messaggio <br> per {{ $apartment->title }}</h1>
+    <h2 class="text-center">Sponsorizza l'apparmantento per ricevere più messaggi!</h2>
+    
+    @endif
+</div>
+
+
+{{-- statistiche  --}}
+
+<div class="container">
+    @foreach ($apartment->statistic as $sta)
+        
+    @endforeach
+
+</div>
+
 
 
 

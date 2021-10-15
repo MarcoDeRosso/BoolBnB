@@ -46,14 +46,20 @@ export default {
         }
 
         div{
-            background-color: gray ;
+            background-image: linear-gradient(
+        to right,
+        #fc6076,
+        #ff9a44,
+        #ef9d43,
+        #e75516
+      );
             position: absolute;
             top: 40px;
             left: -40px;
             transform: rotate(-45deg);
             width: 200px;
             text-align: center;
-            color: honeydew;
+            color: #034f84;
         }
     }
 </style>

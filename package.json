@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
+        "chart.js": "^3.5.1",
         "font-awesome": "^4.7.0",
         "vue-carousel": "^0.18.0"
     }

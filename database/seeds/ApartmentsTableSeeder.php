@@ -518,7 +518,32 @@ class ApartmentsTableSeeder extends Seeder
         for($a=0;$a<5;$a++) {
             $statistic = new Statistic();
             $statistic->guest_ip = $faker->localIpv4();
+            //$statistic->guest_ip = Hash::make($faker->localIpv4());
             $statistic->apartment_id = 18;
+            $statistic->save();
+        }
+        for($a=0;$a<5;$a++) {
+            $statistic = new Statistic();
+            $statistic->guest_ip = $faker->localIpv4();
+            //$statistic->guest_ip = Hash::make($faker->localIpv4());
+            $statistic->apartment_id = 18;
+            $statistic->created_at="2021-10-14 08:00:00";
+            $statistic->save();
+        }
+        for($a=0;$a<10;$a++) {
+            $statistic = new Statistic();
+            $statistic->guest_ip = $faker->localIpv4();
+            //$statistic->guest_ip = Hash::make($faker->localIpv4());
+            $statistic->apartment_id = 18;
+            $statistic->created_at="2021-10-13 23:00:00";
+            $statistic->save();
+        }
+        for($a=0;$a<15;$a++) {
+            $statistic = new Statistic();
+            $statistic->guest_ip = $faker->localIpv4();
+            //$statistic->guest_ip = Hash::make($faker->localIpv4());
+            $statistic->apartment_id = 18;
+            $statistic->created_at="2021-10-12 12:00:00";
             $statistic->save();
         }
     }

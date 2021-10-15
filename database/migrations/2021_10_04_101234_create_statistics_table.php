@@ -18,6 +18,7 @@ class CreateStatisticsTable extends Migration
             $table->unsignedBigInteger('apartment_id');
             $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
             $table->ipAddress('guest_ip');
+            //$table->string('guest_ip');
             $table->timestamps();
         });
     }

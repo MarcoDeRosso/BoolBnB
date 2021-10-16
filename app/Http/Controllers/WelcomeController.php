@@ -11,7 +11,7 @@ use Carbon\Carbon;
 class WelcomeController extends Controller
 {
     public function welcome () {
-        $apartments= Apartment::paginate(6);
+        $apartments= Apartment::paginate(9);
         $services = Service::all();
         $payments = Payment::all();
         $now= new Carbon();

@@ -5,7 +5,7 @@
     <h1 class="mt-3">Ciao {{ Auth::user()->name }} {{ Auth::user()->surname }}, questa è la tua Dashboard</h1>
     <h2 class="text-center mb-3" >I tuoi appartamenti pubblicati sulla piattaforma sono i seguenti:</h2>
     
-    <div class="row">
+    <div class="row mt-3">
         <table class="table table-striped text-center ">
             <thead>
                 <tr>
@@ -41,7 +41,7 @@
         </table>
     </div>
     <div class="text-center">
-        <button class="btn btn-often mb-3">
+        <button class="btn btn-often mb-5 mt-3">
             <a href="{{ route('apartments.create') }}">
                 Aggiungi un appartamento            
             </a>

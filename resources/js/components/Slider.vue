@@ -37,6 +37,7 @@ export default {
         justify-content: center;
         box-shadow: 10px 10px 10px #ff8964 ;
         position: relative;
+        overflow: hidden;
 
         h1{
             background-color: rgba($color: #000000, $alpha: 0.7);

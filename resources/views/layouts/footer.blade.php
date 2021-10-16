@@ -9,7 +9,7 @@
                     <li><a href="#" class=" mb-0 text-decoration-none">BoolBnb 2021</a></li>
                     <li><a href="#" class=" mb-0 text-decoration-none">BoolBnb Plus</a></li>
                     <li><a href="#" class=" mb-0 text-decoration-none">BoolBnb Luxe</a></li>
-                    <li><a href="#" class=" mb-0 text-decoration-none">HoteTonight</a></li>
+                    <li><a href="#" class=" mb-0 text-decoration-none">HotelTonight</a></li>
                     <li><a href="#" class=" mb-0 text-decoration-none">Boolbnb for Work</a></li>
                     <li><a href="#" class=" mb-0 text-decoration-none">Grazie agli host puoi</a></li>
                     <li><a href="#" class=" mb-0 text-decoration-none">Lavora con noi</a></li>
@@ -70,13 +70,13 @@
                </div>
                 <div class="text-center">
                     <div class="p-3">
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/mariapiacoccioli/"> Mariapia Coccioli </a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/mariapiacoccioli/">  Mariapia Coccioli </a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/marco-de-rosso-82776b1a1/"> Marco De Rosso  </a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/marco-de-rosso-82776b1a1/"> <button class="cyberpunk"> Marco De Rosso </button> </a> 
                         <span>-</span>
                         <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluca-argo-913a8a220/"> Gianluca Argo  </a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluigi-celentano-1157891a3"> Gianluigi Celentano</a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluigi-celentano-1157891a3"><button class="learn-more"> Gianluigi Celentano  <button></a>
                         <span>-</span>
                         <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/sebastian-rizzo-ba84a2159"> Sebastian Rizzo</a>
                     </div>

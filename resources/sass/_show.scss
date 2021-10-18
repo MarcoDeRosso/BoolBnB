@@ -1,6 +1,7 @@
 .features h6{
     display: inline-block;
     margin-left: 7px;
+    
 }
 .jumbotron-sponsor{
     background-image: $jumbotron-sponsor;
@@ -31,6 +32,10 @@
     border-radius: 25px;
   }
 }
+h4{
+  font-weight: bold;
+}
+
 .img-box {
   
   height: 340px;

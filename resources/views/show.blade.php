@@ -5,7 +5,7 @@
     <h1 class="text-center mt-4">{{ $apartment->title }}</h1>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-6 articol-card mt-3 mb-3">
-            <div class="img-box mt-3 mb-3">
+            <div class="img-box mt-3 mb-5">
                 <img class="img-apartment" src="{{ $apartment->img_path }}" alt="" >
                 <div class="price-tag">{{$apartment->price_night}} €</div>
             </div>

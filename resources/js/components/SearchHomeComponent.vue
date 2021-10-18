@@ -84,26 +84,29 @@
     <div style="background-color: #f2f2f3">        
         <div class="container home ">
             <div v-show="startSearchFlag" class="p-5">
-                <h1 class="pb-2">I risultati della tua ricerca:</h1>
-                <div class="row " v-if="filteredApartments.length > 0">
-                    <div class="articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3" v-for="(apa,index) in filteredApartments" :key="index">
-                        <a :href='`home/${apa.id}`' class="apartment">
-                        <div>
-                            <img class="img-apartment mb-3" :src="apa.img_path" alt="" >
-                            <div class="price-tag"> {{ apa.price_night }}  €</div>
+                <div  v-if="filteredApartments.length > 0">
+                <h1 class="pb-2">I risultati della tua ricerca: {{filteredApartments.length}}</h1>
+                    <div class="row ">
+                        <div class="articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3" v-for="(apa,index) in filteredApartments" :key="index">
+                            <a :href='`home/${apa.id}`' class="apartment">
+                            <div>
+                                <img class="img-apartment mb-3" :src="apa.img_path" alt="" >
+                                <div class="price-tag"> {{ apa.price_night }}  €</div>
+                            </div>
+                            <h2> {{ apa.title }} </h2>
+                            <div class="features d-flex justify-content-around pt-2">
+                                <h6><i class="fas fa-home gradient"></i> Locali: {{ apa.rooms_num }}</h6>
+                                <h6><i class="fas fa-bed gradient"></i> Letti: {{ apa.beds_num }}</h6>
+                                <h6><i class="fas fa-shower gradient"></i> Bagni: {{ apa.bath_num }}</h6>
+                                <h6><i class="fas fa-th gradient"></i> Mq: {{ apa.meters_size }}</h6>
+                            </div>
+                            
+                        </a>   
                         </div>
-                        <h2> {{ apa.title }} </h2>
-                        <div class="features d-flex justify-content-around pt-2">
-                            <h6><i class="fas fa-home gradient"></i> Locali: {{ apa.rooms_num }}</h6>
-                            <h6><i class="fas fa-bed gradient"></i> Letti: {{ apa.beds_num }}</h6>
-                            <h6><i class="fas fa-shower gradient"></i> Bagni: {{ apa.bath_num }}</h6>
-                            <h6><i class="fas fa-th gradient"></i> Mq: {{ apa.meters_size }}</h6>
-                        </div>
-                        
-                    </a>   
                     </div>
                 </div>
                 <div v-else>
+                    <h1 class="pb-2">I risultati della tua ricerca:</h1>
                     <h2 class="text-center">Nessun appartamento trovato</h2>
                 </div>
             </div>

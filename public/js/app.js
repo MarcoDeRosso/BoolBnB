@@ -2028,6 +2028,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['services', 'apartments', 'lista'],
   mounted: function mounted() {
@@ -2045,6 +2048,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       apartmentsAndService: [],
       serviceListFlag: true,
       copyFilteredApartments: [],
+      copyFilteredApaForRooms: [],
+      copyFilteredApaForBeds: [],
       apartmentsInRange: [],
       api: '',
       numberOfServices: '',
@@ -2072,10 +2077,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.apartmentsAndService.push(apaAndServ);
       }
     },
-    filterSearch: function filterSearch() {
+    filterSearchCity: function filterSearchCity() {
       var _this2 = this;
 
-      this.startSearchFlag = true;
+      this.startSearchFlag = true; //se c'è gia un risultato per il filtro km, allora lavora su quei appartamenti
 
       if (this.apartmentsInRange.length != 0) {
         this.filteredApartments = this.apartmentsInRange;
@@ -2083,6 +2088,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       if (this.city.trim() != '') {
+        // problema salvare copia del filtro città su cui ciclare sempre i bagni e stanze
+        //se l'array degli appartamenti filtrato è vuoto, copialo dall'array completo e filtra per città
         if (this.filteredApartments.length === 0) {
           this.filteredApartments = this.apartmentsAndService.filter(function (apa) {
             return apa.address.toLowerCase().includes(_this2.city.toLowerCase().trim());
@@ -2092,33 +2099,52 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             return apa.address.toLowerCase().includes(_this2.city.toLowerCase().trim());
           });
         }
-      }
-
-      if (this.rooms != 0) {
-        this.filteredApartments = this.filteredApartments.filter(function (apa) {
-          return apa.rooms_num == _this2.rooms;
-        });
-      }
-
-      if (this.beds != 0) {
-        this.filteredApartments = this.filteredApartments.filter(function (apa) {
-          return apa.beds_num == _this2.beds;
-        });
       } //reset se si cancella la città
 
 
       if (this.city === '') {
         this.filteredApartments = [];
+        this.copyFilteredApaForRooms = [];
+        this.copyFilteredApaForBeds = [];
         this.beds = 0;
         this.rooms = 0;
-      }
+      } //lista base sulla quale ciclare per rooms
 
-      this.copyFilteredApartments = this.filteredApartments;
+
+      this.copyFilteredApaForRooms = this.filteredApartments; //lista base sulla quale ciclare per beds
+
+      this.copyFilteredApaForBeds = this.filteredApartments; //lista base sulla quale ciclare per i servizi
+
+      this.copyFilteredApartments = this.filteredApartments; //reset lista servizi se cambia città o num stanze o num bagni
+
       this.serviceList = [];
       this.serviceListFlag = true;
     },
-    filterServices: function filterServices() {
+    filterRooms: function filterRooms() {
       var _this3 = this;
+
+      if (this.rooms != 0) {
+        this.filteredApartments = this.copyFilteredApaForRooms.filter(function (apa) {
+          // console.log('sono nelle camere')
+          return apa.rooms_num == _this3.rooms;
+        });
+      }
+
+      this.copyFilteredApaForBeds = this.filteredApartments;
+      this.beds = 0;
+    },
+    filterBeds: function filterBeds() {
+      var _this4 = this;
+
+      if (this.beds != 0) {
+        this.filteredApartments = this.copyFilteredApaForBeds.filter(function (apa) {
+          // console.log('sono nei letti')
+          return apa.beds_num == _this4.beds;
+        });
+      }
+    },
+    filterServices: function filterServices() {
+      var _this5 = this;
 
       // entra solo se c'è almeno un oggetto nell'array di appartamenti filtrati
       if (this.copyFilteredApartments.length > 0) {
@@ -2129,16 +2155,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             var nexStepFlag = true; //per ogni servizio nella lista di quelli selezionati, 
             //controlla che sia presente nei servizi dell'appartamento
 
-            _this3.serviceList.forEach(function (service) {
+            _this5.serviceList.forEach(function (service) {
               if (apa.services.includes(parseInt(service)) && nexStepFlag === true) {
-                _this3.serviceListFlag = true;
+                _this5.serviceListFlag = true;
               } else {
-                _this3.serviceListFlag = false;
+                _this5.serviceListFlag = false;
                 nexStepFlag = false;
               }
             });
 
-            return _this3.serviceListFlag;
+            return _this5.serviceListFlag;
           });
         }
 
@@ -38609,7 +38635,7 @@ var render = function() {
                         domProps: { value: _vm.city },
                         on: {
                           keyup: function($event) {
-                            return _vm.filterSearch()
+                            return _vm.filterSearchCity()
                           },
                           input: function($event) {
                             if ($event.target.composing) {
@@ -38661,7 +38687,7 @@ var render = function() {
                             domProps: { value: _vm.rooms },
                             on: {
                               click: function($event) {
-                                return _vm.filterSearch()
+                                return _vm.filterRooms()
                               },
                               input: function($event) {
                                 if ($event.target.composing) {
@@ -38700,7 +38726,7 @@ var render = function() {
                             domProps: { value: _vm.beds },
                             on: {
                               click: function($event) {
-                                return _vm.filterSearch()
+                                return _vm.filterBeds()
                               },
                               input: function($event) {
                                 if ($event.target.composing) {
@@ -38896,87 +38922,96 @@ var render = function() {
             staticClass: "p-5"
           },
           [
-            _c("h1", { staticClass: "pb-2" }, [
-              _vm._v("I risultati della tua ricerca:")
-            ]),
-            _vm._v(" "),
             _vm.filteredApartments.length > 0
-              ? _c(
-                  "div",
-                  { staticClass: "row " },
-                  _vm._l(_vm.filteredApartments, function(apa, index) {
-                    return _c(
-                      "div",
-                      {
-                        key: index,
-                        staticClass:
-                          "articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3"
-                      },
-                      [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "apartment",
-                            attrs: { href: "home/" + apa.id }
-                          },
-                          [
-                            _c("div", [
-                              _c("img", {
-                                staticClass: "img-apartment mb-3",
-                                attrs: { src: apa.img_path, alt: "" }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "price-tag" }, [
-                                _vm._v(" " + _vm._s(apa.price_night) + "  €")
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("h2", [_vm._v(" " + _vm._s(apa.title) + " ")]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "features d-flex justify-content-around pt-2"
-                              },
-                              [
-                                _c("h6", [
-                                  _c("i", {
-                                    staticClass: "fas fa-home gradient"
-                                  }),
-                                  _vm._v(" Locali: " + _vm._s(apa.rooms_num))
-                                ]),
-                                _vm._v(" "),
-                                _c("h6", [
-                                  _c("i", {
-                                    staticClass: "fas fa-bed gradient"
-                                  }),
-                                  _vm._v(" Letti: " + _vm._s(apa.beds_num))
-                                ]),
-                                _vm._v(" "),
-                                _c("h6", [
-                                  _c("i", {
-                                    staticClass: "fas fa-shower gradient"
-                                  }),
-                                  _vm._v(" Bagni: " + _vm._s(apa.bath_num))
-                                ]),
-                                _vm._v(" "),
-                                _c("h6", [
-                                  _c("i", {
-                                    staticClass: "fas fa-th gradient"
-                                  }),
-                                  _vm._v(" Mq: " + _vm._s(apa.meters_size))
-                                ])
-                              ]
-                            )
-                          ]
-                        )
-                      ]
+              ? _c("div", [
+                  _c("h1", { staticClass: "pb-2" }, [
+                    _vm._v(
+                      "I risultati della tua ricerca: " +
+                        _vm._s(_vm.filteredApartments.length)
                     )
-                  }),
-                  0
-                )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "row " },
+                    _vm._l(_vm.filteredApartments, function(apa, index) {
+                      return _c(
+                        "div",
+                        {
+                          key: index,
+                          staticClass:
+                            "articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3"
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "apartment",
+                              attrs: { href: "home/" + apa.id }
+                            },
+                            [
+                              _c("div", [
+                                _c("img", {
+                                  staticClass: "img-apartment mb-3",
+                                  attrs: { src: apa.img_path, alt: "" }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "price-tag" }, [
+                                  _vm._v(" " + _vm._s(apa.price_night) + "  €")
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("h2", [_vm._v(" " + _vm._s(apa.title) + " ")]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "features d-flex justify-content-around pt-2"
+                                },
+                                [
+                                  _c("h6", [
+                                    _c("i", {
+                                      staticClass: "fas fa-home gradient"
+                                    }),
+                                    _vm._v(" Locali: " + _vm._s(apa.rooms_num))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("h6", [
+                                    _c("i", {
+                                      staticClass: "fas fa-bed gradient"
+                                    }),
+                                    _vm._v(" Letti: " + _vm._s(apa.beds_num))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("h6", [
+                                    _c("i", {
+                                      staticClass: "fas fa-shower gradient"
+                                    }),
+                                    _vm._v(" Bagni: " + _vm._s(apa.bath_num))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("h6", [
+                                    _c("i", {
+                                      staticClass: "fas fa-th gradient"
+                                    }),
+                                    _vm._v(" Mq: " + _vm._s(apa.meters_size))
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    }),
+                    0
+                  )
+                ])
               : _c("div", [
+                  _c("h1", { staticClass: "pb-2" }, [
+                    _vm._v("I risultati della tua ricerca:")
+                  ]),
+                  _vm._v(" "),
                   _c("h2", { staticClass: "text-center" }, [
                     _vm._v("Nessun appartamento trovato")
                   ])
@@ -51624,8 +51659,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\sebas\Desktop\BoolBnB-1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\sebas\Desktop\BoolBnB-1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

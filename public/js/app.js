@@ -2065,7 +2065,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         console.log(res);
         _this.apartmentsInRange = res.data;
 
-        _this.filterSearch();
+        _this.filterSearchCity();
       });
     },
     addApartmentsToService: function addApartmentsToService() {
@@ -51662,8 +51662,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Marco\Desktop\BolBnB\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

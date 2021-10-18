@@ -1,126 +1,169 @@
-
 #sponsorships {
-    .col-md-8 {
-       margin: 0 auto 10px;
-       text-align: center;
-       padding-top: 80px;
-       h5 {
-          margin-bottom: 5px;
-       }
-       h6 {
-          margin-top: 10px;
-          margin-bottom: 10px;
-          padding: 0 7px;
-          font-size: 15px;
-       }
-    }
-    .form-check {
-       padding: 0 !important;
-    }
- 
-    .card-bronze{
-       transition: 0.5s;
- 
-       &:hover{
-          background: rgb(205,127,50);
-          background-image: linear-gradient(0deg, rgba(205,127,50,1) 0%, rgba(252, 221, 190, 0.962) 49%, rgba(205,127,50,1) 100%);
- 
-          color: black !important;
-          h5{
-             color: black !important;
-          }
- 
-          transform: scale(1.1);
-          transition: 0.5s;
-       }
-    }
- 
-    .card-silver{
-       transition: 0.5s;
- 
-       &:hover{
-          background: rgb(206,206,206);
-          background: linear-gradient(0deg, rgba(206,206,206,1) 0%, rgba(243,243,243,0.9139005944174545) 49%, rgba(206,206,206,0.9559174011401436) 100%);
- 
-          color: black !important;
-          h5{
-             color: black !important;
-          }
- 
-          transform: scale(1.1);
-          transition: 0.5s;
-       }
-    }
- 
-    .card-gold{
-       transition: 0.5s;
-       &:hover{
-          background: rgb(255, 209, 5);
-          background: linear-gradient(0deg, rgba(255,172,5,1) 0%, rgba(250, 226, 166, 0.914) 49%, rgba(255,209,5,0.9279061966583508) 100%);
-          color: black !important;
-          h5{
-             color: black !important;
-          }
-          transform: scale(1.1);
-          transition: 0.5s;
-       }
-    }
- 
-    .card {
-       margin-bottom: 15px;
-       box-shadow: 0px 0px 5px -1px rgb(0 0 0 / 30%);
- 
-       .card-body {
-          padding-left: 0;
-          padding-right: 0;
-       }
-       label {
-          cursor: pointer;
-       }
-       .color {
-          margin-bottom: 20px;
-          .bronze {
-             color: #CD7F32;
-          }
-          .silver {
-             color: #C0C0C0;
-          }
-          .gold {
-             color: #ff9900;
-          }
-          h6:last-child {
-             font-weight: bold;
-          }
-          img{
-             width: 50px;
-          }
-       }
-       .form-check-input {
-          transform: translate(-50%,-50%);
-          left: 50%;
-          height: 15px;
-          margin: 0 !important;
-          cursor: pointer;
-       }
-    }
-    .card:hover {
-       box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 30%);
-    }
- }
- .bnb-totalMain {
-    .bnb-mainPayment {
-       text-align: center;
-    }
-    .row, .bnb-totalContainer {
-       display: flex;
-       justify-content: center;
-    }
-    #submit-button {
-       margin: 0 auto;
-    }
- }
+   .col-md-8 {
+      margin: 0 auto 10px;
+      text-align: center;
+      padding-top: 80px;
+      h5 {
+         margin-bottom: 5px;
+      }
+      h6 {
+         margin-top: 10px;
+         margin-bottom: 10px;
+         padding: 0 7px;
+         font-size: 15px;
+      }
+   }
+   .form-check {
+      padding: 0 !important;
+   }
 
- /* The Modal (background) */
+   .card-bg:first-of-type {
+      transition: 0.5s;
+
+      background: rgb(205, 127, 50);
+      background-image: linear-gradient(
+         0deg,
+         rgba(205, 127, 50, 1) 0%,
+         rgba(252, 221, 190, 0.962) 49%,
+         rgba(205, 127, 50, 1) 100%
+      );
+
+      color: black !important;
+      h5 {
+         color: black !important;
+      }
+
+      transform: scale(1.1);
+      transition: 0.5s;
+   }
+
+   .card-bg {
+      transition: 0.5s;
+
+      background: rgb(206, 206, 206);
+      background: linear-gradient(
+         0deg,
+         rgba(206, 206, 206, 1) 0%,
+         rgba(243, 243, 243, 0.9139005944174545) 49%,
+         rgba(206, 206, 206, 0.9559174011401436) 100%
+      );
+
+      color: black !important;
+      h5 {
+         color: black !important;
+      }
+
+      transform: scale(1.1);
+      transition: 0.5s;
+      i, .title-color{
+         color: $bluscuropastello;
+      }
+   }
+
+   .card-bg:last-of-type {
+      transition: 0.5s;
+
+      background: rgb(255, 209, 5);
+      background: linear-gradient(
+         0deg,
+         rgba(255, 172, 5, 1) 0%,
+         rgba(250, 226, 166, 0.914) 49%,
+         rgba(255, 209, 5, 0.9279061966583508) 100%
+      );
+      color: black !important;
+      h5 {
+         color: black !important;
+      }
+      transform: scale(1.1);
+      transition: 0.5s;
+   }
+
+   .card {
+      margin-bottom: 15px;
+      box-shadow: 0px 0px 5px -1px rgb(0 0 0 / 30%);
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+      width: 100%;
+      height: 240px;
+
+      .card-body {
+         padding-left: 0;
+         padding-right: 0;
+         transform-style: preserve-3d;
+         transition: transform 0.6s;
+         position: relative;
+         width: 100%;
+         height: 100%;
+
+         // transform-style: preserve-3d;
+         // transition: transform 0.6s;
+         // transform: rotateY(180deg);
+      }
+      label {
+         cursor: pointer;
+      }
+      .color {
+         margin-bottom: 20px;
+         // .title-color:first-of-type {
+         //    color: #cd7f32!important;
+         // }
+         // .title-color {
+         //    color: #c0c0c0!important;
+         // } 
+         // .title-color:last-of-type {
+         //    color: #ff9900;
+         // }
+         h6:last-child {
+            font-weight: bold;
+         }
+         img {
+            width: 50px;
+         }
+      }
+      .flip-card-front {
+         -webkit-backface-visibility: hidden;
+         backface-visibility: hidden;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+      }
+
+      .flip-card-back {
+         -webkit-backface-visibility: hidden;
+         backface-visibility: hidden;
+         transform: rotateY(180deg);
+         position: absolute;
+         width: 100%;
+         height: 100%;
+      }
+      .form-check-input {
+         transform: translate(-50%, -50%);
+         left: 50%;
+         height: 15px;
+         margin: 0 !important;
+         cursor: pointer;
+      }
+   }
+   .card:hover {
+      box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 30%);
+      transform: rotateY(180deg);
+   }
+}
+.bnb-totalMain {
+   .bnb-mainPayment {
+      text-align: center;
+   }
+   .row,
+   .bnb-totalContainer {
+      display: flex;
+      justify-content: center;
+   }
+   #submit-button {
+      margin: 0 auto;
+   }
+}
+
+/* The Modal (background) */
 .modal {
    display: none; /* Hidden by default */
    position: fixed; /* Stay in place */
@@ -131,8 +174,8 @@
    width: 100%; /* Full width */
    height: 100%; /* Full height */
    overflow: auto; /* Enable scroll if needed */
-   background-color: rgb(0,0,0); /* Fallback color */
-   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   background-color: rgb(0, 0, 0); /* Fallback color */
+   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */

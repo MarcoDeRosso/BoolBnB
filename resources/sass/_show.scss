@@ -18,37 +18,40 @@
         }
     }
 }
+.jumbotron-sponsor {
+  background-image: $jumbotron-sponsor;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 350px;
+  border-radius: 0px !important;
+  .sponsor {
+    background-color: white;
+    padding: 25px;
+    border-radius: 25px;
+  }
+}
+.img-box {
+  
+  height: 340px;
+  .img-apartment {
+    border-radius: 15px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  .price-tag {
+    width: 20%;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+    text-align: center;
+    position: relative;
+    bottom: 20%;
+    left: 80%;
+    font-size: 24px;
+    border-radius: 15px 0 0 15px;
+  }
 
-.bn632-hover {
-    width: 160px;
-    font-size: 16px;
-    font-weight: 600;
-    color: $bluscuropastello;
-    cursor: pointer;
-    margin: 20px;
-    height: 55px;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-    border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-  }
-  
-  .bn632-hover:hover {
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-  }
-  
-  .bn632-hover:focus {
-    outline: none;
-  }
-  
+//  qui diceva cose git hub (merge di emmepi)
   .bn632-hover.bn21 {
       background-image: linear-gradient(
         to right,
@@ -81,3 +84,44 @@ div.container.graphic {
 
 
   
+//qui finiva di dire cose git hub (merge di emmepi)
+}
+
+.bn632-hover {
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: $bluscuropastello;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn21 {
+  background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+  box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+.bn632-hover.show {
+  width: 220px;
+}
+

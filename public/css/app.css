@@ -15560,7 +15560,6 @@ a.text-dark:focus {
 footer.my_footer {
   background-color: #f2f2f3;
   font-weight: bold;
-  color: #5C5B62;
   padding-top: 20px;
 }
 
@@ -15569,7 +15568,6 @@ footer.my_footer li {
 }
 
 footer.my_footer li a {
-  color: #5C5B62;
   padding-bottom: 20px;
 }
 
@@ -15577,16 +15575,8 @@ footer.my_footer li a:hover {
   color: #FF8964;
 }
 
-footer.my_footer h3 a {
-  color: #5C5B62;
-}
-
 footer.my_footer h3 a:hover {
   color: #FF8964;
-}
-
-footer.my_footer .p-3 a {
-  color: #5C5B62;
 }
 
 footer.my_footer .p-3 a:hover {
@@ -15619,7 +15609,7 @@ footer.my_footer .footer_bottom {
 }
 
 .for-line-only {
-  border-top: 1px solid black;
+  border-top: 3px solid #FF8964;
 }
 
 button.cyberpunk,
@@ -15628,12 +15618,12 @@ button.cyberpunk::after {
   width: 200px;
   height: 86px;
   font-family: "Bebas Neue", cursive;
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 5%, #034f84 5%);
   border: 0;
   color: #fff;
   letter-spacing: 3px;
   line-height: 88px;
-  box-shadow: 6px 0px 0px #00E6F6;
+  box-shadow: 6px 0px 0px #FF8964;
   outline: transparent;
   position: relative;
 }
@@ -15652,8 +15642,8 @@ button.cyberpunk::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #034f84 5%);
+  text-shadow: -3px -3px 0px orangered, 3px 3px 0px #00E6F6;
   -webkit-clip-path: var(--slice-0);
           clip-path: var(--slice-0);
 }
@@ -15861,13 +15851,75 @@ button.learn-more:active::before {
   transform: translate3d(0, 0, -1em);
 }
 
-h2 {
+.index .jumbotron {
+  background-image: url(https://images.pexels.com/photos/34639/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 270px;
+  border-radius: 0px !important;
+  text-align: center;
+}
+
+.index .jumbotron .white-space {
+  display: inline-block;
+  background-color: white;
+  padding: 25px;
+  border-radius: 25px;
+}
+
+.index .jumbotron .white-space span.info-name {
   color: #FF8964;
 }
 
-h1 {
-  font-weight: bold;
-  text-align: center;
+.index .container-fluid,
+.index .container-sm,
+.index .container-md,
+.index .container-lg,
+.index .container-xl {
+  padding-bottom: 24px;
+}
+
+.index .container-fluid h1,
+.index .container-sm h1,
+.index .container-md h1,
+.index .container-lg h1,
+.index .container-xl h1 {
+  padding-bottom: 12px;
+}
+
+.index .container-fluid table,
+.index .container-sm table,
+.index .container-md table,
+.index .container-lg table,
+.index .container-xl table {
+  padding-left: 15px;
+}
+
+.index .container-fluid table tbody td,
+.index .container-sm table tbody td,
+.index .container-md table tbody td,
+.index .container-lg table tbody td,
+.index .container-xl table tbody td {
+  padding: 0 !important;
+}
+
+.index .container-fluid table tbody td img,
+.index .container-sm table tbody td img,
+.index .container-md table tbody td img,
+.index .container-lg table tbody td img,
+.index .container-xl table tbody td img {
+  width: 100px;
+  border-radius: 0;
+}
+
+.index .container-fluid table tbody td a button.bn632-hover.bn26,
+.index .container-sm table tbody td a button.bn632-hover.bn26,
+.index .container-md table tbody td a button.bn632-hover.bn26,
+.index .container-lg table tbody td a button.bn632-hover.bn26,
+.index .container-xl table tbody td a button.bn632-hover.bn26 {
+  width: inherit;
+  padding: 5px 20px;
 }
 
 img {
@@ -15933,8 +15985,12 @@ img {
 
 .jumbotron-sponsor .sponsor {
   background-color: white;
-  padding: 25px;
+  padding: 20px;
   border-radius: 25px;
+}
+
+.jumbotron-sponsor .sponsor button.bn632-hover.bn21 {
+  margin-bottom: 0;
 }
 
 .bn632-hover {
@@ -15970,6 +16026,31 @@ img {
 
 .bn632-hover.show {
   width: 220px;
+}
+
+div.container.buttons {
+  padding-bottom: 24px;
+}
+
+div.container-fluid.msgs,
+div.msgs.container-sm,
+div.msgs.container-md,
+div.msgs.container-lg,
+div.msgs.container-xl {
+  padding: 36px 0 24px;
+  background-color: #f2f2f3;
+}
+
+div.container-fluid.msgs h1,
+div.msgs.container-sm h1,
+div.msgs.container-md h1,
+div.msgs.container-lg h1,
+div.msgs.container-xl h1 {
+  padding-bottom: 12px;
+}
+
+div.container.graphic {
+  padding: 36px;
 }
 
 .navbar {
@@ -16022,6 +16103,15 @@ input {
 
 .no-box-shadow {
   box-shadow: none;
+}
+
+h2 {
+  color: #FF8964;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
 }
 
 div.login.jumbotron {

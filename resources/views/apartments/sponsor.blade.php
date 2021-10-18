@@ -27,11 +27,16 @@
       <div class="col-md-8">
         <div class="row justify-content-around">
           @foreach ($sponsors as $sponsor)
-          <div class="card col-12 col-lg-3">
+          <div class="card card-bg col-12 col-lg-3">
             <div class="card-body">
-              <div class="form-check bnb-formCheck">
+              <div class="flip-card-front">
+                <h6 class="bronze">Pacchetto {{$sponsor->name}}</h6>
+                <h1><i class="fas fa-medal"></i></h1>
+                <h6>&#8364; {{$sponsor->cost}} </h6>
+              </div>
+              <div class="form-check flip-card-back bnb-formCheck">
                 <div class="color">
-                  <h6 class="bronze">Pacchetto {{$sponsor->name}}</h6>
+                  <h6 class="title-color">Pacchetto {{$sponsor->name}}</h6>
                   <i class="fas fa-medal"></i>
                   <h6>Appartamento sponsorizzato per {{$sponsor->hours}} ore</h6>
                   <h6>&#8364; {{$sponsor->cost}} </h6>

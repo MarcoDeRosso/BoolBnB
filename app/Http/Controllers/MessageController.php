@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Apartment;
 use App\Message;
 use Illuminate\Http\Request;
 
@@ -33,5 +34,10 @@ class MessageController extends Controller
 
         return redirect()->route('apartmentShow', $data['id']);
     }
-
+    public function destroy(Message $message)
+    {   
+        dd($message);
+        $message->delete();
+        return redirect()->route('apartments.show');
+    }
 }

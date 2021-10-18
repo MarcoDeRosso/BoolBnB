@@ -24,6 +24,8 @@ Route::post('/apartments/{id}/sponsor', 'PaymentsController@store')->name('spons
 
 Route::get('/messages','MessageController@index')->name('messages.index');
 Route::post('/messages','MessageController@store')->name('messages.store');
+Route::delete('/messages/{id}','MessageController@destroy')->name('messages.delete');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/{id}', 'HomeController@show')->name('apartmentShow');

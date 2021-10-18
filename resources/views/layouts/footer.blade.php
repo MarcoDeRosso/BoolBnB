@@ -55,7 +55,7 @@
     
     <div class="for-line-only">
        <section class="p-3 pt-0 container footer_bottom">
-           <div class="row d-flex align-items-center  justify-content-between">
+           <div class="row d-flex align-items-center  justify-content-around">
                <div class="text-center">
                    <div class="p-3">
                       <strong> © 2021 BoolBnb. Team 1  </strong>- 
@@ -70,15 +70,15 @@
                </div>
                 <div class="text-center">
                     <div class="p-3">
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/mariapiacoccioli/">  Mariapia Coccioli </a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/mariapiacoccioli/"> <button class="cyberpunk">  Mariapia Coccioli  </button></a>
                         <span>-</span>
                         <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/marco-de-rosso-82776b1a1/"> <button class="cyberpunk"> Marco De Rosso </button> </a> 
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluca-argo-913a8a220/"> Gianluca Argo  </a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluca-argo-913a8a220/"> <button class="cyberpunk">  Gianluca Argo  </button>  </a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluigi-celentano-1157891a3"><button class="learn-more"> Gianluigi Celentano  <button></a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluigi-celentano-1157891a3"><button class="cyberpunk"> Gianluigi Celentano  </button></a>
                         <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/sebastian-rizzo-ba84a2159"> Sebastian Rizzo</a>
+                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/sebastian-rizzo-ba84a2159"> <button class="cyberpunk"> Sebastian Rizzo  </button></a>
                     </div>
                 </div>
             </div>    

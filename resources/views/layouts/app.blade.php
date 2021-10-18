@@ -26,7 +26,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+        <nav class="navbar sticky-top navbar-expand-md navbar-light shadow-sm">
             <div class="container ">
                 <a  href="{{ url('/') }}">
                     {{ config('app.name', 'BoolBnB') }}

@@ -16025,28 +16025,28 @@ img {
   width: 220px;
 }
 
-.img-box div.container.buttons {
+div.container.buttons {
   padding-bottom: 24px;
 }
 
-.img-box div.container-fluid.msgs,
-.img-box div.msgs.container-sm,
-.img-box div.msgs.container-md,
-.img-box div.msgs.container-lg,
-.img-box div.msgs.container-xl {
+div.container-fluid.msgs,
+div.msgs.container-sm,
+div.msgs.container-md,
+div.msgs.container-lg,
+div.msgs.container-xl {
   padding: 36px 0 24px;
   background-color: #f2f2f3;
 }
 
-.img-box div.container-fluid.msgs h1,
-.img-box div.msgs.container-sm h1,
-.img-box div.msgs.container-md h1,
-.img-box div.msgs.container-lg h1,
-.img-box div.msgs.container-xl h1 {
+div.container-fluid.msgs h1,
+div.msgs.container-sm h1,
+div.msgs.container-md h1,
+div.msgs.container-lg h1,
+div.msgs.container-xl h1 {
   padding-bottom: 12px;
 }
 
-.img-box div.container.graphic {
+div.container.graphic {
   padding: 36px;
 }
 

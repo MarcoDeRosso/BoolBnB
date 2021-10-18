@@ -8,10 +8,9 @@
 <h1>hai gia pagato</h1>
 <a href="{{ route('apartments.show', $apartment) }}">
   <button>Torna in dietro</button>
-</a>
+</a>  
 
-@else  
-
+@else
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -29,8 +28,6 @@
     <p>Aumenta la sua visilibità e ricevi più messaggi!</p>
   </div>
 </div>
-
-
 
 <div id="sponsorships">
   <div class="row">

@@ -85,8 +85,8 @@
         </tbody>
     </table>   
     @else
-    <h1>Ops, peccato, ancora nessun messaggio <br> per {{ $apartment->title }}</h1>
-    <h2 class="text-center">Sponsorizza l'apparmantento per ricevere più messaggi!</h2>    
+        <h1>Ops, peccato, ancora nessun messaggio <br> per {{ $apartment->title }}</h1>
+        <h2 class="text-center">Sponsorizza l'apparmantento per ricevere più messaggi!</h2>    
     @endif
 </div>
 
@@ -128,16 +128,20 @@
                 data:{
                     labels:[
                         @foreach ($statisticByDay as $item)
-                            '{{$item[0]}}',       
+                            @if($loop->remaining < 7)
+                                '{{$item[0]}}',       
+                            @endif
                         @endforeach
+
                     ],
                     datasets:[{
                         label:'Visite',
                         data:[
                             @foreach ($statisticByDay as $item)
-                            {{$item[1]}},       
+                                @if($loop->remaining < 7)
+                                    {{$item[1]}},       
+                                @endif
                             @endforeach
-
                         ],
                         backgroundColor: '#FF8964'
                     }],
@@ -146,33 +150,5 @@
             });
             
         }, 1000);
-        /*
-        var myChart = new Chart(
-            document.getElementById('myChart').getContext('2d');
-            config
-        );
-        const config = {
-            type: 'line',
-            data: data,
-            options: {}
-        };
-        const labels = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-            ];
-            const data = {
-            labels: labels,
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45],
-            }]
-        };
-        */
     </script>
 @endsection

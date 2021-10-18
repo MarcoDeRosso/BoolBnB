@@ -37,7 +37,7 @@ class BackOfficeController extends Controller
 
             }
         }
-        return view('apartments.index', compact('apartments', 'time'));
+        return view('apartments.index', compact('apartments'));
     }
     
     public function create()

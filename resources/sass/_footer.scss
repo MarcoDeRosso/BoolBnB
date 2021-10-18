@@ -6,25 +6,18 @@ footer.my_footer{
     li{
         padding-bottom: 20px;
         a{
-
-            padding-bottom: 20px ;
+          padding-bottom: 20px ;
         }
         a:hover{
             color: #FF8964;
         }
     }
     h3{
-        a{
-
-        }
         a:hover{
             color: #FF8964;
         }
     }
     .p-3{
-        a{
-
-        }
         a:hover{
             color: #FF8964;
         }
@@ -76,6 +69,7 @@ button.cyberpunk, button.cyberpunk::after {
   box-shadow: 6px 0px 0px $arancionesalmone;
   outline: transparent;
   position: relative;
+  margin-bottom: 20px;
 }
 
 button.cyberpunk::after {

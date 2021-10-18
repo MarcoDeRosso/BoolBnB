@@ -56,29 +56,35 @@
     <div class="for-line-only">
        <section class="p-3 pt-0 container footer_bottom">
            <div class="row d-flex align-items-center  justify-content-around">
-               <div class="text-center">
+               <div class="text-center col-12">
                    <div class="p-3">
                       <strong> © 2021 BoolBnb. Team 1  </strong>- 
-                       <a class=" mb-0 text-decoration-none" href="#"> Privacy  </a>
+                       <a class=" mb-0" href="#"> Privacy  </a>
                        <span>-</span>
-                       <a class=" mb-0 text-decoration-none" href="#"> Termini  </a>
+                       <a class=" mb-0" href="#"> Termini  </a>
                        <span>-</span>
-                       <a class=" mb-0 text-decoration-none" href="#"> Mappa del sito  </a>
+                       <a class=" mb-0" href="#"> Mappa del sito  </a>
                        <span>-</span>
-                       <a class=" mb-0 text-decoration-none" href="#"> Dettagli dell'azienda</a>
+                       <a class=" mb-0" href="#"> Dettagli dell'azienda</a>
                    </div>
                </div>
-                <div class="text-center">
-                    <div class="p-3">
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/mariapiacoccioli/"> <button class="cyberpunk">  Mariapia Coccioli  </button></a>
-                        <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/marco-de-rosso-82776b1a1/"> <button class="cyberpunk"> Marco De Rosso </button> </a> 
-                        <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluca-argo-913a8a220/"> <button class="cyberpunk">  Gianluca Argo  </button>  </a>
-                        <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/gianluigi-celentano-1157891a3"><button class="cyberpunk"> Gianluigi Celentano  </button></a>
-                        <span>-</span>
-                        <a class=" mb-0 text-decoration-none" href="https://www.linkedin.com/in/sebastian-rizzo-ba84a2159"> <button class="cyberpunk"> Sebastian Rizzo  </button></a>
+                <div class="col text-center">
+                    <div class="row justify-content-between">
+                        <div class="col-12 col-md-6 col-lg-2">                            
+                            <a class=" mb-0" href="https://www.linkedin.com/in/mariapiacoccioli/"> <button class="cyberpunk">  Mariapia Coccioli  </button></a>                            
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2">    
+                            <a class=" mb-0" href="https://www.linkedin.com/in/marco-de-rosso-82776b1a1/"> <button class="cyberpunk"> Marco De Rosso </button> </a>                             
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2">    
+                            <a class=" mb-0" href="https://www.linkedin.com/in/gianluca-argo-913a8a220/"> <button class="cyberpunk">  Gianluca Argo  </button>  </a>                            
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2">    
+                            <a class=" mb-0" href="https://www.linkedin.com/in/gianluigi-celentano-1157891a3"><button class="cyberpunk"> Gianluigi Celentano  </button></a>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2">  
+                            <a class=" mb-0" href="https://www.linkedin.com/in/sebastian-rizzo-ba84a2159"> <button class="cyberpunk"> Sebastian Rizzo  </button></a>
+                        </div>
                     </div>
                 </div>
             </div>    

@@ -16085,6 +16085,11 @@ div.container.graphic {
   width: 220px;
 }
 
+span.custom-badge {
+  background-color: #feb;
+  padding: 0 5px;
+}
+
 .navbar {
   background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
   font-weight: bold;

@@ -17,7 +17,7 @@
                 <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-th gradient"></i> Metri Quadri: {{$apartment->meters_size}}</h6>
             </div>
             @foreach ($apartment->service as $service)
-                <span class="badge badge-pill-custom badge-success">{{ $service->title }}</span> 
+                <span class="custom-badge">{{ $service->title }}</span> 
             @endforeach
             <p class="mt-3"> {{ $apartment->description }}</p>
             <input type="hidden" name="latitude" id="latitude" value="{{ $apartment->latitude }}">

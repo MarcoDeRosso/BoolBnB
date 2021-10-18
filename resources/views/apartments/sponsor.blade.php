@@ -1,16 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
 
 @if ($apartment->sponsorActive)
+
 <h1>hai gia pagato</h1>
+<a href="{{ route('apartments.show', $apartment) }}">
+  <button>Torna in dietro</button>
+</a>
+
+@else  
 
 
-@else
-    
-
-
-  <div class="container">
   <!-- The Modal -->
   <div id="myModal" class="modal">
     <!-- Modal content -->
@@ -61,7 +63,7 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center mb-3">
         <div id="dropin-container"></div>
-        <button class="bn632-hover bn21 show" id="submit-button">Request payment method</button>
+        <button class="bn632-hover bn21 show" id="submit-button">Invia pagamento</button>
       </div>
     </div>
   </div>

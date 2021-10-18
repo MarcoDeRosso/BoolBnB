@@ -101,10 +101,14 @@ class ApartmentsTableSeeder extends Seeder
         }
 
         $apartmentDescriptionList=[
-            "Elegante e accogliente monolocale seminterrato situato in Via Marsala nel cuore del centro storico di Bologna. Il monolocale si trova in un palazzo storico ristrutturato. Lo studio ha soffitti in pietra originali, letto matrimoniale, angolo cottura e bagno.
+            "Un appartamento spazioso e luminoso facente parte di un Monastero di fine '800 restaurato con corpo e anima in ogni sua parte per donare ai nostri ospiti eleganza, pulizia e comfort. Con accesso indipendente ed ubicato a 30 mt dalla centralissima e storica Via Roma troverete, in casa e nei dintorni, tutto ciò che serve per vivere una vacanza in comodità e relax!
+            Welcome to Palermo!!
             Lo spazio
-            Il monolocale di 32 mq è stato recentemente ristrutturato e si trova al piano seminterrato di un palazzo storico. Il design è semplice, moderno ed elegante. Si tratta di un piano seminterrato quindi la quantità di luce naturale è limitata, ma ci sono due finestre (una in studio e una in bagno).
-            Leggere con attenzione: essendo un appartamento al piano seminterrato la linea telefonica mobile non funziona. Avrete a vostra disposizione un wi-fi velocissimo con cui potrete lavorare, comunicare, navigare, chattare, vedere film o video e utilizzare tutte le vostre app.",
+            Ciuri ri Puisia è un pied à terre, con arredi moderni e vintage che si fondono in una miscela di elegante raffinatezza. Da pochissimo restaurato tramite meticoloso ripristino delle bellezze architettoniche originarie e ben rifinito, è così composto: living room con zona cucina dotata di ogni comfort (tavolo/console, 4 sedie, piastra ad induzione, frigorifero con freezer, macchinetta del caffè, tostapane, forno a microonde con grill, ferro da stiro e asse da stiro, TV 4K con NetFlix) e zona relax (sofa/letto matrimoniale) con smart TV di fronte; una camera patronale molto grande con letto matrimoniale (160x190), smart TV 4K 43” con NetFilx, condizionatore silenziosissimo, armadio; bagno con vaso e bidet, phon e kit cortesia,
+            (bagnoschiuma e doccia shampoo), doccia extra-size con cromoterapia. L’appartamento è inoltre provvisto di Wi-Fi ILLIMITATO con FIBRA. Possibilità di parcheggio free nei vicoli adiacenti o parking custodito h24 a pagamento. L’appartamento si trova al pianterreno ed, essendo storico è praticamente insonorizzato perchè dotato di mura di circa 1,20 metri di spessore; ha inoltre accesso indipendente con self check-in (a qualsiasi orario) e con doppio portone.
+            Per chi arriva con l'auto:
+            L'appartamento si trova sul perimetro della Zona Traffico Limitato, attiva dal lunedì al venerdì dalle ore 8.00 alle ore 20.00 ma, con i miei consigli, sarà possibile arrivare a 50 metri dall'appartamento, senza dover acquistare il pass giornaliero.
+            E' possibile parcheggiare l'automobile in un parcheggio libero non custodito a 150 mt dall'appartamento, se c'è disponibilità, oppure sono presenti parcheggi privati a pochi metri al costo di 10/15 euro al giorno circa (la tariffa può cambiare).",
             "Piccolo monolocale appena ristrutturato al quarto piano (senza ascensore) nel cuore della zona Liberty di Milano, a due passi dalla fermata di Porta Venezia M1. Comodo divano letto, TV, WiFi, doccia ed aria condizionata.
             L'appartamento è situato al quarto piano SENZA ascensore.
             Altre cose da tenere a mente
@@ -129,11 +133,10 @@ class ApartmentsTableSeeder extends Seeder
             All'esterno è possibile mangiare nella veranda o nel giardino, in parte ombrato da alberi da fico.
             Accesso per gli ospiti
             Gli ospiti potranno accedere in ogni parte della casa e visitare l'azienda agricola. Per coloro che hanno particolari problemi di allergia, facciamo presente che nell'azienda agricola sono presenti diversi animali, compresi cani e gatti.",
-            "Situato nel centro di Atene, a meno di 700 m dal Teatro Nazionale della Grecia e a meno di 1 km da Piazza Omonia, il Connect Suites offre sistemazioni con WiFi gratuito e area salotto.
-
-            Tutte le unità sono dotate di aria condizionata, TV a schermo piatto, soggiorno con divano, angolo cottura ben attrezzato con zona pranzo e bagno privato con doccia, asciugacapelli e set di cortesia. Per una maggiore comodità, la struttura fornisce asciugamani e lenzuola a un costo aggiuntivo.
-            
-            Tra i luoghi d'interesse nelle vicinanze dell'aparthotel figurano il Museo Archeologico Nazionale di Atene, Piazza Monastiraki e il Technopolis (Gazi). L'Aeroporto più vicino è Elefthérios Venizelos, a 21 km da Connect Suites, e la struttura offre un servizio di navetta aeroportuale a pagamento.",
+            "Questa è una grande stanza privata luminosa in appartamento condivisa con altre 2. La casa è in posizione facile per andare a Venezia, c'è la fermata dell'autobus a 50 metri per andare a Venezia in 5 minuti e gli autobus vanno in un giorno e tutta la notte. La casa è ben collegata alla stazione ferroviaria e all'aeroporto. cucina e un grande bagno, comodo bagno con wc, doccia e bidet. Vengono forniti il bagnoschiuma, lo shampoo e il sapone. C'è un secondo bagno in cui c'è una lavatrice.
+            Lo spazio
+            Stanza situata a Mestre , a due minuti dalla fermata dell'autobus per Venezia, a un quarto d'ora dalla stazione dei treni. Vicina a supermercati e discount
+            Questo appartamento è ben posizionato e si trova al terzo piano. Il mio appartamento è situato in un quartiere tranquillo con un accesso facile e veloce a Venezia. Asciugamani ed elementi essenziali sono forniti. Le camere sono grandi, pulite e confortevoli e possono ospitare comodamente 2 persone. Il mio appartamento è a 15 minuti di distanza in autobus da Venezia. La fermata dell'autobus è in Corso del popolo che è la strada principale e un minuto a piedi dall'appartamento.",
             "L'appartamento indipendente al piano terra della villa con piscina, è ad uso esclusivo dei clienti. Può ospitare un unico gruppo familiare o di amici alla volta.
             Incastonata nel verde dei Monti Cimini, consente di raggiungere facilmente i sentieri per gli amanti del trekking e della Mountain-bike. Situata a solo 1 km da Bagnaia, caratteristico paesino medioevale di Viterbo, gode di un ottima posizione anche per chi vuole visitare Villa Lante, Palazzo Farnese, il Parco dei Mostri, lago di Vico..
             Lo spazio
@@ -142,16 +145,16 @@ class ApartmentsTableSeeder extends Seeder
             I clienti saranno dotati delle chiavi per poter entrare ed uscire liberamente dal cancello della proprietà e per accedere all’appartamento.
             Altre cose da tenere a mente
             Di fronte all’ingresso della villa partono vari sentieri nel bosco per gli amanti del trekking o della mountain-bike. È possibile anche praticare il bird watching  o avvistare altri esemplari di fauna selvatica. A due chilometri gli appassionati della storia e delle bellezze architettoniche potranno visitare la famosa Villa Lante e il giardino delle Peonie più grande d’Europa.",
-            "Situato nel centro di Atene, a meno di 1 km da Piazza Monastiraki e a 11 minuti a piedi da Piazza Omonia, il Philosofia Athens Suites offre sistemazioni con WiFi gratuito e area salotto.
-
-            Tutte le unità sono dotate di aria condizionata e alcune dispongono di TV a schermo piatto, lavatrice, bollitore e cucina.
-            
-            Tra i luoghi di interesse nelle vicinanze figurano l'Università di Atene - Edificio Centrale, il Teatro Nazionale della Grecia e la zona dello shopping di via Ermou. L'Aeroporto più vicino è Elefthérios Venizelos, a 20 km da Philosofia Athens Suites.",
-            "Appartamento nuovo, confortevole, in una villa signorile con giardino panoramico. Composto da un ampio e luminoso soggiorno living con angolo cottura, da una spaziosa camera da letto matrimoniale e da un bagno con finestra. Si affaccia sul terrazzo panoramico e sul giardino privato. È possibile attrezzare altri due posti letto per bambini o uno per adulti. Raggiungibile soltanto in auto, a 5 minuti da Ivrea e dall’autostrada per Torino, Aosta e Milano. È dotato di antifurto e di posto auto.
+            "L’appartamento è confortevole, accogliente, per 2 persone.Ogni singolo oggetto d’arredo è stato scelto con cura ed è completo di tutto l’occorrente: lenzuola, asciugamani, stoviglie, ecc.ecc.
+            E’ inserito nel suggestivo contesto di uno stabile vecchia Milano costruito nel 1900, ed è posizionato idealmente, così da avere silenzio e tranquillità.
+            Sotto casa ci sono molti negozi utili e un supermercato Carrefour.
+            Mezzi pubblici di superficie e metro sono a 2 minuti a piedi.",
+            "Appartamento elegante e signorile, appena ristrutturato, situato nella prestigiosa Piazza di Trevi. E' dotato di un lussuoso salone, una comoda camera da letto, una cucina abitabile e un bagno: tutti gli spazi sono arredati da rivestimenti con oltre un secolo di storia. Dispone di copertura gratuita di wi-fi e di AC, tv satellitare ed ogni comfort.
             Lo spazio
-            L'alloggio è ben arredato e dispone di tutti i servizi necessari. La sua caratteristica è quella di essere indipendente, in un luogo tranquillo e di poter usufruire di spazi esterni (portico, giardino) che renderanno il soggiorno piacevole e rilassante. È possibile attrezzare altri due posti letto per bambini in soggiorno o uno per adulti. Nella camera si può aggiungere un lettino per bambini piccoli. L'alloggio è adatto a persone singole, coppie, famiglie, per vacanza o per soggiorni di lavoro.
-            Altre cose da tenere a mente
-            La posizione permette di utilizzare la permanenza sia per godere di alcuni giorni di riposo e di svago, sia di una pausa durante un viaggio lungo senza allontanarsi dalle vie di comunicazione, vista la comodità di accesso all'autostrada per Aosta, Milano, Torino o Genova. Nel paese, a pochi minuti dall'appartamento, si trova il Castello di Parella, magnifica residenza magnificamente restaurata e circondata da un parco e da interessanti botteghe. Nel circondario si potrà inoltre scoprire un territorio ricco di aspetti geologici- naturalistici e di storia quali il parco del Gran Paradiso e le dimore Sabaude.",
+            The apartment is located on the second floor without elevator of a stucco building on Trevi Square, has a sumptuous double bedroom and an elegant lounge overlooking the Fountain.
+            The bedroom has a comfortable double bed, in the living room you can use a double sofa bed with 18cm mattress and a single sleeping area.
+            The kitchen is equipped with an induction hob and any utensil, including a Nespresso machine for an Italian coffee.
+            The bathroom, tiled with antique tiles, features bathroom amenities, a hairdryer and a hydromassage shower.",
             "Villa Alba, casa 4 locali 130 m2 su 2 piani. Arredamento confortevole e antico: sala da pranzo grande, aperta con TV (satellite). Uscita sulla veranda. 1 camera con 2 letti. Cucina aperta (4 punti cottura, forno, forno a microonde). Doccia/bidè/WC. Piano s...
             Lo spazio
             ...uperiore: 1 camera con 1 letto doppio (160 cm, lunghezza 190 cm). 1 camera con 1 letto doppio (160 cm, lunghezza 190 cm). Bagno/bidè/WC. Barbecue. Vista panoramica sulla campagna. A disposizione: lavatrice, seggiolone, letto per bambini. Internet (Wireless LAN [WLAN], gratis). Adatto alle famiglie.
@@ -174,13 +177,7 @@ class ApartmentsTableSeeder extends Seeder
             Una volta ritirata l'ospite potrà scegliere:
             -di utilizzare la propria;
             -la sostituzione, in questo caso c'è un costo di 15€ per un set matrimoniale, per ogni ulteriore set 8€.",
-            "Situato nel centro di Atene, a meno di 700 m da Piazza Omonia e a meno di 1 km da Piazza Monastiraki, l'Athens City Center Apartments offre sistemazioni con WiFi gratuito e area salotto.
-
-            Tutte le sistemazioni sono dotate di bagno privato con doccia, aria condizionata, TV a schermo piatto e forno a microonde. A disposizione anche un frigorifero, un bollitore e una macchina da caffè.
-            
-            Ogni mattina vi attende una colazione continentale.
-            
-            L'Athens City Center Apartments dista 1,3 km dal Teatro Nazionale della Grecia e 1,4 km dal Gazi - Technopoli. L'Aeroporto più vicino è quello di Atene-Elefthérios Venizélos, a 20 km.",
+            "Il Rifugio del Marinaio è un appartamento nel centro storico di Bari, situato a pochi metri dalla movida e dai principali punti di interesse come Piazza Mercantile, Piazza Ferrarese, il Lungomare di Bari e la Basilica di San Nicola. Si trova a circa 2 km dalla spiaggia Pane e Pomodoro. La casa è dotata di una camera da letto, soggiorno, bagno e cucina. Dispone di TV schermo piatto, aria condizionata e balcone.",
             "Podere Casidote, casa 6 locali 115 m2 su 2 piani. Luminoso, arredamento accogliente: 1 camera con 1 letto doppio. Uscita sul giardino. 2 camere, ogni camera con 2 letti. Uscita sul giardino. 1 camera con 1 letto. Uscita sul giardino. Cucina abitabile (forn...
             Lo spazio
             ...ello a gas, 4 fuochi, bollitore elettrico) con tavolo da pranzo. Uscita sulla terrazza. Bagno/bidè/WC, doccia/bidè/WC. Riscaldamento a gas. Piano superiore: cucina abitabile (lavastoviglie, fornello a gas, 4 fuochi, bollitore elettrico, macchina del caffè elettrica) con camino e tavolo da pranzo. Uscita sulla terrazza. Doccia/bidè/WC. Riscaldamento a gas. 2 terrazze coperta, patio. Barbecue, sedie a sdraio, ripostiglio. Vista panoramica. A disposizione: lavatrice, letto per bambini. Prego notare: appartamento per non fumatori. 2 animali/cani permessi.
@@ -193,13 +190,11 @@ class ApartmentsTableSeeder extends Seeder
            Una casa con giardino privato e recintato attrezzato con barbeque e lettini da cui si può accedere al lago per fare i bagni. Arredata in stile naturale , ha una camera con un letto matrimoniale e 2 originali letti a castello costruiti sopra . In sala un divano che può diventare un comodo letto.Cucina attrezzata , camino e forno a legna. CIR 09704-CNI-00019
            Accesso per gli ospiti
            Comodo parcheggio privato gratuito.",
-            "Situato nel centro di Atene, a soli 10 minuti a piedi dal Museo dell'Acropoli, l'Athens Residence Apartments è un complesso di appartamenti elegantemente arredati con connessione Wi-Fi gratuita. La struttura dista 100 m dalla Collina di Filopappos e pochi passi da ristoranti e bar.
-
-            Caratterizzati da pavimenti in parquet e colori tenui, gli appartamenti dispongono di aria condizionata, zona giorno e angolo cottura con frigorifero, tostapane, fornelli e macchina da caffè. Inoltre, comprendono un bagno moderno con doccia, set di cortesia e pantofole. Alcune sistemazioni vantano l'accesso a un cortile, a una terrazza e/o a un balcone. Asciugamani e lenzuola sono inclusi.
-            
-            In loco potrete usufruire di un servizio di noleggio biciclette, e la zona è rinomata per il ciclismo e l'escursionismo. L'Athens Residence Apartments dista 400 m dalla stazione della metropolitana Syngrou Fix e 700 m dal Museo Nazionale d'Arte Contemporanea. L'Aeroporto più vicino è quello di Atene-Elefthérios Venizélos, a 40 km.
-            
-            Questa zona di Atene è una delle preferite dai nostri ospiti, in base alle recensioni indipendenti.",
+            "Piccolo monolocale appena ristrutturato al quarto piano (senza ascensore) nel cuore della zona Liberty di Milano, a due passi dalla fermata di Porta Venezia M1. Comodo divano letto, TV, WiFi, doccia ed aria condizionata.
+            Lo spazio
+            L'appartamento è situato al quarto piano SENZA ascensore.
+            Altre cose da tenere a mente
+            Usiamo un sistema di self check in direttamente presso l'abitazione. Vi invieremo un link per effettuare il check in on line (da fare TASSATIVAMENTE entro le 19 del giorno precedente l'arrivo) e riceverete le istruzioni circa 24 ore prima dell'arrivo.",
             "Questo ampio bilocale offre tutte le comodità che servono alle famiglie che viaggiano. Un letto matrimoniale e due divani trasformabili in letto, offrono fino a 6 posti letto. La casa è dotata di biancheria, asciugamani, stoviglie, elettrodomestici, per garantire il massimo comfort agli ospiti. L’appartamento è situato a 15 minuti a piedi dalla centralissima Piazza Statuto e Stazione Porta Susa ed a 3 minuti dal Parco della Pellerina. Comoda alla Metropolitana ed alle linee dei mezzi 13 e 71.
             Lo spazio
             L’alloggio è costituito da un disimpegno all’ingresso, un soggiorno con angolo cucina, tavolo per sei persone, divano letto e tv; una seconda camera completa di letto matrimoniale, armadio guardaroba e secondo divano letto; un bagno completo di finestra, lavabo, doccia, WC e bidet. Sono presenti tutti gli elettrodomestici principali come lavatrice, forno a microonde, macchina caffè Nespresso, piano cottura a induzione con cappa aspirante. Posate, piatti, pentole, asciugamani, lenzuola, coperte, etc..., completano la dotazione di questo appartamento.",
@@ -230,16 +225,14 @@ class ApartmentsTableSeeder extends Seeder
             Per famiglie con bimbi piccoli è disponibile un lettino da campeggio e un seggiolone.
             L'appartamento è completo di dotazione biancheria letto e bagno.
             Per gli ospiti che arrivano in auto è possibile parcheggiare liberamente sotto casa o nel garage privato",
-            "La stanza è sita in un ampio appartamento a sua volta ubicato in uno storico palazzo del dopoguerra: centralissimo, a 50 metri dalla stazione centrale, dalle linee metropolitane e dalla linea Circumvesuviana. Dall'appartamento sono anche facilmente raggiungibili le linee Cumana e Circumflegrea.
-            Lo spazio
-            Una stanza finemente arredata, che ho attrezzato in risposta alle esigenze che io stesso, a seguito dei miei numerosi viaggi,ho riscontrato.
+            "La stanza è sita in un ampio appartamento a sua volta ubicato in uno storico palazzo del dopoguerra: centralissimo. Lo spazio         Una stanza finemente arredata, che ho attrezzato in risposta alle esigenze che io stesso, a seguito dei miei numerosi viaggi,ho riscontrato.
             Accesso per gli ospiti
             Gli ospiti possono usufruire, oltre che della loro stanza, anche di tutti i servizi disponibili in casa, incluso il bagno condiviso con me e con gli altri ospiti.
             Altre cose da tenere a mente
             La mia casa è una risorsa e al contempo una grande opportunità per chi la sceglie, sarò lieto di assistere i miei ospiti al meglio!
             Non dovrebbe nemmeno essere specificato, ma lo faccio per chiarezza: LGBT benvenuti a casa mia!
             Le zone comuni dell’appartamento sono sorvegliate da telecamere per la reciproca tutela e sicurezza.",
-            "Nuovissimo accogliente bilocale di 65 mq con doppio balcone, perfetto per 2 persone, situato al 1° piano di uno stabile con ascensore. L'appartamento si trova a soli 250mt dalla fermata della metro M1 De Angeli, all'interno dell'elegante quartiere Marghera/De Angeli, ricco di ristoranti, gelaterie, negozi di abbigliamento e bar. Nelle vicinanze sono presenti la farmacia De Angeli aperta h24, la Feltrinelli e Mondadori Store. L'alloggio fa parte di un condominio signorile con portiere.
+            "Nuovissimo accogliente bilocale di 65 mq con doppio balcone, perfetto per 2 persone, situato al 1° piano di uno stabile con ascensore.
             Lo spazio
             SONO CONSENTITI SOGGIORNI DI MEDIA/LUNGA DURATA CON CONTRATTO DI LOCAZIONE TURISTICA O TRANSITORIO FINO A 1 ANNO
             
@@ -293,9 +286,9 @@ class ApartmentsTableSeeder extends Seeder
             "Lunattico 48 Central Milano",
             "The Milky House Milan",
             "Suite Sweet Dreams",
-            "Villa Prada, sul mare",
-            "Chalet sul Lago di Como",
-            "Imperial House",
+            "Villa Prada",
+            "Incantevole appartamento nel cuore di Roma",
+            "Il Rifugio del Marinaio",
             "Casa Momom, con ampio patio",
             "Casetta con fantastica vista lago!",
             "Moderno zona corso Como",
@@ -317,14 +310,14 @@ class ApartmentsTableSeeder extends Seeder
             'https://images.pexels.com/photos/4846461/pexels-photo-4846461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/6527069/pexels-photo-6527069.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/3038552/pexels-photo-3038552.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/4846461/pexels-photo-4846461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/65225/boat-house-cottage-waters-lake-65225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            'https://images.pexels.com/photos/7511693/pexels-photo-7511693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/7227621/pexels-photo-7227621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            'https://images.pexels.com/photos/460695/pexels-photo-460695.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            'https://images.pexels.com/photos/7746589/pexels-photo-7746589.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             'https://images.pexels.com/photos/8134848/pexels-photo-8134848.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
             'https://images.pexels.com/photos/6585598/pexels-photo-6585598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',

@@ -147,7 +147,7 @@
                 axios.get(this.api).then(res=>{
                     console.log(res)
                     this.apartmentsInRange=res.data
-                    this.filterSearch()
+                    this.filterSearchCity()
                 })
             },
             addApartmentsToService () {

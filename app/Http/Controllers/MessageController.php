@@ -7,14 +7,7 @@ use App\Message;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
-{
-    
-    public function index()
-    {
-        //
-    }
-
-    
+{    
     public function store(Request $request)
     {
         $request->validate([
@@ -36,8 +29,9 @@ class MessageController extends Controller
     }
     public function destroy(Message $message)
     {   
-        dd($message);
+        $apartment = Apartment::find($message->apartment_id);
+        // dd($message->data);
         $message->delete();
-        return redirect()->route('apartments.show');
+        return redirect()->route('apartments.show',$apartment);
     }
 }

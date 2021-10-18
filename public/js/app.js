@@ -6645,7 +6645,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container-card[data-v-872262e8] {\n  width: 100%;\n  height: 600px;\n  background-size: cover;\n  background-position: center;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  box-shadow: 10px 10px 10px #ff8964;\n  position: relative;\n}\n.container-card h1[data-v-872262e8] {\n  background-color: rgba(0, 0, 0, 0.7);\n  width: 100%;\n  color: #ff8964;\n  padding: 12px 0;\n}\n.container-card div[data-v-872262e8] {\n  background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);\n  position: absolute;\n  top: 40px;\n  left: -40px;\n  transform: rotate(-45deg);\n  width: 200px;\n  text-align: center;\n  color: #034f84;\n}", ""]);
+exports.push([module.i, ".container-card[data-v-872262e8] {\n  width: 100%;\n  height: 600px;\n  background-size: cover;\n  background-position: center;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  box-shadow: 10px 10px 10px #ff8964;\n  position: relative;\n  overflow: hidden;\n}\n.container-card h1[data-v-872262e8] {\n  background-color: rgba(0, 0, 0, 0.7);\n  width: 100%;\n  color: #ff8964;\n  padding: 12px 0;\n}\n.container-card div[data-v-872262e8] {\n  background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);\n  position: absolute;\n  top: 40px;\n  left: -40px;\n  transform: rotate(-45deg);\n  width: 200px;\n  text-align: center;\n  color: #034f84;\n}", ""]);
 
 // exports
 
@@ -38771,7 +38771,8 @@ var render = function() {
                             id: "servicesExtra",
                             tabindex: "-1",
                             "aria-labelledby": "servicesExtraLabel",
-                            "aria-hidden": "true"
+                            "aria-hidden": "true",
+                            "data-backdrop": "false"
                           }
                         },
                         [
@@ -51623,8 +51624,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\sebas\Desktop\BoolBnB-1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\sebas\Desktop\BoolBnB-1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

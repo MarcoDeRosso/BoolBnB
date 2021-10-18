@@ -55,23 +55,23 @@
                                 </div>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="servicesExtra" tabindex="-1" aria-labelledby="servicesExtraLabel" aria-hidden="true">
+                                <div class="modal fade" id="servicesExtra" tabindex="-1" aria-labelledby="servicesExtraLabel" aria-hidden="true" data-backdrop="false">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-                                        <div class="modal-header" style=" background-color:#92a8d1">
-                                            <h5 class="modal-title" style="color:#034f84" id="servicesExtraLabel">Servizi Aggiuntivi</h5>  
-                                        </div>
-                                        <div class="modal-body row">
-                                            <div class="col-6 text-center align-items-center" v-for="service in services" :key="service.id" >
-                                                <label class="pt-3" for="`${service.title}`">{{ service.title }}</label>
-                                                <input @change="filterServices()"  id="`${service.title}`" type="checkbox" :value="`${service.id}`" v-model="serviceList">
+                                            <div class="modal-header" style=" background-color:#92a8d1">
+                                                <h5 class="modal-title" style="color:#034f84" id="servicesExtraLabel">Servizi Aggiuntivi</h5>  
                                             </div>
-                                        </div>
-                                        <div class="modal-footer justify-content-center">
-                                            <button type="button" class="btn btn-often" data-dismiss="modal">Fatto</button>
-                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                                        </div>
-                                        </div>
+                                            <div class="modal-body row">
+                                                <div class="col-6 text-center align-items-center" v-for="service in services" :key="service.id" >
+                                                    <label class="pt-3" for="`${service.title}`">{{ service.title }}</label>
+                                                    <input @change="filterServices()"  id="`${service.title}`" type="checkbox" :value="`${service.id}`" v-model="serviceList">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer justify-content-center">
+                                                <button type="button" class="btn btn-often" data-dismiss="modal">Fatto</button>
+                                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                            </div>
+                                        </div>    
                                     </div>
                                 </div>
                             </div>

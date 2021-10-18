@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="jumbotron-home d-flex justify-content-center align-items-center">
-    <div class="text-center ">
-        <h3 style="color: black"><strong>Non sai dove andare? Nessun problema!</strong></h3>
-        <a href="{{ route('home') }}"><button class=" btn btn-primary reg-top text-capitalize">Cerca la tua prossima casa</button></a>
+    <div class="text-center" style="background-color: rgba(0, 0, 0, 0.2); border-radius: 20px; padding:13px ">
+        <h3 style="color: white"><strong>Non sai dove andare? Nessun problema!</strong></h3>
+        <a href="{{ route('home') }}"><button class=" btn bn632-hover bn26">Cerca la tua prossima casa</button></a>
     </div>
 </div>
 
@@ -41,10 +41,55 @@
 
 </div>
 
+<div class="container no-limit">
+    <div class="row text-center">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-3">
+            <h1>Seguici sui nostri social media per rimanere sempre aggiornato</h1>
+        </div>       
+    </div>
+</div>
+<div class="container social mb-5">
+    <div class="row">
+        {{-- <div class="col-6 col-sm-3 col-md-3 col-lg-2 offset-lg-2">
+            <a href="#"><img src={{ asset('storage/images/twitter.jpg') }} alt="ps5"></a>
+        </div>
+        <div class="col-6 col-sm-3 col-md-3 col-lg-2">
+            <a href="#"><img src={{ asset('storage/images/facebook.jpg') }} alt=""></a>
+        </div>
+        <div class="col-6 col-sm-3 col-md-3 col-lg-2">
+            <a href="#"><img src={{ asset('storage/images/instagram.jpg') }} alt=""></a>
+        </div>
+        <div class="col-6 col-sm-3 col-md-3 col-lg-2">
+            <a href="#"><img src={{ asset('storage/images/youtube.png') }} alt=""></a>
+        </div>        --}}
+        <div class="hexagon-wrapper">
+            <div class="hexagon">
+              <i class="fab fa-facebook"></i>
+            </div>
+          </div>
+          <div class="hexagon-wrapper">
+            <div class="hexagon">
+              <i class="fab fa-twitter"></i>
+            </div>
+          </div>
+          <div class="hexagon-wrapper">
+            <div class="hexagon">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </div>
+          <div class="hexagon-wrapper">
+            <div class="hexagon">
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+    </div>
+
+</div>
+
 <div class="jumbotron-footer d-flex justify-content-center align-items-center mt-3">
     <div class="text-center ">
         <h3><strong>Condividi il tuo spazio per guadagnare qualcosa in più e cogliere nuove opportunità.</strong></h3>
-        <a href="{{ route('register') }}"><button class=" btn btn-primary reg-btn"> Diventa Host</button></a>
+        <a href="{{ route('register') }}"><button class=" btn bn632-hover bn26"> Diventa Host</button></a>
     </div>
 </div>
 @endsection

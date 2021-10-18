@@ -11,7 +11,7 @@
                             <div class="form-group row">
                                 <label class="col-md-5 col-form-label text-md-right" for="city">Città:</label>
                                 <div class="col-md-4">
-                                    <input class="box-shadow input-home" @keyup="filterSearch()"  type="text" id="city" name="city" v-model="city">
+                                    <input class="box-shadow input-home" @keyup="filterSearchCity()"  type="text" id="city" name="city" v-model="city">
                                 </div>
                             </div>
 
@@ -19,7 +19,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-5 col-form-label text-md-right" for="rooms_num">Numero di camere:</label>
                                     <div class="col-md-4">
-                                        <input class="box-shadow input-home" @click="filterSearch()" type="number" min="5" max="8" v-model="rooms">
+                                        <input class="box-shadow input-home" @click="filterRooms()" type="number" min="5" max="8" v-model="rooms">
 
                                     </div>
                                 </div>
@@ -27,7 +27,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-5 col-form-label text-md-right" for="beds_num">Numero di posti letto:</label>
                                     <div class="col-md-4">
-                                        <input class="box-shadow input-home" @click="filterSearch()"  type="number" min="1" max="3" v-model="beds">
+                                        <input class="box-shadow input-home" @click="filterBeds()"  type="number" min="1" max="3" v-model="beds">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -130,6 +130,8 @@
                 apartmentsAndService:[],
                 serviceListFlag : true,
                 copyFilteredApartments: [],
+                copyFilteredApaForRooms:[],
+                copyFilteredApaForBeds:[],
                 apartmentsInRange:[],
                 api:'',
                 numberOfServices:'',
@@ -151,15 +153,19 @@
                     this.apartmentsAndService.push(apaAndServ)
                 }
             },
-            filterSearch() {
+            filterSearchCity() {
                 this.startSearchFlag = true
 
+                //se c'è gia un risultato per il filtro km, allora lavora su quei appartamenti
                 if(this.apartmentsInRange.length != 0){
                     this.filteredApartments=this.apartmentsInRange;
                     this.apartmentsInRange= [];
                 }
-                if(this.city.trim() != '') {
 
+                if(this.city.trim() != '') {
+                    // problema salvare copia del filtro città su cui ciclare sempre i bagni e stanze
+
+                    //se l'array degli appartamenti filtrato è vuoto, copialo dall'array completo e filtra per città
                     if (this.filteredApartments.length === 0) {
 
                         this.filteredApartments = this.apartmentsAndService.filter((apa)=>{
@@ -173,26 +179,42 @@
                     }
                 }
 
-                if(this.rooms != 0) {
-                    this.filteredApartments = this.filteredApartments.filter((apa)=>{
-                    return apa.rooms_num == this.rooms
-                })}
-
-                if(this.beds != 0) {
-                    this.filteredApartments = this.filteredApartments.filter((apa)=>{
-                    return apa.beds_num == this.beds  
-                })}
-
                 //reset se si cancella la città
                 if(this.city === '') {
                     this.filteredApartments = []
+                    this.copyFilteredApaForRooms = []
+                    this.copyFilteredApaForBeds = []
                     this.beds = 0
                     this.rooms = 0
                 }
+
+                //lista base sulla quale ciclare per rooms
+                this.copyFilteredApaForRooms = this.filteredApartments
+                //lista base sulla quale ciclare per beds
+                this.copyFilteredApaForBeds = this.filteredApartments
+                //lista base sulla quale ciclare per i servizi
                 this.copyFilteredApartments = this.filteredApartments
 
+                //reset lista servizi se cambia città o num stanze o num bagni
                 this.serviceList = []
                 this.serviceListFlag = true
+            },
+            filterRooms() {
+
+                if(this.rooms != 0) {
+                    this.filteredApartments = this.copyFilteredApaForRooms.filter((apa)=>{
+                        // console.log('sono nelle camere')
+                    return apa.rooms_num == this.rooms                        
+                })}
+                this.copyFilteredApaForBeds = this.filteredApartments
+                this.beds = 0
+            },
+            filterBeds(){
+                if(this.beds != 0) {
+                    this.filteredApartments = this.copyFilteredApaForBeds.filter((apa)=>{
+                        // console.log('sono nei letti')
+                    return apa.beds_num == this.beds  
+                })}
             },
             filterServices () {
 

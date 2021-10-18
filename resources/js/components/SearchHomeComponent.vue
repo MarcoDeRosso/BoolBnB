@@ -211,6 +211,7 @@
                 })}
                 this.copyFilteredApaForBeds = this.filteredApartments
                 this.beds = 0
+                this.copyFilteredApartments = this.filteredApartments
             },
             filterBeds(){
                 if(this.beds != 0) {
@@ -218,6 +219,7 @@
                         // console.log('sono nei letti')
                     return apa.beds_num == this.beds  
                 })}
+                this.copyFilteredApartments = this.filteredApartments
             },
             filterServices () {
 

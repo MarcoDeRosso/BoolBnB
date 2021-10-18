@@ -2132,6 +2132,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.copyFilteredApaForBeds = this.filteredApartments;
       this.beds = 0;
+      this.copyFilteredApartments = this.filteredApartments;
     },
     filterBeds: function filterBeds() {
       var _this4 = this;
@@ -2142,6 +2143,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           return apa.beds_num == _this4.beds;
         });
       }
+
+      this.copyFilteredApartments = this.filteredApartments;
     },
     filterServices: function filterServices() {
       var _this5 = this;

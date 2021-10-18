@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="jumbotron-home d-flex justify-content-center align-items-center">
-    <div class="text-center" style="background-color: rgba(0, 0, 0, 0.2); border-radius: 20px; padding:13px ">
+    <div class="text-center" style="background-color: rgba(0, 0, 0, 0.4); border-radius: 20px; padding:13px ">
         <h3 style="color: white"><strong>Non sai dove andare? Nessun problema!</strong></h3>
         <a href="{{ route('home') }}"><button class=" btn bn632-hover bn26">Cerca la tua prossima casa</button></a>
     </div>

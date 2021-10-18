@@ -1,13 +1,12 @@
 footer.my_footer{
     background-color: #f2f2f3;
     font-weight: bold;
-    color: #5C5B62;
     padding-top: 20px;
 
     li{
         padding-bottom: 20px;
         a{
-            color: #5C5B62;
+
             padding-bottom: 20px ;
         }
         a:hover{
@@ -16,7 +15,7 @@ footer.my_footer{
     }
     h3{
         a{
-            color: #5C5B62;
+
         }
         a:hover{
             color: #FF8964;
@@ -24,7 +23,7 @@ footer.my_footer{
     }
     .p-3{
         a{
-            color: #5C5B62;
+
         }
         a:hover{
             color: #FF8964;
@@ -61,7 +60,7 @@ footer.my_footer{
 }
 
 .for-line-only {
-    border-top: 1px solid black;
+  border-top: 3px solid #FF8964;
 }
 
 button.cyberpunk, button.cyberpunk::after {
@@ -69,12 +68,12 @@ button.cyberpunk, button.cyberpunk::after {
   width: 200px;
   height: 86px;
   font-family: 'Bebas Neue', cursive;
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 5%, $bluscuropastello 5%);
   border: 0;
   color: #fff;
   letter-spacing: 3px;
   line-height: 88px;
-  box-shadow: 6px 0px 0px #00E6F6;
+  box-shadow: 6px 0px 0px $arancionesalmone;
   outline: transparent;
   position: relative;
 }
@@ -94,8 +93,8 @@ button.cyberpunk::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #034f84 5%);
+  text-shadow: -3px -3px 0px orangered, 3px 3px 0px #00E6F6;
   clip-path: var(--slice-0);
 }
 

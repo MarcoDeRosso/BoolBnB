@@ -1,11 +1,55 @@
-h2{
-    color: $arancionesalmone;
+.index {
+
+    .jumbotron{
+        background-image: $jumbotron-sponsor;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 270px;
+        border-radius: 0px!important; 
+        text-align: center;
+        .white-space{
+            display: inline-block;
+            background-color: white;
+            padding: 25px;
+            border-radius: 25px;
+
+            span.info-name {
+                color: $arancionesalmone;
+            }
+        }
+    }
+
+    .container-fluid {
+        padding-bottom: 24px;
+
+        h1 {
+            padding-bottom: 12px;
+    
+        }
+        table {
+            padding-left: 15px;
+            tbody{
+                td {
+                    padding: 0!important;
+                    img {
+                        width: 100px; 
+                        border-radius: 0;
+                    }
+                    a {
+                        button.bn632-hover.bn26 {
+                            width: inherit;
+                            padding: 5px 20px;
+                        }
+                    }    
+                }
+            }
+        }
+    }
+
 }
-h1{
-    font-weight: bold;
-    text-align: center;
-}
+
 img{
-     border-radius: 15px;
-     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }

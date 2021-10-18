@@ -23,6 +23,7 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-6 articol-card mt-3 mb-3">
             <img class="mt-3 mb-3" src="{{ $apartment->img_path }}" alt="" style="width: 100%">
+            
             <div class="features">
                 <h4>CARATTERISTICHE</h4>
                 <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-home gradient"></i> Locali: {{$apartment->rooms_num}}</h6>

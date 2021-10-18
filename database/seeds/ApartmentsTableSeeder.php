@@ -69,7 +69,7 @@ class ApartmentsTableSeeder extends Seeder
         $userObj=new User();
         $userObj->name = 'Andrea';
         $userObj->surname = 'Calzolari';
-        $userObj->img_path = 'https://lh3.googleusercontent.com/proxy/fgCnqkNF5DsJ4YmDJKlo5pypkT9Lt1AQokGEusbAalDTkMFWKfi07MIbZ_JF_npNob1YuKVsdubHpI5T8HGF3UZPWf8rXy4mLyYxzo6HZ2-Xd0RdKNblr285Bs-EHT8';
+        $userObj->img_path = 'https://www.focusedu.org/wp-content/uploads/2018/12/circled-user-male-skin-type-1-2.png';
         $userObj->date_of_birth = '1980/02/02';
         $userObj->email = 'andreacalzolari@live.it';
         $userObj->password = '$2y$10$GucQhVApDtnNFGjO9snLUeXMQo1NwU6p60V6Xs6DHAJzD.MBpqyZW';// ciccio1234

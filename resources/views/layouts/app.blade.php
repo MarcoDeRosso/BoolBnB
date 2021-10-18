@@ -64,9 +64,9 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} {{ Auth::user()->surname }}
+                                    <img style="width: 50px; box-shadow:none" src="{{ Auth::user()->img_path }}" alt="">
+                                    {{ Auth::user()->name }} {{ Auth::user()->surname }} 
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     {{-- <a class="dropdown-item" href="">I tuoi Appartamenti</a> --}}
 

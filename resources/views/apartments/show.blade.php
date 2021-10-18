@@ -6,8 +6,9 @@
     <div class="text-center sponsor ">
         <h3><strong>Complimenti! Il tuo appartamento è in evidenza <br> sulla nostra piattaforma.</strong></h3>
         @foreach ($payment as $pay)
+        @if($loop->last)
         <div>Fino al {{$pay['expire_date']}} (UTC)</div>
-            
+        @endif            
         @endforeach
     </div>
     @else
@@ -47,7 +48,7 @@
     </div>
     
 </div>
-<div class="container d-flex justify-content-around">
+<div class="container d-flex justify-content-around buttons">
     <button class="bn632-hover bn21">
         <a href="{{ route('apartments.edit', $apartment) }}">
             Modifica Info
@@ -61,40 +62,47 @@
 </div>
 
 {{-- messaggi  --}}
-<div class="container">
-    @if (count($apartment->message) > 0)    
-    <h1>Inbox Mail per {{ $apartment->title }}</h1>
-    
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Email</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Messaggio</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($apartment->message as $msg)
-            <tr>
-                <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $msg->full_name}}</td>
-                <td>{{ $msg->email}}</td>
-                <td>{{ $msg->text}}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>   
-    @else
-        <h1>Ops, peccato, ancora nessun messaggio <br> per {{ $apartment->title }}</h1>
-        <h2 class="text-center">Sponsorizza l'apparmantento per ricevere più messaggi!</h2>    
-    @endif
+<div class="container-fluid msgs">
+    <div class="container">
+        @if (count($apartment->message) > 0)    
+        <h1>Inbox Mail per {{ $apartment->title }}</h1>
+        
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Messaggio</th>
+                    <th scope="col">Azioni</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($apartment->message as $msg)
+                <tr>
+                    <th scope="row">{{ $loop->iteration }}</th>
+                    <td>{{ $msg->full_name}}</td>
+                    <td>{{ $msg->email}}</td>
+                    <td>{{ $msg->text}}</td>
+                    <td>Elimina</td>
+
+                </tr>
+                @endforeach
+            </tbody>
+        </table>   
+        @else
+            <h1>Ops, peccato, ancora nessun messaggio <br> per {{ $apartment->title }}</h1>
+            <h2 class="text-center">Sponsorizza l'apparmantento per ricevere più messaggi!</h2>    
+        @endif
+    </div>
 </div>
 
 
 {{-- statistiche  --}}
 
-<div class="container">
+<div class="container graphic">
+    <h1>Statische dell'utima settimana di: {{ $apartment->title }}</h1>
     <div>
         <canvas id="myChart"></canvas>
     </div>

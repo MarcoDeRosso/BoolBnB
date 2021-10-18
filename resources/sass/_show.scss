@@ -1,6 +1,22 @@
-.features h6 {
-  display: inline-block;
-  margin-left: 7px;
+.features h6{
+    display: inline-block;
+    margin-left: 7px;
+}
+.jumbotron-sponsor{
+    background-image: $jumbotron-sponsor;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    border-radius: 0px!important; 
+    .sponsor{
+        background-color: white;
+        padding: 20px;
+        border-radius: 25px;
+        button.bn632-hover.bn21 {
+          margin-bottom: 0;
+        }
+    }
 }
 .jumbotron-sponsor {
   background-image: $jumbotron-sponsor;
@@ -34,6 +50,41 @@
     font-size: 24px;
     border-radius: 15px 0 0 15px;
   }
+
+//  qui diceva cose git hub (merge di emmepi)
+  .bn632-hover.bn21 {
+      background-image: linear-gradient(
+        to right,
+        #fc6076,
+        #ff9a44,
+        #ef9d43,
+        #e75516
+      );
+      box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+  }
+  .bn632-hover.show {
+    width: 220px;
+  }  
+div.container.buttons {
+  padding-bottom: 24px;
+}
+
+div.container-fluid.msgs {
+  padding: 36px 0 24px;
+  background-color: #f2f2f3;
+  h1 {
+    padding-bottom: 12px;
+  }
+}
+
+div.container.graphic {
+  padding: 36px;
+}
+
+
+
+  
+//qui finiva di dire cose git hub (merge di emmepi)
 }
 
 .bn632-hover {
@@ -73,3 +124,4 @@
 .bn632-hover.show {
   width: 220px;
 }
+

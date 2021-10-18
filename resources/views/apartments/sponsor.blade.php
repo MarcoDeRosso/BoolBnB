@@ -1,9 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- perchè il primo elemento dell'array non lo prense ? --}}
-{{-- <form action="{{ route('sponsor.store', ['id'=>$apartment->id]) }}" method='POST' > --}}
-{{-- @csrf --}}
+
+@if ($apartment->sponsorActive)
+<h1>hai gia pagato</h1>
+
+
+@else
+    
+
+
   <div class="container">
   <!-- The Modal -->
   <div id="myModal" class="modal">
@@ -60,6 +66,7 @@
     </div>
   </div>
 </div>
+@endif
 @endsection
 @section('script')
     <script>

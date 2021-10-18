@@ -15980,7 +15980,7 @@ img {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 350px;
+  height: 270px;
   border-radius: 0px !important;
 }
 
@@ -15992,21 +15992,6 @@ img {
 
 .jumbotron-sponsor .sponsor button.bn632-hover.bn21 {
   margin-bottom: 0;
-}
-
-.jumbotron-sponsor {
-  background-image: url(https://images.pexels.com/photos/34639/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 350px;
-  border-radius: 0px !important;
-}
-
-.jumbotron-sponsor .sponsor {
-  background-color: white;
-  padding: 25px;
-  border-radius: 25px;
 }
 
 .img-box {

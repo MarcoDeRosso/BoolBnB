@@ -2,18 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Apartment;
 use App\Message;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
-{
-    
-    public function index()
-    {
-        //
-    }
-
-    
+{    
     public function store(Request $request)
     {
         $request->validate([
@@ -33,5 +27,11 @@ class MessageController extends Controller
 
         return redirect()->route('apartmentShow', $data['id']);
     }
-
+    public function destroy(Message $message)
+    {   
+        $apartment = Apartment::find($message->apartment_id);
+        // dd($message->data);
+        $message->delete();
+        return redirect()->route('apartments.show',$apartment);
+    }
 }

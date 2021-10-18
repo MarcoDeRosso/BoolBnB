@@ -85,7 +85,13 @@
                     <td>{{ $msg->full_name}}</td>
                     <td>{{ $msg->email}}</td>
                     <td>{{ $msg->text}}</td>
-                    <td>Elimina</td>
+                    <td>
+                        <form action="{{route('messages.delete', $msg )}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Elimina il messaggio</button>
+                        </form>
+                    </td>
 
                 </tr>
                 @endforeach

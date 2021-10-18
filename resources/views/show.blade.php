@@ -10,7 +10,7 @@
                 <div class="price-tag">{{$apartment->price_night}} €</div>
             </div>
             <div class="features">
-                <h4>CARATTERISTICHE</h4>
+                <h4 class="font-weight-bold">CARATTERISTICHE</h4>
                 <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-home gradient"></i> Locali: {{$apartment->rooms_num}}</h6>
                 <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-bed gradient" ></i> Letti: {{$apartment->beds_num}}</h6>
                 <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-shower gradient" ></i> Bagni: {{$apartment->bath_num}}</h6>

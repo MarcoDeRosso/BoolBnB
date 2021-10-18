@@ -35,6 +35,8 @@
                 <h6 class="bronze">Pacchetto {{$sponsor->name}}</h6>
                 <h1><i class="fas fa-medal"></i></h1>
                 <h6>&#8364; {{$sponsor->cost}} </h6>
+                <label class="form-check-label" for="sponsor_id"></label>
+                <input class="form-check-input sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" >
               </div>
               <div class="form-check flip-card-back bnb-formCheck">
                 <div class="color">
@@ -43,8 +45,8 @@
                   <h6>Appartamento sponsorizzato per {{$sponsor->hours}} ore</h6>
                   <h6>&#8364; {{$sponsor->cost}} </h6>
                 </div>
-                <label class="form-check-label" for="sponsor_id"></label>
-                <input class="form-check-input sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" >
+                {{-- <label class="form-check-label" for="sponsor_id"></label>
+                <input class="form-check-input sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" > --}}
               </div>
             </div>
           </div>

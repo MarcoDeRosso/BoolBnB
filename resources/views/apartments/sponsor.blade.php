@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container text-center">
 
 @if ($apartment->sponsorActive)
 
@@ -23,49 +23,61 @@
       </a>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12">
+      <h1>Sponsorizza il tuo appartamento!</h1>
+      <p>Aumenta la sua visilibità e ricevi più messaggi!</p>
+    </div>
+  </div>
 
 
-    <div id="sponsorships" class="container">
-      <div class="col-md-8">
-        <div class="row justify-content-around">
-          @foreach ($sponsors as $sponsor)
-          <div class="card card-bg col-12 col-lg-3">
-            <div class="card-body">
-              <div class="flip-card-front">
-                <h6 class="bronze">Pacchetto {{$sponsor->name}}</h6>
-                <h1><i class="fas fa-medal"></i></h1>
-                <h6>&#8364; {{$sponsor->cost}} </h6>
-                <label class="form-check-label" for="sponsor_id"></label>
-                <input class="form-check-input sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" >
-              </div>
-              <div class="form-check flip-card-back bnb-formCheck">
-                <div class="color">
-                  <h6 class="title-color">Pacchetto {{$sponsor->name}}</h6>
-                  <i class="fas fa-medal"></i>
-                  <h6>Appartamento sponsorizzato per {{$sponsor->hours}} ore</h6>
-                  <h6>&#8364; {{$sponsor->cost}} </h6>
+
+    <div id="sponsorships">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row justify-content-around">
+            @foreach ($sponsors as $sponsor)
+            <div class="card card-bg col-12 col-lg-3">
+              <div class="card-body">
+                <div class="flip-card-front">
+                  <h6 class="bronze">Pacchetto {{$sponsor->name}}</h6>
+                  <h1><i class="fas fa-medal"></i></h1>
+                  <h6>&#8364; {{$sponsor->cost}} </h6>               
                 </div>
-                {{-- <label class="form-check-label" for="sponsor_id"></label>
-                <input class="form-check-input sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" > --}}
+                <div class="form-check flip-card-back bnb-formCheck">
+                  <div class="color">
+                    <h6 class="title-color">Pacchetto {{$sponsor->name}}</h6>
+                    <i class="fas fa-medal"></i>
+                    <h6>Appartamento sponsorizzato per {{$sponsor->hours}} ore</h6>
+                    <h6>&#8364; {{$sponsor->cost}} </h6>
+                  </div>
+                  {{-- <label class="form-check-label" for="sponsor_id"></label>
+                  <input class="form-check-input sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" > --}}
+                </div>
               </div>
             </div>
+            @endforeach
           </div>
-          @endforeach
         </div>
       </div>
+      <div class="row">        
+        <div class="col-md-8">
+          <div class="row justify-content-around ">
+            @foreach ($sponsors as $sponsor)
+            <div class="col-12 col-lg-3">              
+              <label class="form-check-label" for="sponsor_id"></label>
+              <input class="sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" >
+            </div>
+            @endforeach
+          </div>          
+        </div>
+      </div>
+
     </div>
   </div>
   {{-- <button> Vai al pagamento </button> --}}
 {{-- </form> --}}
 <div class="container bnb-totalMain">
-  <div class="bnb-mainPayment">
-    <div class="bnb-totalContainer">
-      <div class="bnb-text col-md-8">
-        <h1>Sponsorizza il tuo appartamento!</h1>
-          <p>Sponsorizza ora il tuo appartamento e questo verrà mostrato per primo nella homepage</p>
-      </div>
-    </div>
-  </div>
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center mb-3">

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <carousel :autoplay="true" :centerMode="true" :loop="true" :perPage="1">
+        <carousel :autoplay="true" :centerMode="true" :loop="true" :perPage="1" paginationColor="#034f84" paginationActiveColor="#FF8964">
             <slide v-for="apa in apartments" :key="apa.id">
                 <a :href='`home/${apa.id}`'>
                     <div class="container-card" :style="'background-image:url('+apa.img_path+')'">

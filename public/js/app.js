@@ -39132,7 +39132,16 @@ var render = function() {
     [
       _c(
         "carousel",
-        { attrs: { autoplay: true, centerMode: true, loop: true, perPage: 1 } },
+        {
+          attrs: {
+            autoplay: true,
+            centerMode: true,
+            loop: true,
+            perPage: 1,
+            paginationColor: "#034f84",
+            paginationActiveColor: "#FF8964"
+          }
+        },
         _vm._l(_vm.apartments, function(apa) {
           return _c("slide", { key: apa.id }, [
             _c("a", { attrs: { href: "home/" + apa.id } }, [

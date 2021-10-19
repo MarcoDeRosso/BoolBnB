@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid jumbotron login">
+<div class="container-fluid jumbotron bg-register login">
     <div class="container login">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -46,7 +46,7 @@
                                         <input class="form-check-input no-box-shadow " type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
     
                                         <label class="form-check-label no-box-shadow " for="remember">
-                                            {{ __('Remember Me') }}
+                                            {{ __('Ricordami') }}
                                         </label>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
     
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
+                                            {{ __('Password Dimenticata?') }}
                                         </a>
                                     @endif
                                 </div>

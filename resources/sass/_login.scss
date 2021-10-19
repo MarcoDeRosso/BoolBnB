@@ -5,8 +5,31 @@ div.login.jumbotron {
     align-items: center;
 }
 
+
 .register {
     input {
         width: 100%;
     }
+}
+
+.bg-register{
+    background-image: url(https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+        .card{
+            border: 2px solid $arancionesalmone;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            .card-header{
+                font-weight: bold;
+                border-radius: 15px 15px 0 0 ;
+                background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+            }
+            
+            .card-body{
+                input{
+                    border: none;
+                    border-bottom: 2px solid $arancionesalmone;
+                }
+            }
+        }
+    
 }

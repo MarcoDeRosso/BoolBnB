@@ -16,7 +16,7 @@
 <div id="myModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
-    <h1 id="h1-text-modal">Pagamento è andato a buon fine</h1>
+    <h1 id="h1-text-modal"></h1>
     <a href="{{ route('apartments.show', $apartment) }}">
       <button class="btn-route bn632-hover bn26">Chiudi</button>
     </a>
@@ -122,10 +122,10 @@
                 function(response) {
                   if (response.success) {
                     modal.style.display = "block";
-                    textModal.innerHTML = "Pagamento è andato a buon fine";
+                    textModal.innerHTML = "Il pagamento è andato a buon fine";
                   } else {
                     modal.style.display = "block";
-                    textModal.innerHTML = "Pagamento non è riuscito";
+                    textModal.innerHTML = "Il pagamento non è riuscito";
 
                    }
                   }, 'json');

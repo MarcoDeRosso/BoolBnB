@@ -16161,6 +16161,27 @@ div.login.jumbotron {
   width: 100%;
 }
 
+.bg-register {
+  background-image: url(https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+}
+
+.bg-register .card {
+  border: 2px solid #FF8964;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.bg-register .card .card-header {
+  font-weight: bold;
+  border-radius: 15px 15px 0 0;
+  background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+}
+
+.bg-register .card .card-body input {
+  border: none;
+  border-bottom: 2px solid #FF8964;
+}
+
 .home .apartment {
   border-radius: 15px;
   display: flex;

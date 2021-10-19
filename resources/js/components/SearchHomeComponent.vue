@@ -17,20 +17,6 @@
 
                             <div v-show="city != ''">
                                 <div class="form-group row">
-                                    <label class="col-md-5 col-form-label text-md-right" for="rooms_num">Numero di camere:</label>
-                                    <div class="col-md-4">
-                                        <input class="box-shadow input-home" @click="filterRooms()" type="number" min="5" max="8" v-model="rooms">
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-md-5 col-form-label text-md-right" for="beds_num">Numero di posti letto:</label>
-                                    <div class="col-md-4">
-                                        <input class="box-shadow input-home" @click="filterBeds()"  type="number" min="1" max="3" v-model="beds">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <label class="col-md-5 col-form-label text-md-right" for="distance"> Raggio della ricera (0-20 km):</label>
                                     <div class="col-md-4 align-self-center">
                                         <!-- <input class="no-box-shadow slider" @change="postRange()" type="range" min="0" max="20" step="5"  v-model="distance"> -->
@@ -42,6 +28,21 @@
                                         <option value="15"></option>
                                         <option value="20"></option>
                                         </datalist>
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group row">
+                                    <label class="col-md-5 col-form-label text-md-right" for="rooms_num">Numero di camere:</label>
+                                    <div class="col-md-4">
+                                        <input class="box-shadow input-home" @click="filterRooms()" type="number" min="5" max="8" v-model="rooms">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-5 col-form-label text-md-right" for="beds_num">Numero di posti letto:</label>
+                                    <div class="col-md-4">
+                                        <input class="box-shadow input-home" @click="filterBeds()"  type="number" min="1" max="3" v-model="beds">
                                     </div>
                                 </div>
 
@@ -145,10 +146,12 @@
             postRange(){
                 this.api=`http://127.0.01:8000/api/rangeapartments?city=${this.city}&radius=${this.distance}`
                 axios.get(this.api).then(res=>{
-                    console.log(res)
                     this.apartmentsInRange=res.data
                     this.filterSearchCity()
                 })
+
+                this.beds = 0
+                this.rooms = 0
             },
             addApartmentsToService () {
                 for(let i= 0; i< this.apartments.length; i++){
@@ -206,7 +209,6 @@
 
                 if(this.rooms != 0) {
                     this.filteredApartments = this.copyFilteredApaForRooms.filter((apa)=>{
-                        // console.log('sono nelle camere')
                     return apa.rooms_num == this.rooms                        
                 })}
                 this.copyFilteredApaForBeds = this.filteredApartments
@@ -216,7 +218,6 @@
             filterBeds(){
                 if(this.beds != 0) {
                     this.filteredApartments = this.copyFilteredApaForBeds.filter((apa)=>{
-                        // console.log('sono nei letti')
                     return apa.beds_num == this.beds  
                 })}
                 this.copyFilteredApartments = this.filteredApartments

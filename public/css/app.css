@@ -16402,7 +16402,7 @@ div.login.jumbotron {
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
-  z-index: 1;
+  z-index: 1001;
   /* Sit on top */
   padding-top: 100px;
   /* Location of the box */
@@ -16422,28 +16422,15 @@ div.login.jumbotron {
 
 /* Modal Content */
 
-.modal-content {
+#myModal .modal-content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  width: 800px;
 }
 
-/* The Close Button */
-
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+#myModal .modal-content button {
+  width: 120px;
 }
 
 .jumbotron-home {

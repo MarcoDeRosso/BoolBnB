@@ -156,7 +156,7 @@
 .modal {
    display: none; /* Hidden by default */
    position: fixed; /* Stay in place */
-   z-index: 1; /* Sit on top */
+   z-index: 1001; /* Sit on top */
    padding-top: 100px; /* Location of the box */
    left: 0;
    top: 0;
@@ -168,25 +168,20 @@
 }
 
 /* Modal Content */
-.modal-content {
-   background-color: #fefefe;
-   margin: auto;
-   padding: 20px;
-   border: 1px solid #888;
-   width: 80%;
+// .modal-content {
+//    border: 1px solid #888;
+//    width: 80%;
+// }
+
+#myModal{
+   .modal-content{
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      width: 800px;
+      button{
+         width: 120px;
+      }
+   }
 }
 
-/* The Close Button */
-.close {
-   color: #aaaaaa;
-   float: right;
-   font-size: 28px;
-   font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-   color: #000;
-   text-decoration: none;
-   cursor: pointer;
-}

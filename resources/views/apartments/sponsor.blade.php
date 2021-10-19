@@ -5,7 +5,7 @@
 
 @if ($apartment->sponsorActive)
 
-<h1>hai gia pagato</h1>
+<h1>La sponsorizzazione è già attiva!</h1>
 <a href="{{ route('apartments.show', $apartment) }}">
   <button>Torna in dietro</button>
 </a>  
@@ -16,9 +16,9 @@
 <div id="myModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
-    <p id="p-text-modal">Pagamento andato a buon fine</p>
+    <h1 id="h1-text-modal">Pagamento è andato a buon fine</h1>
     <a href="{{ route('apartments.show', $apartment) }}">
-      <button class="btn-route">Chiudi</button>
+      <button class="btn-route bn632-hover bn26">Chiudi</button>
     </a>
   </div>
 </div>
@@ -36,14 +36,13 @@
         @foreach ($sponsors as $sponsor)
         <div class="all-cards card card-bg col-12 col-lg-3">
           <div class="card-body">
-            <div class="flip-card-front">
+            <div class="flip-card-front mt-4">
               <h6 class="bronze">Pacchetto {{$sponsor->name}}</h6>
               <h1><i class="fas fa-medal"></i></h1>
               <h6>&#8364; {{$sponsor->cost}} </h6>               
             </div>
-            <div class="form-check flip-card-back bnb-formCheck">
+            <div class="form-check flip-card-back bnb-formCheck mt-2">
               <div class="color">
-                <h6 class="title-color">Pacchetto {{$sponsor->name}}</h6>
                 <i class="fas fa-medal"></i>
                 <h6>Appartamento sponsorizzato per {{$sponsor->hours}} ore</h6>
                 <h6>&#8364; {{$sponsor->cost}} </h6>
@@ -90,7 +89,7 @@
         setTimeout(() => {
           // modal
           var modal = document.getElementById('myModal');
-          let textModal = document.getElementById('p-text-modal');
+          let textModal = document.getElementById('h1-text-modal');
 
           // x modal ->button invere con redirect
           var span = document.getElementsByClassName("btn-route")[0];
@@ -123,9 +122,10 @@
                 function(response) {
                   if (response.success) {
                     modal.style.display = "block";
-                    textModal.innerHTML = "Pagamento riuscito";
+                    textModal.innerHTML = "Pagamento è andato a buon fine";
                   } else {
-                    textModal.innerHTML = "Pagamento non riuscito";
+                    modal.style.display = "block";
+                    textModal.innerHTML = "Pagamento non è riuscito";
 
                    }
                   }, 'json');

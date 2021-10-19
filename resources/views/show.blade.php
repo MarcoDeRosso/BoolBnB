@@ -4,12 +4,12 @@
 <div class="container">
     <h1 class="text-center mt-4">{{ $apartment->title }}</h1>
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-6 articol-card mt-3 mb-3">
-            <div class="img-box mt-3 mb-5">
+        <div class="col-12 col-md-6 col-lg-6 articol-card  mb-3">
+            <div class="img-box mb-5">
                 @if (str_contains($apartment->img_path, 'https'))
-                <img class="img-apartment" src="{{ $apartment->img_path }}" alt="" style="width: 100%">
+                <img class="img-apartment mt-3 mb-3" src="{{ $apartment->img_path }}" alt="" style="width: 100%">
                 @else
-                <img class="img-apartment" src="{{asset('storage/' . $apartment->img_path )}}" alt="" style="width: 100%">
+                <img class="img-apartment mt-3 mb-3" src="{{asset('storage/' . $apartment->img_path )}}" alt="" style="width: 100%">
                 @endif
                 <div class="price-tag">{{$apartment->price_night}} €</div>
             </div>
@@ -27,7 +27,7 @@
             <input type="hidden" name="latitude" id="latitude" value="{{ $apartment->latitude }}">
             <input type="hidden" name="longitude" id="longitude" value="{{ $apartment->longitude }}">
         </div>
-        <div class="col-12 col-md-6 col-lg-6 articol-card mt-3 mb-3">
+        <div class="col-12 col-md-6 col-lg-6 articol-card mt-3">
             <div id="map-div"></div>
 
             <div>

@@ -258,6 +258,7 @@
 <style scoped>
     .bkg{
         background-color: #92a8d1;
+        border-radius: 15px 15px 0 0;
     }
     .input-home{
     text-align: center;

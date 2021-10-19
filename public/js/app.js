@@ -6693,7 +6693,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.bkg[data-v-7fe8f0fb]{\n        background-color: #92a8d1;\n}\n.input-home[data-v-7fe8f0fb]{\n    text-align: center;\n}\n.box-search[data-v-7fe8f0fb]{    \n    border: 2px solid #034f84;\n    border-radius: 15px;\n    padding: 15px auto;\n    background: white;\n}\n.modal-header[data-v-7fe8f0fb]{\n    justify-content: center!important;\n}\n.modal-content[data-v-7fe8f0fb]{     \n    border: 2px solid #034f84;\n}\n", ""]);
+exports.push([module.i, "\n.bkg[data-v-7fe8f0fb]{\n        background-color: #92a8d1;\n        border-radius: 15px 15px 0 0;\n}\n.input-home[data-v-7fe8f0fb]{\n    text-align: center;\n}\n.box-search[data-v-7fe8f0fb]{    \n    border: 2px solid #034f84;\n    border-radius: 15px;\n    padding: 15px auto;\n    background: white;\n}\n.modal-header[data-v-7fe8f0fb]{\n    justify-content: center!important;\n}\n.modal-content[data-v-7fe8f0fb]{     \n    border: 2px solid #034f84;\n}\n", ""]);
 
 // exports
 

@@ -2031,6 +2031,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['services', 'apartments', 'lista'],
   mounted: function mounted() {
@@ -2062,11 +2063,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.api = "http://127.0.01:8000/api/rangeapartments?city=".concat(this.city, "&radius=").concat(this.distance);
       axios.get(this.api).then(function (res) {
-        console.log(res);
         _this.apartmentsInRange = res.data;
 
         _this.filterSearchCity();
       });
+      this.beds = 0;
+      this.rooms = 0;
     },
     addApartmentsToService: function addApartmentsToService() {
       for (var i = 0; i < this.apartments.length; i++) {
@@ -2125,7 +2127,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (this.rooms != 0) {
         this.filteredApartments = this.copyFilteredApaForRooms.filter(function (apa) {
-          // console.log('sono nelle camere')
           return apa.rooms_num == _this3.rooms;
         });
       }
@@ -2139,7 +2140,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (this.beds != 0) {
         this.filteredApartments = this.copyFilteredApaForBeds.filter(function (apa) {
-          // console.log('sono nei letti')
           return apa.beds_num == _this4.beds;
         });
       }
@@ -38670,6 +38670,54 @@ var render = function() {
                           {
                             staticClass:
                               "col-md-5 col-form-label text-md-right",
+                            attrs: { for: "distance" }
+                          },
+                          [_vm._v(" Raggio della ricera (0-20 km):")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-md-4 align-self-center" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.distance,
+                                  expression: "distance"
+                                }
+                              ],
+                              staticClass: "no-box-shadow ",
+                              attrs: {
+                                type: "range",
+                                list: "tickmarks",
+                                min: "0",
+                                max: "20",
+                                step: "5"
+                              },
+                              domProps: { value: _vm.distance },
+                              on: {
+                                change: function($event) {
+                                  return _vm.postRange()
+                                },
+                                __r: function($event) {
+                                  _vm.distance = $event.target.value
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm._m(0)
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group row" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass:
+                              "col-md-5 col-form-label text-md-right",
                             attrs: { for: "rooms_num" }
                           },
                           [_vm._v("Numero di camere:")]
@@ -38740,54 +38788,6 @@ var render = function() {
                             }
                           })
                         ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group row" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "col-md-5 col-form-label text-md-right",
-                            attrs: { for: "distance" }
-                          },
-                          [_vm._v(" Raggio della ricera (0-20 km):")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "col-md-4 align-self-center" },
-                          [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.distance,
-                                  expression: "distance"
-                                }
-                              ],
-                              staticClass: "no-box-shadow ",
-                              attrs: {
-                                type: "range",
-                                list: "tickmarks",
-                                min: "0",
-                                max: "20",
-                                step: "5"
-                              },
-                              domProps: { value: _vm.distance },
-                              on: {
-                                change: function($event) {
-                                  return _vm.postRange()
-                                },
-                                __r: function($event) {
-                                  _vm.distance = $event.target.value
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _vm._m(0)
-                          ]
-                        )
                       ]),
                       _vm._v(" "),
                       _vm._m(1),

@@ -15617,7 +15617,6 @@ button.cyberpunk::after {
   vertical-align: middle;
   width: 200px;
   height: 86px;
-  font-family: "Bebas Neue", cursive;
   background: linear-gradient(45deg, transparent 5%, #034f84 5%);
   border: 0;
   color: #fff;
@@ -16346,6 +16345,7 @@ div.login.jumbotron {
   width: 100%;
   height: 200px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 #sponsorships .card .card-body {

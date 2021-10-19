@@ -27,7 +27,11 @@
                     <tr >
                         <th class="align-middle" scope="row"> {{ $loop->iteration }} </th>
                         <td class="align-middle">
-                            <img src="{{ $apa->img_path }}" alt="">
+                            @if (str_contains($apa->img_path, 'https'))
+                                <img src="{{ $apa->img_path }}" alt="">
+                            @else
+                                <img src="{{asset('storage/' . $apa->img_path )}}" alt="">
+                            @endif
                         </td>
                         <td class="align-middle">{{ $apa->address }}</td>
                         <td class="align-middle">{{ $apa->title }}</td>

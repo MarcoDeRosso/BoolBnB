@@ -15,7 +15,11 @@
         <div class="articol-card col-12 col-md-6 col-lg-4 mt-3 mb-3">
             <a href="{{ route('apartmentShow', $apartment) }}" class="apartment">
                 <div>
-                    <img class="img-apartment mb-3" src="{{ $apartment->img_path }}" alt="" >
+                    @if (str_contains($apartment->img_path, 'https'))
+                    <img class="img-apartment mb-3" src="{{ $apartment->img_path }}" alt="" style="width: 100%">
+                    @else
+                    <img class="img-apartment mb-3" src="{{asset('storage/' . $apartment->img_path )}}" alt="" style="width: 100%">
+                    @endif
                     <div class="price-tag">{{$apartment->price_night}} €</div>
                 </div>
                 <h2>{{ $apartment->title }}</h2>

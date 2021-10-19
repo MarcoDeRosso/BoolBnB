@@ -64,7 +64,12 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img style="width: 50px; box-shadow:none" src="{{ Auth::user()->img_path }}" alt="">
+                                    @if (str_contains(Auth::user()->img_path, 'https'))
+                                        <img style="width: 50px; box-shadow:none" src="{{ Auth::user()->img_path }}" alt="">
+                                    @else
+                                        <img style="width: 50px; box-shadow:none" src="{{asset('storage/' . Auth::user()->img_path)}}" alt="">
+                                    @endif
+
                                     {{ Auth::user()->name }} {{ Auth::user()->surname }} 
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

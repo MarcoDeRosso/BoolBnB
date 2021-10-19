@@ -6,7 +6,11 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-6 articol-card mt-3 mb-3">
             <div class="img-box mt-3 mb-5">
-                <img class="img-apartment" src="{{ $apartment->img_path }}" alt="" >
+                @if (str_contains($apartment->img_path, 'https'))
+                <img class="img-apartment" src="{{ $apartment->img_path }}" alt="" style="width: 100%">
+                @else
+                <img class="img-apartment" src="{{asset('storage/' . $apartment->img_path )}}" alt="" style="width: 100%">
+                @endif
                 <div class="price-tag">{{$apartment->price_night}} €</div>
             </div>
             <div class="features">

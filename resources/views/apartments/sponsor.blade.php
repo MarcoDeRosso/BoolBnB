@@ -34,7 +34,7 @@
     <div class="col-md-8">
       <div class="row justify-content-around">
         @foreach ($sponsors as $sponsor)
-        <div class="card card-bg col-12 col-lg-3">
+        <div class="all-cards card card-bg col-12 col-lg-3">
           <div class="card-body">
             <div class="flip-card-front">
               <h6 class="bronze">Pacchetto {{$sponsor->name}}</h6>
@@ -97,24 +97,23 @@
 
           var button = document.getElementById('submit-button');
           var apa = {{ $apartment->id }};
-          console.log(apa);
           var radioButtons = document.getElementsByClassName('sponsor-type');
           let sponsor = '';
-
+          var cards= document.getElementsByClassName('all-cards');
+          for(let y=0; y< cards.length; y++){
+            cards[y].addEventListener('click', function(){
+              console.log('sono una carta!');
+              radioButtons[y].checked=true;
+              sponsor = radioButtons[y].value;
+              console.log('sto controllando il valore',sponsor);
+            })
+          }
           braintree.dropin.create({
             authorization: "{{ Braintree\ClientToken::generate() }}",
             // container: '#dropin-container'
             container: document.getElementById('dropin-container')
           },function(createErr, instance) {
             button.addEventListener('click', function() {
-              for (let x = 0; x < radioButtons.length; x++) {
-                if (radioButtons[x].checked) {
-                  sponsor = radioButtons[x].value;
-                  console.log('dentro if',sponsor);
-                }
-                console.log('dentro for',sponsor);
-              }
-              console.log('sono fuori',sponsor);
               instance.requestPaymentMethod(function(err, payload) {
                 $.get('{{route('payment.make') }}', {
                   payload,

@@ -461,7 +461,7 @@ class ApartmentsTableSeeder extends Seeder
 
         for($y=0; $y<5; $y++){
             $message=new Message();
-            $message->apartment_id=rand(18,20);
+            $message->apartment_id=rand(18,19);
             $message->full_name=$messagesNameList[$y];
             $message->email=$messagesMailList[$y];
             $message->text=$messagesTextList[$y];
@@ -508,7 +508,7 @@ class ApartmentsTableSeeder extends Seeder
             $payment->save();
         };
 
-        for($a=0;$a<5;$a++) {
+        for($a=0;$a<13;$a++) {
             $statistic = new Statistic();
             $statistic->guest_ip = $faker->localIpv4();
             //$statistic->guest_ip = Hash::make($faker->localIpv4());
@@ -528,7 +528,7 @@ class ApartmentsTableSeeder extends Seeder
             $statistic->guest_ip = $faker->localIpv4();
             //$statistic->guest_ip = Hash::make($faker->localIpv4());
             $statistic->apartment_id = 18;
-            $statistic->created_at="2021-10-13 23:00:00";
+            $statistic->created_at="2021-10-15 23:00:00";
             $statistic->save();
         }
         for($a=0;$a<15;$a++) {
@@ -536,7 +536,23 @@ class ApartmentsTableSeeder extends Seeder
             $statistic->guest_ip = $faker->localIpv4();
             //$statistic->guest_ip = Hash::make($faker->localIpv4());
             $statistic->apartment_id = 18;
-            $statistic->created_at="2021-10-12 12:00:00";
+            $statistic->created_at="2021-10-16 12:00:00";
+            $statistic->save();
+        }
+        for($a=0;$a<11;$a++) {
+            $statistic = new Statistic();
+            $statistic->guest_ip = $faker->localIpv4();
+            //$statistic->guest_ip = Hash::make($faker->localIpv4());
+            $statistic->apartment_id = 18;
+            $statistic->created_at="2021-10-17 12:00:00";
+            $statistic->save();
+        }
+        for($a=0;$a<6;$a++) {
+            $statistic = new Statistic();
+            $statistic->guest_ip = $faker->localIpv4();
+            //$statistic->guest_ip = Hash::make($faker->localIpv4());
+            $statistic->apartment_id = 18;
+            $statistic->created_at="2021-10-18 12:00:00";
             $statistic->save();
         }
     }

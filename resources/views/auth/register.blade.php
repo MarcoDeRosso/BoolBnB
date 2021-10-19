@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid jumbotron login">
-    <div class="container">
+<div class="container-fluid login bg-register py-5">
+    <div class="container ">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 ">
                 <div class="card">
                     <div class="card-header">{{ __('Registrati') }}</div>
 
-                    <div class="card-body register">
+                    <div class="card-body register ">
                         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -77,17 +77,17 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                            <div class="form-group row justify-content-center mb-0">
+                                <div class="col-md-6 d-flex justify-content-center">
+                                    <button type="submit" class="bn632-hover bn21">
+                                        {{ __('Registrati') }}
                                     </button>
                                 </div>
                             </div>

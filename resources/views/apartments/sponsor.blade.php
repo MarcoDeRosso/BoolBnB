@@ -34,7 +34,7 @@
     <div class="col-md-8">
       <div class="row justify-content-around">
         @foreach ($sponsors as $sponsor)
-        <div class="all-cards card card-bg col-12 col-lg-3">
+        <div class="all-cards card card-bg col-5 col-lg-3">
           <div class="card-body">
             <div class="flip-card-front mt-4">
               <h6 class="bronze">Pacchetto {{$sponsor->name}}</h6>
@@ -47,6 +47,8 @@
                 <h6>Appartamento sponsorizzato per {{$sponsor->hours}} ore</h6>
                 <h6>&#8364; {{$sponsor->cost}} </h6>
               </div>
+              <label class="form-check-label" for="sponsor_id"></label>
+              <input class="sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" >
               {{-- <label class="form-check-label" for="sponsor_id"></label>
               <input class="form-check-input sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" > --}}
             </div>
@@ -61,8 +63,8 @@
       <div class="row justify-content-around ">
         @foreach ($sponsors as $sponsor)
         <div class="col-12 col-lg-3">              
-          <label class="form-check-label" for="sponsor_id"></label>
-          <input class="sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" >
+          {{-- <label class="form-check-label" for="sponsor_id"></label>
+          <input class="sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" > --}}
         </div>
         @endforeach
       </div>          

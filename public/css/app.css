@@ -15941,6 +15941,7 @@ img {
   background-repeat: no-repeat;
   padding-top: 15px;
   padding-bottom: 15px;
+  background-size: cover;
 }
 
 .bg .box-edit {

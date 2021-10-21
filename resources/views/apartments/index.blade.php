@@ -5,9 +5,11 @@
     <div class="jumbotron">
         <div class="white-space">
             <h1>Bentornato <span class="info-name"> {{ Auth::user()->name }} {{ Auth::user()->surname }}</span>, <br> questa è la tua Dashboard:</h1>
-        </div>
+        </div> 
     </div>
     <div class="container-fluid">
+        
+        @if (count($apartments)>0)
         <h1 class="text-center" >I tuoi appartamenti pubblicati sulla piattaforma sono i seguenti:</h1>
         <div class="row">
             <table class="table table-striped text-center">
@@ -48,6 +50,8 @@
                 </tbody>
             </table>
         </div>
+        @else
+        <h1 class="text-center">Al momento non hai ancora alcun appartmaneto pubblicato sulla nostra piattaforma</h1>
         <div class="text-center">
             <button class="bn632-hover bn26">
                 <a href="{{ route('apartments.create') }}">
@@ -56,5 +60,7 @@
             </button>
         </div>
     </div>
+
+    @endif
 </div>
 @endsection

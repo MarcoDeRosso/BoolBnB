@@ -17,63 +17,63 @@
             <label class="col-3" for="title">
                 <h3>Titolo</h3>
             </label>
-            <input class="col-7 box-shadow" type="text" class="form-control" name="title" id="title" placeholder="Scegli un titolo">
+            <input class="col-7 box-shadow" type="text" class="form-control" name="title" id="title" placeholder="Scegli un titolo" required>
         </div>
     
         <div class="form-group row d-flex justify-content-between px-3">
             <label class="col-3 " for="description">
                 <h3>Descrizione</h3>
             </label>
-            <textarea class="col-7 box-shadow" id="description" name="description" rows="5" placeholder="Scrivi la tua descrizione"></textarea>
+            <textarea required class="col-7 box-shadow" id="description" name="description" rows="5" placeholder="Scrivi la tua descrizione"></textarea>
         </div>
 
         <div class="form-group row d-flex px-3">
             <label class="col-5 col-xl-5 col-md-5 col-sm-5 " for="rooms_num">
                 <h3>Numero di camere</h3>
             </label>
-            <input class="col-7 box-shadow" type="number" id="rooms_num" name="rooms_num" min="1" max="15" placeholder="1-15">
+            <input class="col-7 box-shadow" type="number" id="rooms_num" name="rooms_num" min="1" max="15" placeholder="1-15" required>
         </div>
 
         <div class="form-group row d-flex px-3">
             <label class="col-5 col-xl-5 col-md-5 col-sm-5  " for="beds_num">
                 <h3>Numero di posti letto</h3>
             </label>
-            <input class="col-7 box-shadow" type="number" id="beds_num" name="beds_num" min="1" max="10" placeholder="1-10">
+            <input class="col-7 box-shadow" type="number" id="beds_num" name="beds_num" min="1" max="10" placeholder="1-10" required>
         </div>
 
         <div class="form-group row d-flex px-3">
             <label class="col-5 col-xl-5 col-md-5 col-sm-5 " for="bath_num">
                 <h3> Numero bagni</h3>
             </label>
-            <input class="col-7 box-shadow" type="number" id="bath_num" name="bath_num" min="1" max="5"  placeholder="1-5">
+            <input class="col-7 box-shadow" type="number" id="bath_num" name="bath_num" min="1" max="5"  placeholder="1-5" required>
         </div>
 
         <div class="form-group d-flex row px-3">
             <label class="col-5 col-xl-5 col-md-5 col-sm-5" for="meters_size">
                 <h3>Metri quadri</h3>
             </label>
-            <input class="col-7 box-shadow" type="number" id="meters_size" name="meters_size" min="20" max="1000"  placeholder="Inserisci la grandezza">
+            <input class="col-7 box-shadow" type="number" id="meters_size" name="meters_size" min="20" max="1000"  placeholder="Inserisci la grandezza" required>
         </div>
 
         <div class="form-group row d-flex px-3">
             <label class="col-5 col-xl-5 col-md-5 col-sm-5" for="address">
                 <h3>Indirizzo</h3>
             </label>
-            <input class="col-7 box-shadow" type="text" class="form-control" name="address" id="address"  placeholder="Inserisci l'indirizzo">
+            <input class="col-7 box-shadow" type="text" class="form-control" name="address" id="address"  placeholder="Inserisci l'indirizzo" required>
         </div>
 
         <div class="form-group row d-flex px-3">
             <label class="col-5 col-xl-5 col-md-5 col-sm-5" for="img_path">
                 <h3>Immagine</h3>
             </label>
-            <input class="col-7 border-0" type="file" class="form-control" name="img_path" id="img_path">
+            <input class="col-7 border-0" type="file" class="form-control" name="img_path" id="img_path" required>
         </div>
 
         <div class="form-group row d-flex px-3">
             <label class="col-5 col-xl-5 col-md-5 col-sm-5 " for="price_night">
                 <h3>Prezzo per notte</h3>
             </label>
-            <input class="col-7 box-shadow" type="number" id="price_night" name="price_night" min="1" max="65000" placeholder="Scegli un prezzo">
+            <input class="col-7 box-shadow" type="number" id="price_night" name="price_night" min="1" max="65000" placeholder="Scegli un prezzo" required>
         </div>
     
         <div class="row d-flex px-3">

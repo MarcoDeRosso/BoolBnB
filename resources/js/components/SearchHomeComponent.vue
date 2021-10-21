@@ -205,6 +205,7 @@
                     this.copyFilteredApaForBeds = []
                     this.beds = 0
                     this.rooms = 0
+                    this.distance = 0
                 }
 
                 //lista base sulla quale ciclare per rooms

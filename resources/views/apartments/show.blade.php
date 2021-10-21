@@ -36,6 +36,7 @@
                 <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-shower gradient" ></i> Bagni: {{$apartment->bath_num}}</h6>
                 <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-th gradient"></i> Metri Quadri: {{$apartment->meters_size}}</h6>
             </div>
+            <h4 class="pt-2">SERVIZI INCLUSI:</h4>
             @foreach ($apartment->service as $service)
                 <span class="custom-badge">{{ $service->title }}</span> 
             @endforeach
@@ -58,11 +59,33 @@
             Modifica Info
         </a>
     </button>     
-     <form action=" {{ route('apartments.destroy', $apartment) }} " method="POST">
-        @csrf
-        @method('DELETE')                  
-        <button type="submit" class="bn632-hover bn21">Elimina Appartamento</button>
-    </form> 
+     
+    <!-- button modal delete apa -->
+    <button type="button" class="bn632-hover bn21" data-toggle="modal" data-target="#deleteApartment">
+        Elimina Appartamento
+    </button>
+    
+    <!-- Modal  delete apa -->
+    <div class="modal fade" id="deleteApartment" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel"> <strong>Attenzione</strong> </h3>
+            </div>
+            <div class="modal-body">
+                Sicuro di voler eliminare: {{ $apartment->title }} ?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+            <form action=" {{ route('apartments.destroy', $apartment) }} " method="POST">
+                @csrf
+                @method('DELETE')                  
+                <button type="submit" class="btn btn-primary">Elimina Appartamento</button>
+            </form> 
+            </div>
+        </div>
+        </div>
+    </div>
 </div>
 
 {{-- messaggi  --}}
@@ -90,11 +113,35 @@
                     <td>{{ $msg->email}}</td>
                     <td>{{ $msg->text}}</td>
                     <td>
-                        <form action="{{route('messages.delete', $msg )}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Elimina il messaggio</button>
-                        </form>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteMsg">
+                            Elimina il messaggio
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteMsg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Attenzione</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                        Sicuro di voler eliminare il messaggio di {{ $msg->full_name }}
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                                        <form action="{{route('messages.delete', $msg )}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-primary" type="submit">Elimina il messaggio</button>
+                                        </form>
+
+                                        {{-- <button type="button" class="btn btn-primary">Elimina messaggio</button> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </td>
 
                 </tr>

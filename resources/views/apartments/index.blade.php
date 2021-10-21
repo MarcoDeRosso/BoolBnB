@@ -52,15 +52,15 @@
         </div>
         @else
         <h1 class="text-center">Al momento non hai ancora alcun appartmaneto pubblicato sulla nostra piattaforma</h1>
-        <div class="text-center">
-            <button class="bn632-hover bn26">
-                <a href="{{ route('apartments.create') }}">
-                    Aggiungi un appartamento            
-                </a>
-            </button>
-        </div>
     </div>
-
+    
     @endif
+    <div class="text-center">
+        <button class="bn632-hover bn26">
+            <a href="{{ route('apartments.create') }}">
+                Aggiungi un appartamento            
+            </a>
+        </button>
+    </div>
 </div>
 @endsection

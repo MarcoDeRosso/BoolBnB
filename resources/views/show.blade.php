@@ -20,6 +20,7 @@
                 <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-shower gradient" ></i> Bagni: {{$apartment->bath_num}}</h6>
                 <h6 style="display: inline-block; margin-left: 7px"><i class="fas fa-th gradient"></i> Metri Quadri: {{$apartment->meters_size}}</h6>
             </div>
+            <h4 class="pt-2">SERVIZI INCLUSI:</h4>
             @foreach ($apartment->service as $service)
                 <span class="custom-badge">{{ $service->title }}</span> 
             @endforeach

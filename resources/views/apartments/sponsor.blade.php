@@ -34,7 +34,7 @@
     <div class="col-md-8">
       <div class="row justify-content-around">
         @foreach ($sponsors as $sponsor)
-        <div class="all-cards card card-bg col-12 col-lg-3">
+        <div class="all-cards card card-bg col-5 col-lg-3">
           <div class="card-body">
             <div class="flip-card-front mt-4">
               <h6 class="bronze">Pacchetto {{$sponsor->name}}</h6>
@@ -47,6 +47,8 @@
                 <h6>Appartamento sponsorizzato per {{$sponsor->hours}} ore</h6>
                 <h6>&#8364; {{$sponsor->cost}} </h6>
               </div>
+              <label class="form-check-label" for="sponsor_id"></label>
+              <input class="sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" >
               {{-- <label class="form-check-label" for="sponsor_id"></label>
               <input class="form-check-input sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" > --}}
             </div>
@@ -55,19 +57,10 @@
         @endforeach
       </div>
     </div>
-  </div>
-  <div class="row">        
-    <div class="col-md-8">
-      <div class="row justify-content-around ">
-        @foreach ($sponsors as $sponsor)
-        <div class="col-12 col-lg-3">              
-          <label class="form-check-label" for="sponsor_id"></label>
-          <input class="sponsor-type bnb-sponsorType" type="radio"  name="sponsor_id" id="sponsor_id" value="{{$sponsor->id}}" >
-        </div>
-        @endforeach
-      </div>          
+    <div class="col-12">
+      <h3 class="pt-2" id="total-to-pay" style="visibility: hidden;"></h3 class="pt-2">
+
     </div>
-  </div>
   </div>
 </div>
   {{-- <button> Vai al pagamento </button> --}}
@@ -94,17 +87,35 @@
           // x modal ->button invere con redirect
           var span = document.getElementsByClassName("btn-route")[0];
 
+          var total = document.getElementById('total-to-pay');
           var button = document.getElementById('submit-button');
+          var nameSponsor = '';
+          var price = 0;
           var apa = {{ $apartment->id }};
           var radioButtons = document.getElementsByClassName('sponsor-type');
           let sponsor = '';
           var cards= document.getElementsByClassName('all-cards');
           for(let y=0; y< cards.length; y++){
             cards[y].addEventListener('click', function(){
-              console.log('sono una carta!');
               radioButtons[y].checked=true;
               sponsor = radioButtons[y].value;
-              console.log('sto controllando il valore',sponsor);
+
+              if (sponsor == 1) {
+                nameSponsor = 'Bronzo'
+                price = 2.99
+
+              } else if (sponsor == 2) {
+                nameSponsor = 'Argento'
+                price = 5.99
+
+              } else {
+                nameSponsor = 'Oro'
+                price = 9.99
+              }
+
+              total.style.visibility= "visible";
+              total.innerHTML =
+              total.innerHTML = "Complimenti! Hai scelto il pacchetto <b> " + nameSponsor + "</b> <br> Totale da pagare " + price;
             })
           }
           braintree.dropin.create({

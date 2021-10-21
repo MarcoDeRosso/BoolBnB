@@ -63,7 +63,7 @@
                                                 <h5 class="modal-title" style="color:#034f84" id="servicesExtraLabel">Servizi Aggiuntivi</h5>  
                                             </div>
                                             <div class="modal-body row">
-                                                <div class="col-6 text-center align-items-center" v-for="service in services" :key="service.id" >
+                                                <div class="col-6 col-md-4 text-center align-items-center" v-for="service in services" :key="service.id">
                                                     <label class="pt-3" for="`${service.title}`">{{ service.title }}</label>
                                                     <input @change="filterServices()"  id="`${service.title}`" type="checkbox" :value="`${service.id}`" v-model="serviceList">
                                                 </div>
@@ -214,6 +214,7 @@
                 this.copyFilteredApaForBeds = this.filteredApartments
                 this.beds = 0
                 this.copyFilteredApartments = this.filteredApartments
+
             },
             filterBeds(){
                 if(this.beds != 0) {
@@ -221,6 +222,7 @@
                     return apa.beds_num == this.beds  
                 })}
                 this.copyFilteredApartments = this.filteredApartments
+
             },
             filterServices () {
 

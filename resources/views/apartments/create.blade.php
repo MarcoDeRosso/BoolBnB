@@ -73,7 +73,7 @@
             <label class="col-5 col-xl-5 col-md-5 col-sm-5 " for="price_night">
                 <h3>Prezzo per notte</h3>
             </label>
-            <input class="col-7 box-shadow" type="number" id="price_night" name="price_night" min="1" max="65000" placeholder="Scegli un prezzo" step="5">
+            <input class="col-7 box-shadow" type="number" id="price_night" name="price_night" min="1" max="65000" placeholder="Scegli un prezzo">
         </div>
     
         <div class="row d-flex px-3">

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="container-fluid jumbotron login" style="margin-bottom:0"> 
+    <div class="container-fluid jumbotron login" style="margin-bottom:0;padding:0; height:400px"> 
         <div class="container login">
             <div class="row justify-content-center">
                 <div class="col-md-7">
@@ -139,7 +139,7 @@
                 apartmentsInRange:[],
                 api:'',
                 numberOfServices:'',
-                startSearchFlag :false
+                startSearchFlag :false,
             }
         },
         methods: {
@@ -147,7 +147,26 @@
                 this.api=`http://127.0.01:8000/api/rangeapartments?city=${this.city}&radius=${this.distance}`
                 axios.get(this.api).then(res=>{
                     this.apartmentsInRange=res.data
-                    this.filterSearchCity()
+                    let arrayApaID = []
+
+                    //prendo gli id degli appartamenti della ricerca range
+                    this.apartmentsInRange.forEach(apa => {
+                        arrayApaID.push(apa.id)                        
+                    });
+                    this.apartmentsInRange = []
+                    console.log(arrayApaID)
+                    this.filteredApartments = this.apartmentsAndService.filter ((apa)=>{
+                        return arrayApaID.includes(apa.id)
+                    })
+ 
+                    arrayApaID =[]   
+                    //lista base sulla quale ciclare per rooms
+                    this.copyFilteredApaForRooms = this.filteredApartments
+                    //lista base sulla quale ciclare per beds
+                    this.copyFilteredApaForBeds = this.filteredApartments
+                    //lista base sulla quale ciclare per i servizi
+                    this.copyFilteredApartments = this.filteredApartments       
+
                 })
 
                 this.beds = 0
@@ -161,12 +180,6 @@
             },
             filterSearchCity() {
                 this.startSearchFlag = true
-
-                //se c'è gia un risultato per il filtro km, allora lavora su quei appartamenti
-                if(this.apartmentsInRange.length != 0){
-                    this.filteredApartments=this.apartmentsInRange;
-                    this.apartmentsInRange= [];
-                }
 
                 if(this.city.trim() != '') {
                     // problema salvare copia del filtro città su cui ciclare sempre i bagni e stanze
@@ -214,6 +227,8 @@
                 this.copyFilteredApaForBeds = this.filteredApartments
                 this.beds = 0
                 this.copyFilteredApartments = this.filteredApartments
+                this.serviceList = []
+
 
             },
             filterBeds(){
@@ -222,6 +237,8 @@
                     return apa.beds_num == this.beds  
                 })}
                 this.copyFilteredApartments = this.filteredApartments
+                this.serviceList = []
+
 
             },
             filterServices () {
@@ -231,14 +248,19 @@
                        
                     // entra solo se almeno un servizio è selezionato     
                     if(this.serviceList.length > 0) {
+                            console.log('if magg');
+
     
                         //per ogni appartamento confronta i servizi            
                         this.filteredApartments = this.copyFilteredApartments.filter((apa)=>{                            
                             let nexStepFlag = true
+                            console.log('sono nel filter');
     
                             //per ogni servizio nella lista di quelli selezionati, 
                             //controlla che sia presente nei servizi dell'appartamento
                             this.serviceList.forEach((service)=>{
+                            console.log('sono nel foreach');
+
                                 if (apa.services.includes(parseInt(service)) && nexStepFlag === true)  {
                                     this.serviceListFlag = true
                                 } else {

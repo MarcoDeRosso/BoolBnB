@@ -2064,8 +2064,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.api = "http://127.0.01:8000/api/rangeapartments?city=".concat(this.city, "&radius=").concat(this.distance);
       axios.get(this.api).then(function (res) {
         _this.apartmentsInRange = res.data;
+        var arrayApaID = []; //prendo gli id degli appartamenti della ricerca range
 
-        _this.filterSearchCity();
+        _this.apartmentsInRange.forEach(function (apa) {
+          arrayApaID.push(apa.id);
+        });
+
+        _this.apartmentsInRange = [];
+        console.log(arrayApaID);
+        _this.filteredApartments = _this.apartmentsAndService.filter(function (apa) {
+          return arrayApaID.includes(apa.id);
+        });
+        arrayApaID = []; //lista base sulla quale ciclare per rooms
+
+        _this.copyFilteredApaForRooms = _this.filteredApartments; //lista base sulla quale ciclare per beds
+
+        _this.copyFilteredApaForBeds = _this.filteredApartments; //lista base sulla quale ciclare per i servizi
+
+        _this.copyFilteredApartments = _this.filteredApartments;
       });
       this.beds = 0;
       this.rooms = 0;
@@ -2082,12 +2098,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     filterSearchCity: function filterSearchCity() {
       var _this2 = this;
 
-      this.startSearchFlag = true; //se c'è gia un risultato per il filtro km, allora lavora su quei appartamenti
-
-      if (this.apartmentsInRange.length != 0) {
-        this.filteredApartments = this.apartmentsInRange;
-        this.apartmentsInRange = [];
-      }
+      this.startSearchFlag = true;
 
       if (this.city.trim() != '') {
         // problema salvare copia del filtro città su cui ciclare sempre i bagni e stanze
@@ -2134,6 +2145,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.copyFilteredApaForBeds = this.filteredApartments;
       this.beds = 0;
       this.copyFilteredApartments = this.filteredApartments;
+      this.serviceList = [];
     },
     filterBeds: function filterBeds() {
       var _this4 = this;
@@ -2145,6 +2157,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       this.copyFilteredApartments = this.filteredApartments;
+      this.serviceList = [];
     },
     filterServices: function filterServices() {
       var _this5 = this;
@@ -2153,12 +2166,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (this.copyFilteredApartments.length > 0) {
         // entra solo se almeno un servizio è selezionato     
         if (this.serviceList.length > 0) {
-          //per ogni appartamento confronta i servizi            
+          console.log('if magg'); //per ogni appartamento confronta i servizi            
+
           this.filteredApartments = this.copyFilteredApartments.filter(function (apa) {
-            var nexStepFlag = true; //per ogni servizio nella lista di quelli selezionati, 
+            var nexStepFlag = true;
+            console.log('sono nel filter'); //per ogni servizio nella lista di quelli selezionati, 
             //controlla che sia presente nei servizi dell'appartamento
 
             _this5.serviceList.forEach(function (service) {
+              console.log('sono nel foreach');
+
               if (apa.services.includes(parseInt(service)) && nexStepFlag === true) {
                 _this5.serviceListFlag = true;
               } else {
@@ -38596,7 +38613,7 @@ var render = function() {
       "div",
       {
         staticClass: "container-fluid jumbotron login",
-        staticStyle: { "margin-bottom": "0" }
+        staticStyle: { "margin-bottom": "0", padding: "0", height: "400px" }
       },
       [
         _c("div", { staticClass: "container login" }, [
@@ -38818,7 +38835,7 @@ var render = function() {
                                     {
                                       key: service.id,
                                       staticClass:
-                                        "col-6 text-center align-items-center"
+                                        "col-6 col-md-4 text-center align-items-center"
                                     },
                                     [
                                       _c(

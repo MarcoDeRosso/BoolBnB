@@ -428,12 +428,17 @@ class ApartmentsTableSeeder extends Seeder
             $apartment->longitude=$apartmentLongitudeList[$z];
             $apartment->latitude=$apartmentLatitudeList[$z];
 
-            $randServiceKeys = array_rand($serviceIDList, 5);
+            $randServiceKeys = array_rand($serviceIDList, 10);
             $service1=$serviceIDList[$randServiceKeys[0]];
             $service2=$serviceIDList[$randServiceKeys[1]];
             $service3=$serviceIDList[$randServiceKeys[2]];
             $service4=$serviceIDList[$randServiceKeys[3]];
             $service5=$serviceIDList[$randServiceKeys[4]];
+            $service6=$serviceIDList[$randServiceKeys[5]];
+            $service7=$serviceIDList[$randServiceKeys[6]];
+            $service8=$serviceIDList[$randServiceKeys[7]];
+            $service9=$serviceIDList[$randServiceKeys[8]];
+            $service10=$serviceIDList[$randServiceKeys[9]];
 
             $apartment->save();
 
@@ -442,6 +447,11 @@ class ApartmentsTableSeeder extends Seeder
             $apartment->service()->attach($service3);
             $apartment->service()->attach($service4);
             $apartment->service()->attach($service5);
+            $apartment->service()->attach($service6);
+            $apartment->service()->attach($service7);
+            $apartment->service()->attach($service8);
+            $apartment->service()->attach($service9);
+            $apartment->service()->attach($service10);
         }
 
         $messagesNameList=[

@@ -115,7 +115,7 @@
 
               total.style.visibility= "visible";
               total.innerHTML =
-              total.innerHTML = "Complimenti! Hai scelto il pacchetto <b> " + nameSponsor + "</b> <br> Totale da pagare " + price;
+              total.innerHTML = "Complimenti! Hai scelto il pacchetto <b> " + nameSponsor + "</b> <br> Totale da pagare " + price + " &#8364;";
             })
           }
           braintree.dropin.create({

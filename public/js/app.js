@@ -38690,7 +38690,13 @@ var render = function() {
                               "col-md-5 col-form-label text-md-right",
                             attrs: { for: "distance" }
                           },
-                          [_vm._v(" Raggio della ricera (0-20 km):")]
+                          [
+                            _vm._v(
+                              " Raggio della ricera: " +
+                                _vm._s(_vm.distance) +
+                                "  km"
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -51689,8 +51695,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\maria\OneDrive\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\sebas\Desktop\BoolBnB-1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\sebas\Desktop\BoolBnB-1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

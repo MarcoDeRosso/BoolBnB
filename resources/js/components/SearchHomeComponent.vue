@@ -17,7 +17,7 @@
 
                             <div v-show="city != ''">
                                 <div class="form-group row">
-                                    <label class="col-md-5 col-form-label text-md-right" for="distance"> Raggio della ricera (0-20 km):</label>
+                                    <label class="col-md-5 col-form-label text-md-right" for="distance"> Raggio della ricera: {{ distance }}  km</label>
                                     <div class="col-md-4 align-self-center">
                                         <!-- <input class="no-box-shadow slider" @change="postRange()" type="range" min="0" max="20" step="5"  v-model="distance"> -->
                                         <input class="no-box-shadow " @change="postRange()" type="range" list="tickmarks" min="0" max="20" step="5" v-model="distance">
